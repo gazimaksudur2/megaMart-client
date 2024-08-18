@@ -1,0 +1,42 @@
+-----------products--------------
+
+chairs
+https://furns-react.netlify.app/images/slider-image/slider-1.png
+https://furns-react.netlify.app/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0864%2F0607%2F0562%2Fproducts%2F12_f87051c2-0726-4a74-a98b-5b462b19dc78.jpg%3Fv%3D1709108934&w=384&q=75
+https://furns-react.netlify.app/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0864%2F0607%2F0562%2Fproducts%2F2_40d9c634-67d1-4623-a7d5-c2ef2b24db83.jpg%3Fv%3D1709108882&w=384&q=75
+https://furns-react.netlify.app/images/slider-image/slider-2.png
+https://furns-react.netlify.app/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0864%2F0607%2F0562%2Fproducts%2F4_d2d85450-694d-4907-8abe-699534972db6.jpg%3Fv%3D1709108892&w=384&q=75
+https://furns-react.netlify.app/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0864%2F0607%2F0562%2Fproducts%2F10_da3eb510-63c2-4f13-b224-8ae9e92102e8.jpg%3Fv%3D1709108923&w=384&q=75
+
+
+sofa
+https://furns-react.netlify.app/images/slider-image/slider-2-2.jpg
+https://furns-react.netlify.app/images/slider-image/slider-2-1.jpg
+https://th.bing.com/th/id/OIP.ZOKq6urQchzwC5fQ5HH9dAHaFj?w=237&h=180&c=7&r=0&o=5&pid=1.7
+https://th.bing.com/th/id/OIP.RiZGcbH9sAZjlKLLreLPGQHaEK?w=294&h=180&c=7&r=0&o=5&pid=1.7
+https://th.bing.com/th/id/OIP.HH2kQAtOzMXo7HMeBlx24gHaFj?w=220&h=180&c=7&r=0&o=5&pid=1.7
+
+
+desks
+https://th.bing.com/th/id/OIP.8tqN4l4-p0Q2rFPjyM4EjAHaHa?w=146&h=180&c=7&r=0&o=5&pid=1.7
+https://th.bing.com/th/id/OIP.2c8zp1_YqhrI-Q2vbG_UygHaHa?w=177&h=180&c=7&r=0&o=5&pid=1.7
+https://th.bing.com/th/id/OIP.GK_PZHRxBdmRKXApqmPK2gHaHJ?w=273&h=198&c=7&r=0&o=5&pid=1.7
+https://th.bing.com/th/id/OIP.kio-mexxGblC09XCVlUB-gHaHa?w=198&h=198&c=7&r=0&o=5&pid=1.7
+https://th.bing.com/th/id/OIP.bpmEegvoW3PtWRDaePJfEgHaHa?w=198&h=198&c=7&r=0&o=5&pid=1.7
+
+
+top categories
+audio https://htmldemo.net/elehaus/elehaus/assets/images/shop/category/1.png
+gamming https://htmldemo.net/elehaus/elehaus/assets/images/shop/category/2.png
+headphone https://htmldemo.net/elehaus/elehaus/assets/images/shop/category/3.png
+digital camera https://htmldemo.net/elehaus/elehaus/assets/images/shop/category/4.png
+mobile phone https://htmldemo.net/elehaus/elehaus/assets/images/shop/category/5.png
+computer https://htmldemo.net/elehaus/elehaus/assets/images/shop/category/6.png
+
+
+404 image
+https://furns-react.netlify.app/_next/image?url=%2F_next%2Fstatic%2Fimage%2Fpublic%2Fimages%2Ferror.0672af5af2ef9ab963f625fb9f516af2.png&w=384&q=75
+
+reference website 
+https://preview.themeforest.net/item/elehaus-electronics-ecommerce-website-template/full_screen_preview/36683433?_ga=2.112712388.1118505066.1723977718-1729480525.1713154698
+https://preview.themeforest.net/item/furns-react-ecommerce-template-for-furniture-shop-website/full_screen_preview/34576252?_ga=2.71113808.1118505066.1723977718-1729480525.1713154698
