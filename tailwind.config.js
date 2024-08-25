@@ -7,7 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        poppins: '"Poppins", sans-serif',
+        fira: '"Fira Sans", sans-serif',
+        beginner: '"Edu VIC WA NT Beginner", cursive',
+        open: '"Open Sans", sans-serif',
       },
       backgroundImage: {
         'hero-pattern': "url('/img/hero-pattern.svg')",
