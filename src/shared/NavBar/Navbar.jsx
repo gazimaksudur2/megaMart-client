@@ -6,11 +6,11 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const navItems = <>
-        <li><NavLink to={'/'} className={({isActive})=>isActive?"text-amber-300 font-semibold font-fira text-lg":"font-fira text-lg"}>Home</NavLink></li>
-        <li><NavLink to={'/products'} className={({isActive})=>isActive?"text-amber-300 font-semibold font-fira text-lg":"font-fira text-lg"}>Products</NavLink></li>
-        <li><NavLink to={'/blogs'} className={({isActive})=>isActive?"text-amber-300 font-semibold font-fira text-lg":"font-fira text-lg"}>Blogs</NavLink></li>
-        <li><NavLink to={'/contact'} className={({isActive})=>isActive?"text-amber-300 font-semibold font-fira text-lg":"font-fira text-lg"}>Contact</NavLink></li>
-        <li><NavLink to={'/about'} className={({isActive})=>isActive?"text-amber-300 font-semibold font-fira text-lg":"font-fira text-lg"}>About</NavLink></li>
+        <li><NavLink to={'/'} className={({ isActive }) => isActive ? "text-amber-300 font-semibold font-fira text-lg" : "font-fira text-lg"}>Home</NavLink></li>
+        <li><NavLink to={'/products'} className={({ isActive }) => isActive ? "text-amber-300 font-semibold font-fira text-lg" : "font-fira text-lg"}>Products</NavLink></li>
+        <li><NavLink to={'/blogs'} className={({ isActive }) => isActive ? "text-amber-300 font-semibold font-fira text-lg" : "font-fira text-lg"}>Blogs</NavLink></li>
+        <li><NavLink to={'/contact'} className={({ isActive }) => isActive ? "text-amber-300 font-semibold font-fira text-lg" : "font-fira text-lg"}>Contact</NavLink></li>
+        <li><NavLink to={'/about'} className={({ isActive }) => isActive ? "text-amber-300 font-semibold font-fira text-lg" : "font-fira text-lg"}>About</NavLink></li>
     </>;
 
     const faltuTopDrower = <>
@@ -49,7 +49,7 @@ const Navbar = () => {
             <div className='w-full px-[6%] py-6 mx-auto flex justify-between'>
                 <div className='flex justify-center items-center gap-3'>
                     <img className='w-8 h-8' src="https://cdn-icons-png.flaticon.com/128/1162/1162456.png" alt="logo" />
-                    <h2 className='text-xl font-semibold '>Mega Mart</h2>
+                    <h2 className='text-xl font-semibold font-beginner'>Mega Mart</h2>
                 </div>
                 {/* <h4 className='font-open font-light text-lg'>This is main Layout.</h4> */}
                 <form onSubmit={handleSearch} className='w-[35%]'>
@@ -78,7 +78,13 @@ const Navbar = () => {
                     }
 
                     <div className='mr-3'>
-                        <IoIosNotificationsOutline className='hover:text-amber-600' size={25} />
+                        {/* <CiShoppingCart className='hover:text-amber-600' size={25} /> */}
+                        <label>
+                            <div className='relative'>
+                                <IoIosNotificationsOutline className='hover:text-amber-600' size={25} />
+                                <p className='absolute -top-[10px] -right-[5px] p-[3px] font-semibold text-xs text-white bg-red-400 rounded'>0</p>
+                            </div>
+                        </label>
                     </div>
                     <div className='px-3 border-x-2 border-slate-300'>
                         <div className="drawer">
@@ -89,7 +95,7 @@ const Navbar = () => {
                                     <GoPerson className='hover:text-amber-600 ' size={25} />
                                 </label>
                             </div>
-                            <div className="drawer-side">
+                            <div className="drawer-side z-50">
                                 <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
                                 <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
 
@@ -110,11 +116,11 @@ const Navbar = () => {
                                 <label htmlFor="my-drawer-2" className="drawer-button">
                                     <div className='relative'>
                                         <CiShoppingCart className='hover:text-amber-600' size={25} />
-                                        <p className='absolute -top-[10px] -right-[5px] p-[2px] font-semibold text-xs text-white bg-red-300 rounded'>0</p>
+                                        <p className='absolute -top-[10px] -right-[5px] p-[3px] font-semibold text-xs text-white bg-red-400 rounded'>0</p>
                                     </div>
                                 </label>
                             </div>
-                            <div className="drawer-side">
+                            <div className="drawer-side z-50">
                                 <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
                                 <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
                                     {/* Sidebar content here */}

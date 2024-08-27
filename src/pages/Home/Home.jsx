@@ -1,9 +1,14 @@
-import React from 'react';
+import BestSelling from "./BestSelling";
+import CurrentOffers from "./CurrentOffers";
+import HomeSlider from "./HomeSlider";
+
 
 const Home = () => {
     return (
         <div>
-            This is Home.
+            <HomeSlider/>
+            <BestSelling/>
+            <CurrentOffers/>
         </div>
     );
 };
