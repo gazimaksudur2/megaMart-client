@@ -6,6 +6,7 @@ import Products from '../pages/Products/Products';
 import About from '../pages/About/About';
 import Contact from '../pages/Contact/Contact';
 import Blog from '../pages/Blog/Blog';
+import CartLayout from '../layouts/CartLayout';
 
 const Router = createBrowserRouter([
     {
@@ -33,6 +34,11 @@ const Router = createBrowserRouter([
                 element: <Contact/>
             }
         ]
+    },
+    {
+        path: '/carts',
+        element: <CartLayout/>,
+        children: [],
     }
 ])
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { RiShoppingBag4Line } from 'react-icons/ri';
 import { RxCross2 } from 'react-icons/rx';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
     // const cartProducts = ['ad', 'cd', 'ef'];
@@ -28,10 +29,10 @@ const Cart = () => {
                     </>
                 }
             </div>
-            <div className='bg-amber-400 rounded flex items-center justify-between p-3'>
+            <Link to={'/carts'} className='bg-amber-400 rounded flex items-center justify-between p-3'>
                 <h4 className='text-white font-open font-bold text-lg'>View Cart</h4>
                 <button className='btn text-amber-400 font-bold font-fira'>$0.00</button>
-            </div>
+            </Link>
         </div>
     );
 };
