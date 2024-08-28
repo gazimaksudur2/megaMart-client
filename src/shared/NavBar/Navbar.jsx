@@ -1,8 +1,9 @@
 import React from 'react';
-import { CiShoppingCart } from 'react-icons/ci';
+import { CiHeart, CiShoppingCart } from 'react-icons/ci';
 import { GoPerson } from 'react-icons/go';
 import { IoIosNotificationsOutline } from 'react-icons/io';
 import { NavLink } from 'react-router-dom';
+import Cart from '../Cart/Cart';
 
 const Navbar = () => {
     const navItems = <>
@@ -39,6 +40,8 @@ const Navbar = () => {
             </svg></a>
         </div>
     </>;
+
+    const user = 'null';
 
     const handleSearch = e => {
         e.preventDefault();
@@ -77,7 +80,35 @@ const Navbar = () => {
                         // faltuTopDrower
                     }
 
-                    <div className='mr-3'>
+                    <div className='px-3 border-r-2 border-slate-300'>
+                        {
+                            user ? <>
+                                <div className="drawer mr-2">
+                                    <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+                                    <div className="drawer-content">
+
+                                        <label htmlFor="my-drawer" className="drawer-button">
+                                            <GoPerson className='hover:text-amber-600 ' size={25} />
+                                        </label>
+                                    </div>
+                                    <div className="drawer-side z-50">
+                                        <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+                                        <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+
+                                            <li><a>Sidebar Item 1</a></li>
+                                            <li><a>Sidebar Item 2</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </>
+                                :
+                                <>
+                                    <p className='hover:text-amber-600 cursor-pointer pb-2'>LogIn / SignUp</p>
+                                </>
+                        }
+                    </div>
+
+                    <div className='mx-3'>
                         {/* <CiShoppingCart className='hover:text-amber-600' size={25} /> */}
                         <label>
                             <div className='relative'>
@@ -86,25 +117,17 @@ const Navbar = () => {
                             </div>
                         </label>
                     </div>
-                    <div className='px-3 border-x-2 border-slate-300'>
-                        <div className="drawer">
-                            <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-                            <div className="drawer-content">
 
-                                <label htmlFor="my-drawer" className="drawer-button">
-                                    <GoPerson className='hover:text-amber-600 ' size={25} />
-                                </label>
+                    <div className='mx-3'>
+                        {/* <CiShoppingCart className='hover:text-amber-600' size={25} /> */}
+                        <label>
+                            <div className='relative'>
+                                <CiHeart className='hover:text-amber-600' size={25} />
+                                <p className='absolute -top-[10px] -right-[5px] p-[3px] font-semibold text-xs text-white bg-red-400 rounded'>0</p>
                             </div>
-                            <div className="drawer-side z-50">
-                                <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-                                <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
-
-                                    <li><a>Sidebar Item 1</a></li>
-                                    <li><a>Sidebar Item 2</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        </label>
                     </div>
+
                     {/* <div className='px-3 border-x-2 border-slate-300'>
                         <GoPerson className='hover:text-amber-600 ' size={25} />
                     </div> */}
@@ -122,11 +145,9 @@ const Navbar = () => {
                             </div>
                             <div className="drawer-side z-50">
                                 <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-                                <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
-                                    {/* Sidebar content here */}
-                                    <li><a>Sidebar Item 1</a></li>
-                                    <li><a>Sidebar Item 2</a></li>
-                                </ul>
+                                <div className="menu p-0 min-h-full w-80 flex items-center justify-start">
+                                    <Cart/>
+                                </div>
                             </div>
                         </div>
                     </div>
