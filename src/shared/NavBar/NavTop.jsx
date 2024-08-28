@@ -34,7 +34,7 @@ const NavTop = () => {
         </div>
     </>;
 
-    const user = 'null';
+    const user = null;
 
     const handleSearch = e => {
         e.preventDefault();
@@ -95,7 +95,7 @@ const NavTop = () => {
                         </>
                             :
                             <>
-                                <p className='hover:text-amber-600 cursor-pointer pb-2'>LogIn / SignUp</p>
+                                <Link to={'/authenticate'} className='hover:text-amber-600 cursor-pointer pb-2'>LogIn / SignUp</Link>
                             </>
                     }
                 </div>

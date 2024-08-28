@@ -20,7 +20,7 @@ const CartRow = () => {
                 </td>
                 <td className="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">{rate.toPrecision(3)}</td>
                 <td className="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
-                    <div className='flex items-center justify-start gap-2'>
+                    <div className='flex items-center justify-center gap-2'>
                         <button className='btn btn-xs' onClick={()=>(quantity>1) && setQuantity(quantity-1)}><FiMinus/></button>
                         <p>{quantity}</p>
                         <button className='btn btn-xs' onClick={()=>setQuantity(quantity+1)}><GoPlus/></button>

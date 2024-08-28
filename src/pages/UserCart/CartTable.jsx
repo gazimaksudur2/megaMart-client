@@ -37,7 +37,7 @@ const CartTable = () => {
                                                 </button>
                                             </th>
 
-                                            <th scope="col" className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">QTY</th>
+                                            <th scope="col" className="px-4 py-3.5 text-sm font-normal text-center text-gray-500">QTY</th>
 
                                             <th scope="col" className="px-4 py-3.5 uppercase text-sm font-normal text-left rtl:text-right text-gray-500">Sub total</th>
 

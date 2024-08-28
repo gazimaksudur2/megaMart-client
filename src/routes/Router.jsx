@@ -7,6 +7,9 @@ import About from '../pages/About/About';
 import Contact from '../pages/Contact/Contact';
 import Blog from '../pages/Blog/Blog';
 import CartLayout from '../layouts/CartLayout';
+import Authenticate from '../layouts/Authenticate';
+import SignIn from '../pages/Authenticate/SignIn';
+import CreateAccount from '../pages/Authenticate/CreateAccount';
 
 const Router = createBrowserRouter([
     {
@@ -39,6 +42,20 @@ const Router = createBrowserRouter([
         path: '/carts',
         element: <CartLayout/>,
         children: [],
+    },
+    {
+        path: '/authenticate',
+        element: <Authenticate/>,
+        children: [
+            {
+                index: true,
+                element: <SignIn/>,
+            },
+            {
+                path: 'signup',
+                element: <CreateAccount/>,
+            }
+        ]
     }
 ])
 
