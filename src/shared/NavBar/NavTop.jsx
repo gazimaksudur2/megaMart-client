@@ -137,7 +137,7 @@ const NavTop = () => {
                         </div>
                         <div className="drawer-side z-50">
                             <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-                            <div className="menu p-0 min-h-full w-80 flex items-center justify-start">
+                            <div className="menu p-0 min-h-full w-96 flex items-center justify-start">
                                 <Cart />
                             </div>
                         </div>

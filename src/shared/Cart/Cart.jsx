@@ -18,7 +18,7 @@ const Cart = () => {
                 {
                     cartProducts.length == 0 ? <>
                         <div className='min-h-80 flex flex-col items-center justify-center space-y-3'>
-                            <RiShoppingBag4Line size={70} className='text-amber-500'/>
+                            <RiShoppingBag4Line size={70} className='text-amber-500' />
                             <h2 className='text-lg font-medium'>There are no products!</h2>
                         </div>
                     </> : <>
@@ -30,8 +30,8 @@ const Cart = () => {
                 }
             </div>
             <Link to={'/carts'} className='bg-amber-400 rounded flex items-center justify-between p-3'>
-                <h4 className='text-white font-open font-bold text-lg'>View Cart</h4>
-                <button className='btn text-amber-400 font-bold font-fira'>$0.00</button>
+                    <h4 className='text-white font-open font-bold text-lg'>View Cart</h4>
+                    <button className='btn text-amber-400 font-bold font-fira'>$0.00</button>
             </Link>
         </div>
     );

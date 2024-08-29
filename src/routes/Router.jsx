@@ -10,11 +10,14 @@ import CartLayout from '../layouts/CartLayout';
 import Authenticate from '../layouts/Authenticate';
 import SignIn from '../pages/Authenticate/SignIn';
 import CreateAccount from '../pages/Authenticate/CreateAccount';
+import ErrorPage from '../pages/ErrorPage/ErrorPage';
+import CheckOut from '../pages/UserCart/CheckOut';
 
 const Router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout/>,
+        errorElement: <ErrorPage/>,
         children: [
             {
                 index: true,
@@ -41,7 +44,10 @@ const Router = createBrowserRouter([
     {
         path: '/carts',
         element: <CartLayout/>,
-        children: [],
+    },
+    {
+        path: '/checkout',
+        element: <CheckOut/>,
     },
     {
         path: '/authenticate',

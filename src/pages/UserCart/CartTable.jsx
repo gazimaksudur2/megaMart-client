@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import CartRow from './CartRow';
+import MakeShip from './MakeShip';
 
 const CartTable = () => {
     const [price, setPrice] = useState([]);
+    const [ship, setShip] = useState(false);
     return (
         <div className='w-[90%] my-10 mx-auto'>
             <section className="container px-4 mx-auto">
@@ -73,9 +75,12 @@ const CartTable = () => {
                     </div>
                     <div className='space-x-4'>
                         <button className='btn btn-warning rounded text-white'>Clear cart</button>
-                        <button className='btn bg-black hover:bg-[#181818e0] text-white rounded'>Proceed to checkout</button>
+                        <button className='btn bg-black hover:bg-[#181818e0] text-white rounded' onClick={()=>setShip(!ship)}>{(!ship)?"Continue to Ship":"Back from Ship"}</button>
                     </div>
                 </div>
+                {
+                    ship && <MakeShip/>
+                }
             </section>
         </div>
     );
