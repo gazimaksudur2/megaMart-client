@@ -12,6 +12,8 @@ import SignIn from '../pages/Authenticate/SignIn';
 import CreateAccount from '../pages/Authenticate/CreateAccount';
 import ErrorPage from '../pages/ErrorPage/ErrorPage';
 import CheckOut from '../pages/UserCart/CheckOut';
+import Payment from '../pages/UserCart/Payment';
+import PlaceOrder from '../pages/UserCart/PlaceOrder';
 
 const Router = createBrowserRouter([
     {
@@ -48,6 +50,16 @@ const Router = createBrowserRouter([
     {
         path: '/checkout',
         element: <CheckOut/>,
+        children: [
+            {
+                index: true,
+                element: <PlaceOrder/>,
+            },
+            {
+                path: 'pay',
+                element: <Payment/>,
+            }
+        ]
     },
     {
         path: '/authenticate',
