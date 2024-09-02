@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import TitleBanner from '../../shared/TitleBanner';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { FaEyeSlash, FaFacebookSquare, FaRegEye } from 'react-icons/fa';
 import { BsTwitterX } from 'react-icons/bs';
@@ -9,6 +9,8 @@ import useAuth from '../../hooks/useAuth';
 const SignIn = () => {
     const { signIn, googleSignIn, facebookSignIn, twitterSignIn } = useAuth();
     const [viewPass, setViewPass] = useState(false);
+    const navigate = useNavigate();
+
     const handleSignIn = e => {
         e.preventDefault();
         // console.log(e.target);
@@ -21,6 +23,8 @@ const SignIn = () => {
         signIn(mail, password)
         .then(res=> console.log('Sign in successful'))
         .catch(error=> console.log('sign in failed'));
+
+        navigate('/');
     }
 
     const handleGoogleSignIn = () => {
@@ -37,7 +41,7 @@ const SignIn = () => {
     const handleTwitterSignIn = () => {
         twitterSignIn()
         .then(res=> console.log('Sign in successfull through Google.'))
-        .catch(error=> console.log('sign in failed through provider.'))
+        .catch(error=> console.log('sign in failed through provider.' + error))
     }
 
     return (

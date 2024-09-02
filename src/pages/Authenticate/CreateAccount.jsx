@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TitleBanner from '../../shared/TitleBanner';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
@@ -7,12 +7,37 @@ import { FaEyeSlash, FaRegEye } from 'react-icons/fa';
 const CreateAccount = () => {
     const { createUser } = useAuth();
     const [error, setError] = useState(null);
+    const [passStrength, setPassStrength] = useState(null);
     const [viewPass, setViewPass] = useState(false);
     const [viewConfPass, setViewConfPass] = useState(false);
 
+    const handlePasswordStrength = e => {
+        // console.log(e.target.value);
+        const pass = e.target.value;
+
+        if (!(/^(?=.*[A-Z])/.test(pass))) {
+            setPassStrength('Atleast one capital letter is required');
+            return;
+        } else if (!(/^(?=.*[a-z])/.test(pass))) {
+            setPassStrength('Atleast one small letter is required');
+            return;
+        } else if (!(/^(?=.*\d)/.test(pass))) {
+            setPassStrength('Atleast one digit is required');
+            return;
+        } else if (!(/^(?=.*[@$!%*?&.])/.test(pass))) {
+            setPassStrength('Atleast one special character is required');
+            return;
+        } else if (!(/^[A-Za-z\d@$!%*?&]{6,}/.test(pass))) {
+            setPassStrength('Atleast 6 character is required');
+            return;
+        } else {
+            setPassStrength(null);
+        }
+    }
+
     const handleSignUp = e => {
         e.preventDefault();
-        console.log(e.target);
+        // console.log(e.target);
         const data = new FormData(e.target);
         const first_name = data.get('first_name');
         const last_name = data.get('last_name');
@@ -21,11 +46,17 @@ const CreateAccount = () => {
         const password = data.get('password');
         const conf_password = data.get('conf_password');
 
-        e.target.reset();
+        // e.target.reset();
 
         if (password != conf_password) {
             setError('Password confirmation mismatched!!');
             return;
+        } else if (passStrength) {
+            setError('Create password with the requirements');
+            return;
+        } else {
+            console.log(passStrength);
+            setError(null);
         }
 
         const userInfo = {
@@ -36,11 +67,16 @@ const CreateAccount = () => {
             password
         }
 
-        createUser(mail, password)
-        .then(res => console.log(res.user))
-        .catch(error=> console.log(error))
+        // else if(password.length()<6){
+        //     setError('Atleast 6 character is required');
+        //     return;
+        // }
 
-        console.log(userInfo);
+        createUser(mail, password)
+            .then(res => console.log(res.user))
+            .catch(error => console.log(error))
+
+        // console.log(userInfo);
     }
     return (
         <div>
@@ -79,21 +115,27 @@ const CreateAccount = () => {
                                 <span className="label-text">Password *</span>
                             </label>
                             <div className='relative'>
-                                <input type={viewPass?"text":"password"} name='password' placeholder="password" className="input input-bordered rounded w-full" required />
-                                <FaRegEye size={18} onClick={()=> setViewPass(!viewPass)} className={viewPass?"hidden":'opacity-75 absolute top-4 right-4'} />
-                                <FaEyeSlash size={20} onClick={()=> setViewPass(!viewPass)} className={viewPass?'opacity-75 absolute top-4 right-4':"hidden"} />
+                                <input onChange={handlePasswordStrength} type={viewPass ? "text" : "password"} name='password' placeholder="password" className="input input-bordered rounded w-full" required />
+                                <FaRegEye size={18} onClick={() => setViewPass(!viewPass)} className={viewPass ? "hidden" : 'opacity-75 absolute top-4 right-4'} />
+                                <FaEyeSlash size={20} onClick={() => setViewPass(!viewPass)} className={viewPass ? 'opacity-75 absolute top-4 right-4' : "hidden"} />
                             </div>
                         </div>
+                        {
+                            passStrength && <p className='text-xs text-red-500'>** {passStrength} **</p>
+                        }
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Confirm Password *</span>
                             </label>
                             <div className='relative'>
-                                <input type={viewConfPass?"text":"password"} name='conf_password' placeholder="password" className="input input-bordered rounded w-full" required />
-                                <FaRegEye size={18} onClick={()=> setViewConfPass(!viewConfPass)} className={viewConfPass?"hidden":'opacity-75 absolute top-4 right-4'} />
-                                <FaEyeSlash size={20} onClick={()=> setViewConfPass(!viewConfPass)} className={viewConfPass?'opacity-75 absolute top-4 right-4':"hidden"} />
+                                <input type={viewConfPass ? "text" : "password"} name='conf_password' placeholder="password" className="input input-bordered rounded w-full" required />
+                                <FaRegEye size={18} onClick={() => setViewConfPass(!viewConfPass)} className={viewConfPass ? "hidden" : 'opacity-75 absolute top-4 right-4'} />
+                                <FaEyeSlash size={20} onClick={() => setViewConfPass(!viewConfPass)} className={viewConfPass ? 'opacity-75 absolute top-4 right-4' : "hidden"} />
                             </div>
                         </div>
+                        {
+                            error && <p className='text-xs text-red-500'>** {error} **</p>
+                        }
                         <div className='flex items-center justify-start gap-2 pt-6'>
                             <input type="checkbox" className="checkbox checkbox-sm" required />
                             <h4 className='text-sm font-semibold'>{"I've read and accept the Privacy Policy"}</h4>
