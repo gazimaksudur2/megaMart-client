@@ -1,15 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TitleBanner from '../../shared/TitleBanner';
 import { Link } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
-import { FaFacebookSquare } from 'react-icons/fa';
+import { FaEyeSlash, FaFacebookSquare, FaRegEye } from 'react-icons/fa';
 import { BsTwitterX } from 'react-icons/bs';
+import useAuth from '../../hooks/useAuth';
 
 const SignIn = () => {
+    const { signIn, googleSignIn, facebookSignIn, twitterSignIn } = useAuth();
+    const [viewPass, setViewPass] = useState(false);
     const handleSignIn = e => {
         e.preventDefault();
-        console.log(e.target);
+        // console.log(e.target);
+        const data = new FormData(e.target);
+        e.target.reset();
+
+        const mail = data.get('mail');
+        const password = data.get('password');
+
+        signIn(mail, password)
+        .then(res=> console.log('Sign in successful'))
+        .catch(error=> console.log('sign in failed'));
     }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+        .then(res=> console.log('Sign in successfull through Google.'))
+        .catch(error=> console.log('sign in failed through provider.'))
+    }
+    
+    const handleFacebookSignIn = () => {
+        facebookSignIn()
+        .then(res=> console.log('Sign in successfull through Google.'))
+        .catch(error=> console.log('sign in failed through provider.'))
+    }
+    const handleTwitterSignIn = () => {
+        twitterSignIn()
+        .then(res=> console.log('Sign in successfull through Google.'))
+        .catch(error=> console.log('sign in failed through provider.'))
+    }
+
     return (
         <div>
             <TitleBanner title={'LogIn'} route={'Home / SignIn'} />
@@ -20,13 +50,17 @@ const SignIn = () => {
                             <label className="label">
                                 <span className="label-text">Email *</span>
                             </label>
-                            <input type="email" placeholder="email" className="input input-bordered rounded" required />
+                            <input name='mail' type="email" placeholder="email" className="input input-bordered rounded" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password *</span>
                             </label>
-                            <input type="password" placeholder="password" className="input input-bordered rounded" required />
+                            <div className='relative'>
+                                <input name='password' type={viewPass?"text":"password"} placeholder="password" className="input input-bordered rounded w-full" required />
+                                <FaRegEye size={18} onClick={()=> setViewPass(!viewPass)} className={viewPass?"hidden":'opacity-75 absolute top-4 right-4'} />
+                                <FaEyeSlash size={20} onClick={()=> setViewPass(!viewPass)} className={viewPass?'opacity-75 absolute top-4 right-4':"hidden"} />
+                            </div>
                         </div>
                         <div className="form-control mt-6 space-y-6">
                             <button className="btn btn-warning text-white rounded-none uppercase ">Signin</button>
@@ -37,9 +71,9 @@ const SignIn = () => {
                         </div>
                         <div className="divider px-[5%]">or Sign In With</div>
                         <div className='w-full flex items-center justify-evenly'>
-                            <FcGoogle size={50} className="border-4 bg-base-300 p-2 rounded-badge cursor-pointer hover:scale-105 active:scale-100" />
-                            <FaFacebookSquare size={50} className="border-4 bg-base-300 p-2 rounded-badge cursor-pointer hover:scale-105 active:scale-100 text-blue-600" />
-                            <BsTwitterX size={50} className="border-4 bg-base-300 p-2 rounded-badge cursor-pointer hover:scale-105 active:scale-100" />
+                            <FcGoogle onClick={handleGoogleSignIn} size={50} className="border-4 bg-base-300 p-2 rounded-badge cursor-pointer hover:scale-105 active:scale-100" />
+                            <FaFacebookSquare onClick={handleFacebookSignIn} size={50} className="border-4 bg-base-300 p-2 rounded-badge cursor-pointer hover:scale-105 active:scale-100 text-blue-600" />
+                            <BsTwitterX onClick={handleTwitterSignIn} size={50} className="border-4 bg-base-300 p-2 rounded-badge cursor-pointer hover:scale-105 active:scale-100" />
                         </div>
                     </form>
                 </div>

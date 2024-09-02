@@ -1,11 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TitleBanner from '../../shared/TitleBanner';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
+import { FaEyeSlash, FaRegEye } from 'react-icons/fa';
 
 const CreateAccount = () => {
+    const { createUser } = useAuth();
+    const [error, setError] = useState(null);
+    const [viewPass, setViewPass] = useState(false);
+    const [viewConfPass, setViewConfPass] = useState(false);
+
     const handleSignUp = e => {
         e.preventDefault();
         console.log(e.target);
+        const data = new FormData(e.target);
+        const first_name = data.get('first_name');
+        const last_name = data.get('last_name');
+        const mail = data.get('mail');
+        const phone = data.get('phone');
+        const password = data.get('password');
+        const conf_password = data.get('conf_password');
+
+        e.target.reset();
+
+        if (password != conf_password) {
+            setError('Password confirmation mismatched!!');
+            return;
+        }
+
+        const userInfo = {
+            first_name,
+            last_name,
+            mail,
+            phone,
+            password
+        }
+
+        createUser(mail, password)
+        .then(res => console.log(res.user))
+        .catch(error=> console.log(error))
+
+        console.log(userInfo);
     }
     return (
         <div>
@@ -37,22 +72,30 @@ const CreateAccount = () => {
                             <label className="label">
                                 <span className="label-text">Phone *</span>
                             </label>
-                            <input type="phone" name='phone' placeholder="E.164 standard. ex: +880 1903 219313" className="input input-bordered rounded" required />
+                            <input type="number" name='phone' placeholder="E.164 standard. ex: +880 1903 219313" className="input input-bordered rounded" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password *</span>
                             </label>
-                            <input type="password" name='password' placeholder="password" className="input input-bordered rounded" required />
+                            <div className='relative'>
+                                <input type={viewPass?"text":"password"} name='password' placeholder="password" className="input input-bordered rounded w-full" required />
+                                <FaRegEye size={18} onClick={()=> setViewPass(!viewPass)} className={viewPass?"hidden":'opacity-75 absolute top-4 right-4'} />
+                                <FaEyeSlash size={20} onClick={()=> setViewPass(!viewPass)} className={viewPass?'opacity-75 absolute top-4 right-4':"hidden"} />
+                            </div>
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Confirm Password *</span>
                             </label>
-                            <input type="password" name='conf_password' placeholder="password" className="input input-bordered rounded" required />
+                            <div className='relative'>
+                                <input type={viewConfPass?"text":"password"} name='conf_password' placeholder="password" className="input input-bordered rounded w-full" required />
+                                <FaRegEye size={18} onClick={()=> setViewConfPass(!viewConfPass)} className={viewConfPass?"hidden":'opacity-75 absolute top-4 right-4'} />
+                                <FaEyeSlash size={20} onClick={()=> setViewConfPass(!viewConfPass)} className={viewConfPass?'opacity-75 absolute top-4 right-4':"hidden"} />
+                            </div>
                         </div>
                         <div className='flex items-center justify-start gap-2 pt-6'>
-                            <input type="checkbox" className="checkbox checkbox-sm" />
+                            <input type="checkbox" className="checkbox checkbox-sm" required />
                             <h4 className='text-sm font-semibold'>{"I've read and accept the Privacy Policy"}</h4>
                         </div>
                         <p className='text-xs'>By signing up, you agree to our <a href="#" className='font-semibold hover:underline hover:text-yellow-600'>Terms of Services.</a> Learn how we collect and use your data in our <a href="#" className='font-semibold hover:underline hover:text-yellow-600'>Privacy Policy.</a></p>

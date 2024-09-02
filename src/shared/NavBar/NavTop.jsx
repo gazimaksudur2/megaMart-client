@@ -1,12 +1,20 @@
 import React from 'react';
-import { CiHeart, CiShoppingCart } from 'react-icons/ci';
+import { CiHeart, CiLogout, CiShoppingCart } from 'react-icons/ci';
 import { GoPerson } from 'react-icons/go';
 import { IoIosNotificationsOutline } from 'react-icons/io';
 import { Link, NavLink } from 'react-router-dom';
 import Cart from '../Cart/Cart';
+import useAuth from '../../hooks/useAuth';
+import { Tooltip } from 'react-tooltip';
 
 const NavTop = () => {
+    const { user, logOut } = useAuth();
 
+    const handleLogout = () => {
+        logOut()
+        .then(res=> console.log('user Logged out!!'))
+        .catch(error => console.log('logout failed!!'))
+    }
     const faltuTopDrower = <>
         {/* <!-- drawer init and toggle --> */}
         <div className="text-center">
@@ -34,7 +42,6 @@ const NavTop = () => {
         </div>
     </>;
 
-    const user = null;
 
     const handleSearch = e => {
         e.preventDefault();
@@ -75,7 +82,14 @@ const NavTop = () => {
                 <div className='px-3 border-r-2 border-slate-300'>
                     {
                         user ? <>
-                            <div className="drawer mr-2">
+                            <GoPerson id="clickable" className='hover:text-amber-600 ' size={25} />
+                            <Tooltip anchorSelect="#clickable" clickable className='bg-transparent'>
+                                <button onClick={handleLogout} className='btn flex items-center justify-center'>
+                                    <CiLogout size={20}/>
+                                    <h4>logout</h4>
+                                </button>
+                            </Tooltip>
+                            {/* <div className="drawer mr-2">
                                 <input id="my-drawer" type="checkbox" className="drawer-toggle" />
                                 <div className="drawer-content">
 
@@ -91,7 +105,7 @@ const NavTop = () => {
                                         <li><a>Sidebar Item 2</a></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> */}
                         </>
                             :
                             <>
