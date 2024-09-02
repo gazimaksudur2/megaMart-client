@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import TitleBanner from '../../shared/TitleBanner';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, ScrollRestoration, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { FaEyeSlash, FaFacebookSquare, FaRegEye } from 'react-icons/fa';
 import { BsTwitterX } from 'react-icons/bs';
@@ -9,43 +9,58 @@ import useAuth from '../../hooks/useAuth';
 const SignIn = () => {
     const { signIn, googleSignIn, facebookSignIn, twitterSignIn } = useAuth();
     const [viewPass, setViewPass] = useState(false);
+    const [error, setError] = useState(null);
     const navigate = useNavigate();
 
     const handleSignIn = e => {
         e.preventDefault();
         // console.log(e.target);
         const data = new FormData(e.target);
-        e.target.reset();
 
         const mail = data.get('mail');
         const password = data.get('password');
 
         signIn(mail, password)
-        .then(res=> console.log('Sign in successful'))
-        .catch(error=> console.log('sign in failed'));
-
-        navigate('/');
+        .then(res=> {
+            console.log('Sign in successful');
+            e.target.reset();
+            navigate('/');
+        })
+        .catch(error=> {
+            setError(error.message);
+            // console.log(error);
+        });        
     }
 
     const handleGoogleSignIn = () => {
         googleSignIn()
-        .then(res=> console.log('Sign in successfull through Google.'))
-        .catch(error=> console.log('sign in failed through provider.'))
+        .then(res=> {
+            console.log('Sign in successfull through Google.');
+            navigate('/');
+        })
+        .catch(error=> setError(error.message));
     }
     
     const handleFacebookSignIn = () => {
         facebookSignIn()
-        .then(res=> console.log('Sign in successfull through Google.'))
-        .catch(error=> console.log('sign in failed through provider.'))
+        .then(res=> {
+            console.log('Sign in successfull through Facebook.');
+            navigate('/');
+        })
+        .catch(error=> setError(error.message));
     }
     const handleTwitterSignIn = () => {
         twitterSignIn()
-        .then(res=> console.log('Sign in successfull through Google.'))
-        .catch(error=> console.log('sign in failed through provider.' + error))
+        .then(res=> {
+            console.log('Sign in successfull through Twitter.');
+            navigate('/');
+        })
+        .catch(error=> setError(error.message));
     }
 
     return (
         <div>
+            <ScrollRestoration/>
             <TitleBanner title={'LogIn'} route={'Home / SignIn'} />
             <div className='w-full flex items-center justify-center  my-12'>
                 <div className="bg-base-100 w-full max-w-lg shrink-0 shadow-xl rounded" >
@@ -66,6 +81,9 @@ const SignIn = () => {
                                 <FaEyeSlash size={20} onClick={()=> setViewPass(!viewPass)} className={viewPass?'opacity-75 absolute top-4 right-4':"hidden"} />
                             </div>
                         </div>
+                        {
+                            error && <p className='text-xs text-red-500'>** {error} **</p> 
+                        }
                         <div className="form-control mt-6 space-y-6">
                             <button className="btn btn-warning text-white rounded-none uppercase ">Signin</button>
                             <div className='w-full flex justify-between items-center gap-3'>
