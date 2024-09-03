@@ -14,6 +14,8 @@ import ErrorPage from '../pages/ErrorPage/ErrorPage';
 import CheckOut from '../pages/UserCart/CheckOut';
 import Payment from '../pages/UserCart/Payment';
 import PlaceOrder from '../pages/UserCart/PlaceOrder';
+import UserDashboard from '../pages/UserDashboard/UserDashboard';
+import AccountPage from '../pages/UserDashboard/AccountPage';
 
 const Router = createBrowserRouter([
     {
@@ -42,6 +44,16 @@ const Router = createBrowserRouter([
                 element: <Contact/>
             }
         ]
+    },
+    {
+        path: 'user',
+        element: <UserDashboard/>,
+        children: [
+            {
+                index: true,
+                element: <AccountPage/>,
+            }
+        ],
     },
     {
         path: '/carts',

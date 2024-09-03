@@ -12,8 +12,8 @@ const NavTop = () => {
 
     const handleLogout = () => {
         logOut()
-        .then(res=> console.log('user Logged out!!'))
-        .catch(error => console.log('logout failed!!'))
+            .then(res => console.log('user Logged out!!'))
+            .catch(error => console.log('logout failed!!'))
     }
     const faltuTopDrower = <>
         {/* <!-- drawer init and toggle --> */}
@@ -82,10 +82,12 @@ const NavTop = () => {
                 <div className='px-3 border-r-2 border-slate-300'>
                     {
                         user ? <>
-                            <GoPerson id="clickable" className='hover:text-amber-600 ' size={25} />
+                            <Link to={'/user'}>
+                                <GoPerson id="clickable" className='hover:text-amber-600 ' size={25} />
+                            </Link>
                             <Tooltip anchorSelect="#clickable" clickable className='bg-transparent'>
                                 <button onClick={handleLogout} className='btn flex items-center justify-center'>
-                                    <CiLogout size={20}/>
+                                    <CiLogout size={20} />
                                     <h4>logout</h4>
                                 </button>
                             </Tooltip>
