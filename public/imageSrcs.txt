@@ -46,3 +46,13 @@ payment page design
 https://cdn.dribbble.com/users/1179895/screenshots/3331288/_2_sm.png
 demo card image
 https://th.bing.com/th/id/R.aa71aa3685bcde92114d52e40fcee4a1?rik=uUDuuaijbNUWaQ&pid=ImgRaw&r=0
+
+
+payment gateway
+upay -> https://eticket.railway.gov.bd/assets/img/upay.svg
+rocket -> https://eticket.railway.gov.bd/assets/img/rocket-logo.svg
+visa -> https://eticket.railway.gov.bd/assets/img/visa.svg
+mastercard -> https://eticket.railway.gov.bd/assets/img/mastercard.svg
+dbbl Nexus -> https://eticket.railway.gov.bd/assets/img/nexus-debit.svg
+bkash -> https://eticket.railway.gov.bd/assets/img/bkash_logo-77x32.png
+nagad -> https://eticket.railway.gov.bd/assets/img/nagad-32.png

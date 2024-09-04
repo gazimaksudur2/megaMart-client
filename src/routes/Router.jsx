@@ -16,6 +16,9 @@ import Payment from '../pages/UserCart/Payment';
 import PlaceOrder from '../pages/UserCart/PlaceOrder';
 import UserDashboard from '../pages/UserDashboard/UserDashboard';
 import AccountPage from '../pages/UserDashboard/AccountPage';
+import ProfileEdit from '../pages/UserDashboard/ProfileEdit';
+import AddressEdit from '../pages/UserDashboard/AddressEdit';
+import AddPayment from '../pages/UserDashboard/AddPayment';
 
 const Router = createBrowserRouter([
     {
