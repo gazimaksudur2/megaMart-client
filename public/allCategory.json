@@ -1,0 +1,57 @@
+[
+  {
+    "category": "Electronics",
+    "image_url": "https://th.bing.com/th/id/OIP.4--3hiBqjh-DGfO5ikpSdAHaE8?w=263&h=180&c=7&r=0&o=5&pid=1.7"
+  },
+  {
+    "category": "Furnitures",
+    "image_url": "https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  { "category": "Fashion", "image_url": "https://images.pexels.com/photos/325876/pexels-photo-325876.jpeg?auto=compress&cs=tinysrgb&w=600" },
+  {
+    "category": "Home & Kitchen",
+    "image_url": "https://images.pexels.com/photos/27680314/pexels-photo-27680314/free-photo-of-a-coffee-maker-and-other-items-are-on-a-shelf.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "category": "Beauty & Personal Care",
+    "image_url": "https://images.pexels.com/photos/5128264/pexels-photo-5128264.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "category": "Health & Fitness",
+    "image_url": "https://images.pexels.com/photos/17093368/pexels-photo-17093368/free-photo-of-barbell-dumbbells-triceps-rope-and-clamps-on-the-floor-at-the-gym-top-down-view-flat-lay-with-bodybuilding-equipment-on-a-black-background-and-empty-space-for-text-fitness-weight-trai.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "category": "Toys & Games",
+    "image_url": "https://images.pexels.com/photos/3661243/pexels-photo-3661243.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "category": "Books & Stationery",
+    "image_url": "https://images.pexels.com/photos/53874/pexels-photo-53874.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "category": "Sports & Outdoors",
+    "image_url": "https://images.pexels.com/photos/2385477/pexels-photo-2385477.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "category": "Fashion Accessories",
+    "image_url": "https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  },
+  {
+    "category": "Pet Supplies",
+    "image_url": "https://images.pexels.com/photos/17851002/pexels-photo-17851002/free-photo-of-cute-siberian-husky-dog-sitting-on-a-meadow-sticking-his-tongue-out.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  { "category": "Groceries", "image_url": "https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=600" },
+  {
+    "category": "Jewelry & Accessories",
+    "image_url": "https://images.pexels.com/photos/248077/pexels-photo-248077.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "category": "Office Supplies",
+    "image_url": "https://images.pexels.com/photos/930535/pexels-photo-930535.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "category": "Music Instruments",
+    "image_url": "https://media.istockphoto.com/id/894058154/photo/musical-instruments.jpg?b=1&s=612x612&w=0&k=20&c=nynkNJnUOzxGQEcL9g2BHJHVYFYSfX2wrMMDMhDRiK4="
+  },
+  { "category": "Gardening", "image_url": "https://images.pexels.com/photos/1118154/pexels-photo-1118154.jpeg?auto=compress&cs=tinysrgb&w=600" }
+]

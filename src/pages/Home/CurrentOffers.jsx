@@ -20,6 +20,10 @@ const CurrentOffers = () => {
                 <input type="text" className="grow" placeholder="Search" />
                 <span className="badge badge-info">Optional</span>
             </label>
+            <h2>Flash sale</h2>
+            <h2>Best deals</h2>
+            <h2>Latest products</h2>
+            <h2>Just for you</h2>
         </div>
     );
 };

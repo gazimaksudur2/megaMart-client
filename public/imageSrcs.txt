@@ -56,3 +56,7 @@ mastercard -> https://eticket.railway.gov.bd/assets/img/mastercard.svg
 dbbl Nexus -> https://eticket.railway.gov.bd/assets/img/nexus-debit.svg
 bkash -> https://eticket.railway.gov.bd/assets/img/bkash_logo-77x32.png
 nagad -> https://eticket.railway.gov.bd/assets/img/nagad-32.png
+
+
+order history page design --> 
+https://cdn.dribbble.com/users/1518948/screenshots/15755532/media/1a7e72c1855211158040169be68f30c8.jpg?resize=1000x750&vertical=center

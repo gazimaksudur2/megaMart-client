@@ -5,7 +5,7 @@ import { FaInstagram } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { RiFacebookFill } from 'react-icons/ri';
 
-const ProfileEdit = () => {
+const ProfileEdit = ({setEdit}) => {
     return (
         <div className='max-w-[380px] bg-base-100 p-6 rounded-xl border-2 border-slate-200'>
             <div className='flex items-center justify-between'>
@@ -60,8 +60,8 @@ const ProfileEdit = () => {
                 </div>
             </div>
             <div className='py-4 flex gap-6'>
-                <button className='btn btn-sm bg-slate-700 text-white hover:bg-base-200 hover:text-slate-700 border-2 duration-150'>Save Changes</button>
-                <button className='btn btn-sm hover:bg-slate-700 hover:text-white bg-base-200 text-slate-700 border-2 duration-150'>Cancel</button>
+                <button onClick={()=>setEdit(false)} className='btn btn-sm bg-slate-700 text-white hover:bg-base-200 hover:text-slate-700 border-2 duration-150'>Save Changes</button>
+                <button onClick={()=>setEdit(false)} className='btn btn-sm hover:bg-slate-700 hover:text-white bg-base-200 text-slate-700 border-2 duration-150'>Cancel</button>
             </div>
         </div>
     );

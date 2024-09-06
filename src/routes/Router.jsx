@@ -19,6 +19,9 @@ import AccountPage from '../pages/UserDashboard/AccountPage';
 import ProfileEdit from '../pages/UserDashboard/ProfileEdit';
 import AddressEdit from '../pages/UserDashboard/AddressEdit';
 import AddPayment from '../pages/UserDashboard/AddPayment';
+import MyOrders from '../pages/UserDashboard/Orders/MyOrders';
+import MyReviews from '../pages/UserDashboard/Reviews/MyReviews';
+import PrivateRouter from './PrivateRouter';
 
 const Router = createBrowserRouter([
     {
@@ -50,11 +53,23 @@ const Router = createBrowserRouter([
     },
     {
         path: 'user',
-        element: <UserDashboard/>,
+        element: <PrivateRouter><UserDashboard/></PrivateRouter>,
         children: [
             {
                 index: true,
                 element: <AccountPage/>,
+            },
+            {
+                path: 'cart',
+                element: <CartLayout/>,
+            },
+            {
+                path: 'history',
+                element: <MyOrders/>,
+            },
+            {
+                path: 'reviews',
+                element: <MyReviews/>,
             }
         ],
     },

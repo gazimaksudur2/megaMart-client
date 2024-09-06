@@ -48,7 +48,7 @@ const NavTop = () => {
         console.log(new FormData(e.target).get('search'));
     }
     return (
-        <div className='w-full px-[6%] py-6 mx-auto flex justify-between'>
+        <div className='w-full px-[6%] py-6 mx-auto flex justify-between bg-base-200'>
             <Link to={'/'} className='flex justify-center items-center gap-3'>
                 <img className='w-8 h-8' src="https://cdn-icons-png.flaticon.com/128/1162/1162456.png" alt="logo" />
                 <h2 className='text-xl font-semibold font-beginner'>Mega Mart</h2>

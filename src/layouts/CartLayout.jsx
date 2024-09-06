@@ -4,8 +4,8 @@ import UserCart from '../pages/UserCart/UserCart';
 
 const CartLayout = () => {
     return (
-        <div>
-            <NavTop/>
+        <div className='bg-base-200'>
+            {/* <NavTop/> */}
             <UserCart/>
         </div>
     );

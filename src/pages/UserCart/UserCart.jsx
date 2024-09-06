@@ -7,10 +7,10 @@ import EmptyCart from './EmptyCart';
 const UserCart = () => {
     return (
         <div>
-            <TitleBanner title={'Your Cart'} route={'home / cart'}/>
-            {/* <CartTable/> */}
-            <EmptyCart/>
-            <Footer/>
+            {/* <TitleBanner title={'Your Cart'} route={'home / cart'}/> */}
+            <CartTable/>
+            {/* <EmptyCart/> */}
+            {/* <Footer/> */}
         </div>
     );
 };

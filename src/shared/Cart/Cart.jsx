@@ -29,7 +29,7 @@ const Cart = () => {
                     </>
                 }
             </div>
-            <Link to={'/carts'} className='bg-amber-400 rounded flex items-center justify-between p-3'>
+            <Link to={'/user/cart'} className='bg-amber-400 rounded flex items-center justify-between p-3'>
                     <h4 className='text-white font-open font-bold text-lg'>View Cart</h4>
                     <button className='btn text-amber-400 font-bold font-fira'>$0.00</button>
             </Link>

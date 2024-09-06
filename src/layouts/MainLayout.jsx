@@ -5,7 +5,7 @@ import Footer from '../shared/Footer/Footer';
 
 const MainLayout = () => {
     return (
-        <div className='min-h-screen flex flex-col justify-between'>
+        <div className='min-h-screen flex flex-col justify-between bg-base-200'>
             <Navbar/>
             <Outlet/>
             <Footer/>

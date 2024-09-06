@@ -5,7 +5,7 @@ import Footer from '../shared/Footer/Footer';
 
 const Authenticate = () => {
     return (
-        <div>
+        <div className='bg-base-200'>
             <NavTop/>
             <Outlet/>
             <Footer/>
