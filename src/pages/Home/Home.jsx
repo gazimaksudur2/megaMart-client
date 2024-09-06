@@ -1,5 +1,6 @@
 import BestSelling from "./BestSelling";
 import CurrentOffers from "./CurrentOffers";
+import FeaturedProducts from "./FeaturedProduct/FeaturedProducts";
 import FlashSale from "./FlashSale/FlashSale";
 import HomeSlider from "./HomeSlider";
 
@@ -9,8 +10,9 @@ const Home = () => {
         <div>
             <HomeSlider/>
             <FlashSale/>
-            <BestSelling/>
-            <CurrentOffers/>
+            <FeaturedProducts/>
+            {/* <BestSelling/>
+            <CurrentOffers/> */}
         </div>
     );
 };
