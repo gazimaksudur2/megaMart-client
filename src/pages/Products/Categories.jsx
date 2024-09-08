@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const Categories = () => {
+const Categories = ({setSeries}) => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
@@ -16,7 +16,7 @@ const Categories = () => {
             <div className='grid grid-cols-4 lg:grid-cols-8 gap-[2px]'>
                 {
                     categories?.map((category, idx) => <>
-                        <div key={idx} class="max-w-52 h-52 bg-white flex flex-col items-center justify-center border-4 border-white hover:border-base-200 hover:-translate-y-1 duration-150">
+                        <div onClick={()=>setSeries([category?.category])} key={idx} class="max-w-52 h-52 bg-white flex flex-col items-center justify-center border-4 border-white hover:border-base-200 hover:-translate-y-1 duration-150">
                             <div className='w-28'>
                                 <img class="w-28 h-20 object-cover" src={category?.image_url} alt="category_products" />
                             </div>

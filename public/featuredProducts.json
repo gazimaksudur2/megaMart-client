@@ -12,7 +12,8 @@
     "productDescription": "Comfortable running shoes with responsive cushioning.",
     "rating": 4.5,
     "reviews": 320,
-    "flashSale": false
+    "flashSale": false,
+    "features": ["Responsive Boost cushioning", "Primeknit upper", "Flexible sole", "Lightweight design"]
   },
   {
     "productName": "Wireless Headphones",
@@ -23,11 +24,12 @@
     "Supplier": "Sony",
     "Brand": "Sony",
     "colorFamily": ["Black", "Blue"],
-    "availableQuantity": 85,
+    "availableQuantity": 0,
     "productDescription": "Noise-canceling wireless headphones with long battery life.",
     "rating": 4.8,
     "reviews": 125,
-    "flashSale": true
+    "flashSale": true,
+    "features": ["Noise-canceling", "Bluetooth 5.0", "20-hour battery life", "Comfortable ear cups"]
   },
   {
     "productName": "Gaming Laptop",
@@ -42,7 +44,8 @@
     "productDescription": "High-performance gaming laptop with powerful graphics card.",
     "rating": 4.3,
     "reviews": 480,
-    "flashSale": false
+    "flashSale": false,
+    "features": ["RTX 3060 graphics card", "16GB RAM", "1TB SSD", "144Hz refresh rate"]
   },
   {
     "productName": "Smartwatch",
@@ -57,7 +60,8 @@
     "productDescription": "Fitness tracker with advanced health monitoring features.",
     "rating": 4.7,
     "reviews": 280,
-    "flashSale": true
+    "flashSale": true,
+    "features": ["Heart rate monitoring", "ECG app", "GPS tracking", "Water-resistant"]
   },
   {
     "productName": "Coffee Maker",
@@ -72,7 +76,8 @@
     "productDescription": "Single-serve coffee maker with various pod options.",
     "rating": 4.6,
     "reviews": 350,
-    "flashSale": false
+    "flashSale": false,
+    "features": ["Single-serve brewing", "Compact design", "Compatible with K-Cups", "Energy efficient"]
   },
   {
     "productName": "Kitchen Knife Set",
@@ -87,7 +92,8 @@
     "productDescription": "High-quality kitchen knife set with various blade sizes.",
     "rating": 4.9,
     "reviews": 220,
-    "flashSale": true
+    "flashSale": true,
+    "features": ["Stainless steel blades", "Ergonomic handles", "Precision cutting", "Dishwasher safe"]
   },
   {
     "productName": "Bluetooth Speaker",
@@ -102,7 +108,8 @@
     "productDescription": "Portable Bluetooth speaker with powerful sound.",
     "rating": 4.4,
     "reviews": 400,
-    "flashSale": false
+    "flashSale": false,
+    "features": ["Bluetooth connectivity", "12-hour battery life", "Water-resistant", "Compact design"]
   },
   {
     "productName": "Yoga Mat",
@@ -117,7 +124,8 @@
     "productDescription": "Non-slip yoga mat with good cushioning.",
     "rating": 4.8,
     "reviews": 180,
-    "flashSale": true
+    "flashSale": true,
+    "features": ["Non-slip surface", "Eco-friendly material", "Thick cushioning", "Lightweight"]
   },
   {
     "productName": "Bicycle",
@@ -132,7 +140,8 @@
     "productDescription": "High-quality road bike with aluminum frame.",
     "rating": 4.7,
     "reviews": 320,
-    "flashSale": false
+    "flashSale": false,
+    "features": ["Aluminum frame", "21-speed gear system", "Lightweight design", "Durable tires"]
   },
   {
     "productName": "Sunglasses",
@@ -147,7 +156,8 @@
     "productDescription": "Stylish sunglasses with UV protection.",
     "rating": 4.5,
     "reviews": 250,
-    "flashSale": true
+    "flashSale": true,
+    "features": ["UV protection", "Lightweight frame", "Polarized lenses", "Scratch-resistant"]
   },
   {
     "productName": "Smart Thermostat",

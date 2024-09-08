@@ -29,6 +29,7 @@ const ProductFilters = () => {
                     <Slider
                         range={{
                             editable: true,
+                            maxCount: 2,
                         }}
                         value={range}
                         onChange={setRange}
