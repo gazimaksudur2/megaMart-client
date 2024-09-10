@@ -9,7 +9,7 @@ const Categories = ({setSeries}) => {
             .then(data => setCategories(data))
     }, []);
 
-    console.log(categories);
+    // console.log(categories);
     return (
         <div>
             <h2 className='text-xl font-semibold mb-4'>Categories</h2>

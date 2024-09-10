@@ -1,5 +1,5 @@
 import React from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Outlet } from 'react-router-dom';
 import MainLayout from '../layouts/MainLayout';
 import Home from '../pages/Home/Home';
 import Products from '../pages/Products/Products';
@@ -19,6 +19,9 @@ import AccountPage from '../pages/UserDashboard/AccountPage';
 import MyOrders from '../pages/UserDashboard/Orders/MyOrders';
 import MyReviews from '../pages/UserDashboard/Reviews/MyReviews';
 import PrivateRouter from './PrivateRouter';
+import ProductPage from '../components/ProductPage/ProductPage';
+import AskQuestion from '../components/ProductPage/AskQuestion';
+import WriteReview from '../components/ProductPage/WriteReview';
 
 const Router = createBrowserRouter([
     {
@@ -33,6 +36,25 @@ const Router = createBrowserRouter([
             {
                 path: "/products",
                 element: <Products/>,
+            },
+            {
+                path: '/product/:id',
+                element: <ProductPage />,
+                // loader: ({params})=> fetch(`http://localhost:5000/product?id=${params?.id}`),
+            },
+            {
+                path: '/userActivity',
+                element:<Outlet/>,
+                children: [
+                    {
+                        path: 'askQuestion',
+                        element: <AskQuestion/>,
+                    },
+                    {
+                        path: 'writeReview',
+                        element: <WriteReview/>,
+                    }
+                ],
             },
             {
                 path: '/blogs',

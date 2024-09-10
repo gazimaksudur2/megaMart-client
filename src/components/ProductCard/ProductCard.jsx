@@ -10,7 +10,7 @@ const ProductCard = ({ product }) => {
                         <p className='absolute z-40 bg-orange-700 w-20 text-white text-center py-[2px] rounded-r-full top-3 capitalize text-sm font-open'>save: ${(product?.actualPrice * (product?.off / 100)).toFixed()}</p>
                     </>
                 }
-                <img class="group-hover:scale-110 w-full h-40 object-cover transition-transform duration-300 ease-in-out transform" src={product?.productImage} alt="category_products" />
+                <img class="group-hover:scale-110 w-full h-40 object-cover transition-transform duration-300 ease-in-out transform" src={product?.productImage[0]} alt="category_products" />
             </div>
             <div class="w-full px-2 py-1 pt-6 text-start space-y-2">
                 <h2 class="text-gray-700">{product?.productName}</h2>

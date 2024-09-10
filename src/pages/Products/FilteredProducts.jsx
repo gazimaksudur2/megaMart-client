@@ -5,7 +5,7 @@ const FilteredProducts = () => {
     const [filteredProducts, setFilteredProducts] = useState([]);
 
     useEffect(()=>{
-        fetch('featuredProducts.json')
+        fetch('http://localhost:5000/products',{method: 'GET'})
         .then(res=>res.json())
         .then(data=>{
             setFilteredProducts(data);

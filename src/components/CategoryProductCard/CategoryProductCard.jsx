@@ -5,17 +5,18 @@ import { AiOutlineStop } from 'react-icons/ai';
 import { CiHeart, CiShoppingCart } from 'react-icons/ci';
 import { FcApproval } from 'react-icons/fc';
 import { IoIosGitCompare } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 const CategoryProductCard = ({ product }) => {
     return (
-        <div class="group basis-60 flex-1 pb-2 bg-white flex flex-col items-center justify-start border-4 border-white hover:border-base-200 duration-150 hover:shadow-lg cursor-pointer rounded">
+        <Link to={`/product/${product?._id}`} class="group basis-60 flex-1 pb-2 bg-white flex flex-col items-center justify-start border-4 border-white hover:border-base-200 duration-150 hover:shadow-lg cursor-pointer rounded">
             <div className='relative w-full overflow-hidden'>
                 {
                     product?.flashSale && <>
                         <p className='absolute z-40 bg-orange-700 w-20 text-white text-center py-[2px] rounded-r-full top-3 capitalize text-sm font-open'>save: ${(product?.actualPrice * (product?.off / 100)).toFixed()}</p>
                     </>
                 }
-                <img class="group-hover:scale-110 w-full h-40 object-cover transition-transform duration-300 ease-in-out transform" src={product?.productImage} alt="category_products" />
+                <img class="group-hover:scale-110 w-full h-40 object-cover transition-transform duration-300 ease-in-out transform" src={product?.productImage[0]} alt="category_products" />
                 <div className='h-full absolute group-hover:z-50 top-0 right-3 flex flex-col items-center justify-center gap-3'>
                     <Tooltip placement="left" title={'Add to Cart'}>
                         <CiShoppingCart size={35} className='text-gray-700 bg-gray-100 bg-opacity-50 rounded-full p-1 hover:bg-opacity-70 active:scale-95' />
@@ -62,7 +63,7 @@ const CategoryProductCard = ({ product }) => {
                     <Rating name="read-only" value={(product?.rating)} readOnly size='small' />
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 
