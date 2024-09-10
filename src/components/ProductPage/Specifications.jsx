@@ -1,13 +1,14 @@
 import React from 'react';
 
-const Specifications = ({ specifications }) => {
+const Specifications = ({ product }) => {
     return (
         <div>
             <ul className='list-disc pl-5 py-1 text-sm'>
                 {
-                    specifications.map(feature => <li>{feature}</li>)
+                    product?.specifications.map(feature => <li>{feature}</li>)
                 }
             </ul>
+            <h2>{product?.productDescription}</h2>
         </div>
     );
 };
