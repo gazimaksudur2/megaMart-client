@@ -82,7 +82,7 @@ const NavTop = () => {
                 <div className='px-3 border-l-2 border-slate-300'>
                     {
                         user ? <>
-                            <Link to={'/user'}>
+                            <Link to={'/user/dash'}>
                                 <GoPerson id="clickable" className='hover:text-amber-600 hover:border-amber-600 border-2 border-gray-500 rounded-full p-1' size={35} />
                             </Link>
                             <Tooltip anchorSelect="#clickable" clickable className='bg-transparent'>

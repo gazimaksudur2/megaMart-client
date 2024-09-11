@@ -24,6 +24,8 @@ import AskQuestion from '../components/ProductPage/AskQuestion';
 import WriteReview from '../components/ProductPage/WriteReview';
 import BeSeller from '../pages/UserDashboard/BeSeller';
 import BeAdmin from '../pages/UserDashboard/BeAdmin';
+import Blogs from '../pages/UserDashboard/Blogs/Blogs';
+import Posts from '../pages/UserDashboard/Posts/Posts';
 
 const Router = createBrowserRouter([
     {
@@ -77,7 +79,7 @@ const Router = createBrowserRouter([
         element: <PrivateRouter><UserDashboard/></PrivateRouter>,
         children: [
             {
-                index: true,
+                path: 'dash',
                 element: <AccountPage/>,
             },
             {
@@ -91,6 +93,14 @@ const Router = createBrowserRouter([
             {
                 path: 'reviews',
                 element: <MyReviews/>,
+            },
+            {
+                path: 'blogs',
+                element: <Blogs/>,
+            },
+            {
+                path: 'posts',
+                element: <Posts/>,
             },
             {
                 path: 'beseller',

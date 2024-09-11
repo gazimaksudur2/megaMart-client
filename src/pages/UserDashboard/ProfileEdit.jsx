@@ -4,6 +4,7 @@ import { CiEdit } from 'react-icons/ci';
 import { FaInstagram } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { RiFacebookFill } from 'react-icons/ri';
+import ImageUpload from './ImageUpload';
 
 const ProfileEdit = ({setEdit}) => {
     return (
@@ -13,7 +14,8 @@ const ProfileEdit = ({setEdit}) => {
             </div>
             <div className='my-8 w-full flex flex-col items-center justify-center space-y-2'>
                 <div className=''>
-                    <BsPersonCircle size={80} />
+                    {/* <BsPersonCircle size={80} /> */}
+                    <ImageUpload/>
                 </div>
                 <div className='text-center'>
                     <h2 className='font-semibold'>Geneva Mcknight</h2>
