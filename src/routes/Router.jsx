@@ -22,6 +22,8 @@ import PrivateRouter from './PrivateRouter';
 import ProductPage from '../components/ProductPage/ProductPage';
 import AskQuestion from '../components/ProductPage/AskQuestion';
 import WriteReview from '../components/ProductPage/WriteReview';
+import BeSeller from '../pages/UserDashboard/BeSeller';
+import BeAdmin from '../pages/UserDashboard/BeAdmin';
 
 const Router = createBrowserRouter([
     {
@@ -89,6 +91,14 @@ const Router = createBrowserRouter([
             {
                 path: 'reviews',
                 element: <MyReviews/>,
+            },
+            {
+                path: 'beseller',
+                element: <BeSeller/>,
+            },
+            {
+                path: 'beadmin',
+                element: <BeAdmin/>,
             }
         ],
     },

@@ -5,7 +5,8 @@ import { RxDashboard } from 'react-icons/rx';
 import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
-import { MdOutlinePostAdd } from 'react-icons/md';
+import { MdOutlineAdminPanelSettings, MdOutlinePostAdd } from 'react-icons/md';
+import { BsPersonVcard } from 'react-icons/bs';
 
 const Navigator = () => {
     const { logOut } = useAuth();
@@ -47,8 +48,8 @@ const Navigator = () => {
                 <h2 className='text-xl font-semibold font-beginner'>Mega Mart</h2>
             </Link>
             <ul className="menu space-y-2">
-                <li className='font-open hover:text-amber-600 '>
-                    <Link to={'/user'} className='p-3 flex items-center  justify-between'>
+                <li className='font-open hover:text-amber-600'>
+                    <Link to={'/user'} className='p-3 flex items-start justify-between'>
                         <div className='flex items-center justify-center gap-2'>
                             <RxDashboard size={20} />
                             <p className=''>Dashboard</p>
@@ -84,6 +85,18 @@ const Navigator = () => {
                     <Link to={'/user/reviews'} className='p-3'>
                         <MdOutlinePostAdd size={20} />
                         <p>My Posts</p>
+                    </Link>
+                </li>
+                <li className='font-open hover:text-amber-600'>
+                    <Link to={'/user/beseller'} className='p-3'>
+                        <BsPersonVcard size={20} />
+                        <p>Be a Seller</p>
+                    </Link>
+                </li>
+                <li className='font-open hover:text-amber-600'>
+                    <Link to={'/user/beadmin'} className='p-3'>
+                        <MdOutlineAdminPanelSettings size={20} />
+                        <p>Be a Admin</p>
                     </Link>
                 </li>
                 <li className='font-open hover:text-amber-600'>

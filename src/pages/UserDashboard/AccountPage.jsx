@@ -8,7 +8,7 @@ import ProfileEdit from './ProfileEdit';
 const AccountPage = () => {
     const [edit, setEdit] = useState(false);
     return (
-        <div className='px-12'>
+        <div className='px-16 py-4'>
             <h2 className='my-4 text-xl font-open font-semibold'>Account Details</h2>
             <div className='flex items-start gap-10'>
                 {

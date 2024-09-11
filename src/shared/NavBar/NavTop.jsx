@@ -72,18 +72,18 @@ const NavTop = () => {
                 </label>
                 {/* <button className='btn btn-ghost'>done</button> */}
             </form>
-            <div className='flex justify-center items-center'>
+            <div className='flex flex-row-reverse justify-center items-center'>
 
 
                 {
                     // faltuTopDrower
                 }
 
-                <div className='px-3 border-r-2 border-slate-300'>
+                <div className='px-3 border-l-2 border-slate-300'>
                     {
                         user ? <>
                             <Link to={'/user'}>
-                                <GoPerson id="clickable" className='hover:text-amber-600 ' size={25} />
+                                <GoPerson id="clickable" className='hover:text-amber-600 hover:border-amber-600 border-2 border-gray-500 rounded-full p-1' size={35} />
                             </Link>
                             <Tooltip anchorSelect="#clickable" clickable className='bg-transparent'>
                                 <button onClick={handleLogout} className='btn flex items-center justify-center'>

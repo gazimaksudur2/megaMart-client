@@ -8,6 +8,7 @@ const Reviews = ({ product }) => {
         <GoCodeReview size={30} className='text-slate-600' />
         <p className='text-lg text-slate-600'>Currently!! Reviews are not available or reviewed yet..</p>
     </div>
+    const overallRating = (product?.reviewDetails.reduce((prev, cur)=>{return prev+cur.rating},0)/product?.reviewDetails?.length);
     return (
         <div className='my-4'>
             <div className='pb-4 border-b-2 flex items-center justify-between px-4'>
@@ -16,8 +17,8 @@ const Reviews = ({ product }) => {
                     <p>Get specific details about this product from customers who own it.</p>
                     <div className='pt-4 flex items-center justify-start gap-2 text-lg font-light'>
                         <h2>Overall Review Rating</h2>
-                        <Rating name="half-rating-read" defaultValue={2.5} precision={0.5} readOnly />
-                        <h2>{(product?.reviewDetails.reduce((prev, cur)=>{return prev+cur.rating},0)/product?.reviewDetails?.length)} out of 5</h2>
+                        <Rating name="half-rating-read" value={overallRating} precision={0.5} readOnly />
+                        <h2>{overallRating} out of 5</h2>
                     </div>
                 </div>
                 <Link to={'/userActivity/writeReview'} state={{ product: product }} className='btn btn-outline px-10 rounded text-blue-800 hover:bg-blue-900'>Write a Review</Link>
@@ -31,7 +32,7 @@ const Reviews = ({ product }) => {
                                     <div key={idx}>
                                         <div className='flex flex-col items-start justify-center gap-1 text-gray-900 text-lg'>
                                             <div className='flex items-center justify-start gap-3'>
-                                                <Rating name="half-rating-read2" value={review?.rating} precision={0.5} readOnly />
+                                                <Rating name="half-rating-read2" value={review?.rating} size='small' precision={0.5} readOnly />
                                                 <h2>{review?.rating} out of 5</h2>
                                             </div>
                                             <h4 className='text-[16px] font-light pt-2'>{review?.review}</h4>

@@ -8,7 +8,7 @@ import DeepInfo from './DeepInfo';
 
 const ProductPage = () => {
     const [product, setProduct] = useState(null);
-    const [value, setValue] = useState(3);
+    const [value, setValue] = useState(0);
     const [quantity, setQuantity] = useState(0);
     const { id } = useParams();
 
