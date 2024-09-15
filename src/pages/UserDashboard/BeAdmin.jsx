@@ -6,12 +6,30 @@ import { ScrollRestoration } from 'react-router-dom';
 const BeAdmin = () => {
     const { user } = useAuth();
     const adminRequest = {
-        approved: false,
+        approved: true,
+        inReview: false,
         requested: true,
     }
     const message = {
         title: 'Join Us Now',
         info: 'This will offer opportunities to develop organizational, communication, and technical skills while gaining exposure to the fast-paced world of online retail, customer service, and operational management.'
+    }
+    const info = {
+        underReview: {
+            image: "https://img.freepik.com/premium-vector/review-rubber-stamp-red-review-rubber-grunge-stamp-seal-vector-illustration-vector_140916-30838.jpg?uid=R113556208&ga=GA1.1.820294120.1714974066&semt=ais_hybrid",
+            title: "Request submitted successfully",
+            message: "Thank you for taking the time to apply to our e-commerce platform! We truly appreciate the effort and passion you've shown in your application, and we're excited about the possibility of working with someone who shares our vision. Best of luck, and we look forward to connecting with you soon!",
+        },
+        accepted: {
+            image: "https://img.freepik.com/premium-photo/accepted-rubber-stamp-3d-illustration-isolated-white-background_839035-1821275.jpg?uid=R113556208&ga=GA1.1.820294120.1714974066&semt=ais_hybrid",
+            title: 'Welcome to our Platform',
+            message: "Welcome aboard! We're thrilled to have you join our team as an admin. Your expertise and leadership will be invaluable as we continue to grow and improve our platform. We look forward to achieving great things together!",
+        },
+        rejected: {
+            image: "https://t3.ftcdn.net/jpg/06/92/50/30/240_F_692503047_tFU2Uc6rkdKUCEwTbM1vYW5DuzAC8YTW.jpg",
+            title: "Best wishes for next time",
+            message: "Thank you for your application. After careful consideration, we have decided to move forward with other candidates, but we truly appreciate your interest and wish you all the best in your future endeavors."
+        }
     }
     // console.log(user);
     const handleSeller = e => {
@@ -26,9 +44,9 @@ const BeAdmin = () => {
     }
     const appliedContent = <>
         <div className='flex flex-col items-center justify-center gap-1 text-center'>
-            <img className='w-44' src="https://img.freepik.com/premium-psd/verified-3d-icon_465216-432.jpg?ga=GA1.1.820294120.1714974066&semt=ais_hybrid" alt="done image" />
-            <h2 className='text-2xl pb-3 font-semibold text-gray-700'>Your Request is Under Review</h2>
-            <h4 className='text-sm w-[60%]'>{"Thank you for taking the time to apply to our e-commerce platform! We truly appreciate the effort and passion you've shown in your application, and we're excited about the possibility of working with someone who shares our vision. Best of luck, and we look forward to connecting with you soon!"}</h4>
+            <img className='w-44' src={info[ !adminRequest?.inReview ? (adminRequest?.approved ? 'accepted' : 'rejected') : 'underReview'].image} alt="done image" />
+            <h2 className='text-2xl pb-3 font-semibold text-gray-700'>{info[ !adminRequest?.inReview ? (adminRequest?.approved ? 'accepted' : 'rejected') : 'underReview']?.title}</h2>
+            <h4 className='text-sm w-[60%]'>{info[ !adminRequest?.inReview ? (adminRequest?.approved ? 'accepted' : 'rejected') : 'underReview']?.message}</h4>
         </div>
     </>;
     return (

@@ -3,21 +3,24 @@ import TitleBanner from '../../shared/TitleBanner';
 import { Link, ScrollRestoration, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import { FaEyeSlash, FaRegEye } from 'react-icons/fa';
+import useAxios from '../../hooks/useAxios';
+import Swal from 'sweetalert2';
 
 const CreateAccount = () => {
-    const { createUser } = useAuth();
+    const { createUser, profileUpdate } = useAuth();
     const [error, setError] = useState(null);
     const [passStrength, setPassStrength] = useState(null);
     const [viewPass, setViewPass] = useState(false);
     const [viewConfPass, setViewConfPass] = useState(false);
-    const [allPass, setAllPass] = useState({pass: null, conf: null});
+    const [allPass, setAllPass] = useState({ pass: null, conf: null });
     const navigate = useNavigate();
+    const axios = useAxios();
 
     const handlePasswordStrength = e => {
         // console.log(e.target.value);
         const pass = e.target.value;
 
-        setAllPass({pass, conf: allPass.conf}); 
+        setAllPass({ pass, conf: allPass.conf });
 
         if (pass.length == 0) {
             setPassStrength('');
@@ -42,7 +45,7 @@ const CreateAccount = () => {
     }
 
     const mismatchingChecker = e => {
-        setAllPass({pass: allPass.pass, conf: e.target.value});
+        setAllPass({ pass: allPass.pass, conf: e.target.value });
 
         if (passStrength) {
             setError('Create password with the requirements');
@@ -61,33 +64,60 @@ const CreateAccount = () => {
 
     const handleSignUp = e => {
         e.preventDefault();
+        navigate('/loader');
 
         const data = new FormData(e.target);
         const first_name = data.get('first_name');
         const last_name = data.get('last_name');
+        const username = data.get('username');
         const mail = data.get('mail');
         const phone = data.get('phone');
 
-        e.target.reset();
-  
+        // e.target.reset();
+
         const userInfo = {
             first_name,
             last_name,
-            mail,
+            username,
+            email: mail,
             phone,
-            password: allPass.pass
+            password: allPass.pass,
+            createdAt: new Date().toISOString(),
+            role: 'customer',
+            sellerRequest: { underReview: false, accepted: false, rejected: false },
+            adminRequest: { underReview: false, accepted: false, rejected: false },
+            shippingAddress: [],
+            billingAddress: [],
         }
+
 
         createUser(mail, allPass.pass)
-            .then(res => console.log(res.user))
+            .then(res => {
+                axios.post('/users', userInfo)
+                    .then(res => {
+                        profileUpdate(username, null)
+                        .then(data=>{
+                            console.log("username updated.")
+                        })
+                        .catch(error=> console.log(error.message))
+                        if (res.data.insertedId) {
+                            Swal.fire({
+                                title: "Great job!",
+                                text: "Your Account Registered Successfully!",
+                                icon: "success",
+                                showConfirmButton: false,
+                                timer: 2000,
+                            });
+                        }
+                    })
+                navigate('/');
+            })
             .catch(error => console.log(error))
-
-            navigate('/');
-        }
-        console.log(allPass);
+    }
+    // console.log(allPass);
     return (
         <div>
-            <ScrollRestoration/>
+            <ScrollRestoration />
             <TitleBanner title={'Create Account'} route={'Home / SignUp'} />
             <div className='w-full flex items-center justify-center  my-20'>
                 <div className="bg-base-100 w-full max-w-lg shrink-0 shadow-xl rounded" >
@@ -105,6 +135,12 @@ const CreateAccount = () => {
                                 </label>
                                 <input name="last_name" placeholder="Doe" className="input input-bordered rounded" required />
                             </div>
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Username *</span>
+                            </label>
+                            <input type="text" name='username' placeholder="demo_name" className="input input-bordered rounded" required />
                         </div>
                         <div className="form-control">
                             <label className="label">

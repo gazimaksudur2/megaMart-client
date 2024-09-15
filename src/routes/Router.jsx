@@ -26,6 +26,13 @@ import BeSeller from '../pages/UserDashboard/BeSeller';
 import BeAdmin from '../pages/UserDashboard/BeAdmin';
 import Blogs from '../pages/UserDashboard/Blogs/Blogs';
 import Posts from '../pages/UserDashboard/Posts/Posts';
+import Loader from '../pages/Loader/Loader';
+import AdminDashboard from '../pages/AdminDashboard/AdminDashboard';
+import AdminPage from '../pages/AdminDashboard/AdminPage/AdminPage';
+import Users from '../pages/AdminDashboard/Users/Users';
+import Sales from '../pages/AdminDashboard/Sales/Sales';
+import AdminProducts from '../pages/AdminDashboard/AdminProducts/AdminProducts';
+import Transactions from '../pages/AdminDashboard/Transactions/Transactions';
 
 const Router = createBrowserRouter([
     {
@@ -71,6 +78,10 @@ const Router = createBrowserRouter([
             {
                 path: '/contact',
                 element: <Contact/>
+            },
+            {
+                path: 'loader',
+                element: <Loader/>,
             }
         ]
     },
@@ -111,6 +122,32 @@ const Router = createBrowserRouter([
                 element: <BeAdmin/>,
             }
         ],
+    },
+    {
+        path: 'admin',
+        element: <AdminDashboard/>,
+        children: [
+            {
+                index: 'true',
+                element: <AdminPage/>,
+            },
+            {
+                path: 'users',
+                element: <Users/>,
+            },
+            {
+                path: 'sales',
+                element: <Sales/>,
+            },
+            {
+                path: 'products',
+                element: <AdminProducts/>,
+            },
+            {
+                path: 'transactions',
+                element: <Transactions/>,
+            }
+        ]
     },
     {
         path: '/carts',

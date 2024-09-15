@@ -5,6 +5,11 @@ import { ScrollRestoration } from 'react-router-dom';
 
 const BeSeller = () => {
     const { user } = useAuth();
+    const sellerRequest = {
+        approved: true,
+        inReview: true,
+        requested: false,
+    }
     const sellFacility = [
         {
             title: "Highly Reputed",
@@ -37,7 +42,31 @@ const BeSeller = () => {
             image: "https://cdn-icons-png.freepik.com/256/12251/12251876.png?ga=GA1.1.820294120.1714974066&semt=ais_hybrid",
         }
     ]
+    const info = {
+        underReview: {
+            image: "https://img.freepik.com/premium-vector/illustration-newsletter-service-subscription-concept-with-woman-subscribe-newsletter-from-phone_675567-3061.jpg?uid=R113556208&ga=GA1.1.820294120.1714974066&semt=ais_hybrid",
+            title: "Your Request is received",
+            message: "Admin will review your request in a very short. We highly appreciate your interest in becoming a seller on our platform! we are excited about the unique products and value you'll bring to our marketplace. We look forward to supporting your success with us!",
+        },
+        accepted: {
+            image: "https://img.freepik.com/premium-photo/accepted-rubber-stamp-3d-illustration-isolated-white-background_839035-1821275.jpg?uid=R113556208&ga=GA1.1.820294120.1714974066&semt=ais_hybrid",
+            title: 'Welcome to our Platform',
+            message: "Welcome to our platform! We're excited to have you join our community of sellers and look forward to supporting your journey to success. If you need any assistance, don't hesitate to reach out—we're here to help you every step of the way!",
+        },
+        rejected: {
+            image: "https://t3.ftcdn.net/jpg/06/92/50/30/240_F_692503047_tFU2Uc6rkdKUCEwTbM1vYW5DuzAC8YTW.jpg",
+            title: "Best wishes for next time",
+            message: "Thank you for your application. After careful consideration, we have decided to move forward with other candidates, but we truly appreciate your interest and wish you all the best in your future endeavors."
+        }
+    }
     // console.log(user);
+    const appliedContent = <>
+        <div className='flex flex-col items-center justify-center gap-1 text-center'>
+            <img className='w-72' src={info[ !sellerRequest?.inReview ? (sellerRequest?.approved ? 'accepted' : 'rejected') : 'underReview'].image} alt="done image" />
+            <h2 className='text-2xl pb-3 font-semibold text-gray-700'>{info[ !sellerRequest?.inReview ? (sellerRequest?.approved ? 'accepted' : 'rejected') : 'underReview'].title}</h2>
+            <h4 className='text-sm w-[60%]'>{info[ !sellerRequest?.inReview ? (sellerRequest?.approved ? 'accepted' : 'rejected') : 'underReview'].message}</h4>
+        </div>
+    </>;
     const handleSeller = e => {
         e.preventDefault();
         Swal.fire({
@@ -50,7 +79,7 @@ const BeSeller = () => {
     }
     return (
         <div className='p-10'>
-            <ScrollRestoration/>
+            <ScrollRestoration />
             {/* <h2 className='text-xl font-semibold text-gray-700'>Create a Seller Account</h2> */}
             <h2 className='text-2xl font-semibold text-gray-700'>Why sell on MegaMart?</h2>
             <div className='w-full p-6 mt-10 flex flex-wrap items-start justify-between gap-5'>
@@ -67,43 +96,47 @@ const BeSeller = () => {
                 }
             </div>
 
-            <form onSubmit={handleSeller} className="card-body w-[60%] mx-auto">
-                <h2 className='text-2xl font-semibold text-gray-600 text-center mt-6'>Seller Request Form</h2>
-                <div className='w-full flex justify-between'>
-                    <div className="form-control w-[48%]">
-                        <label className="label">
-                            <span className="label-text">First Name *</span>
-                        </label>
-                        <input name="first_name" value={user?.firstName} className="input input-bordered rounded disabled:text-gray-600" disabled />
-                    </div>
-                    <div className="form-control w-[48%]">
-                        <label className="label">
-                            <span className="label-text">Last Name *</span>
-                        </label>
-                        <input name="last_name" placeholder={user?.lastName} className="input input-bordered rounded disabled:text-gray-600" disabled />
-                    </div>
-                </div>
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Email *</span>
-                    </label>
-                    <input type="email" name='mail' value={user?.email} className="input input-bordered rounded disabled:text-gray-600" disabled />
-                </div>
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Request Message</span>
-                    </label>
-                    <textarea name='message' className="textarea textarea-bordered rounded disabled:text-gray-600" placeholder="Write Your Message Here"></textarea>
-                </div>
-                <div className='flex items-center justify-start gap-2 pt-6'>
-                    <input type="checkbox" className="checkbox checkbox-sm" required />
-                    <h4 className='text-sm font-semibold'>{"I've read and accept the Privacy Policy"}</h4>
-                </div>
-                <p className='text-xs'>By submitting request, you agree to our <a href="#" className='font-semibold hover:underline hover:text-yellow-600'>Terms of Services.</a> Learn how we collect and use your data in our <a href="#" className='font-semibold hover:underline hover:text-yellow-600'>Privacy Policy.</a></p>
-                <div className="form-control mt-6 space-y-3">
-                    <button className="btn btn-warning text-white rounded-none uppercase ">Submit Request</button>
-                </div>
-            </form>
+            {
+                sellerRequest?.requested ? appliedContent : <>
+                    <form onSubmit={handleSeller} className="card-body w-[60%] mx-auto">
+                        <h2 className='text-2xl font-semibold text-gray-600 text-center my-6'>Seller Request Form</h2>
+                        <div className='w-full flex justify-between'>
+                            <div className="form-control w-[48%]">
+                                <label className="label">
+                                    <span className="label-text">First Name *</span>
+                                </label>
+                                <input name="first_name" value={user?.firstName} className="input input-bordered rounded disabled:text-gray-600" disabled />
+                            </div>
+                            <div className="form-control w-[48%]">
+                                <label className="label">
+                                    <span className="label-text">Last Name *</span>
+                                </label>
+                                <input name="last_name" placeholder={user?.lastName} className="input input-bordered rounded disabled:text-gray-600" disabled />
+                            </div>
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Email *</span>
+                            </label>
+                            <input type="email" name='mail' value={user?.email} className="input input-bordered rounded disabled:text-gray-600" disabled />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Request Message</span>
+                            </label>
+                            <textarea name='message' className="textarea textarea-bordered rounded disabled:text-gray-600" placeholder="Write Your Message Here"></textarea>
+                        </div>
+                        <div className='flex items-center justify-start gap-2 pt-6'>
+                            <input type="checkbox" className="checkbox checkbox-sm" required />
+                            <h4 className='text-sm font-semibold'>{"I've read and accept the Privacy Policy"}</h4>
+                        </div>
+                        <p className='text-xs'>By submitting request, you agree to our <a href="#" className='font-semibold hover:underline hover:text-yellow-600'>Terms of Services.</a> Learn how we collect and use your data in our <a href="#" className='font-semibold hover:underline hover:text-yellow-600'>Privacy Policy.</a></p>
+                        <div className="form-control mt-6 space-y-3">
+                            <button className="btn btn-warning text-white rounded-none uppercase ">Submit Request</button>
+                        </div>
+                    </form>
+                </>
+            }
         </div>
     );
 };

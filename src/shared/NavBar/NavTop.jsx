@@ -2,17 +2,25 @@ import React from 'react';
 import { CiHeart, CiLogout, CiShoppingCart } from 'react-icons/ci';
 import { GoPerson } from 'react-icons/go';
 import { IoIosNotificationsOutline } from 'react-icons/io';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import useAuth from '../../hooks/useAuth';
 import { Tooltip } from 'react-tooltip';
 
 const NavTop = () => {
-    const { user, logOut } = useAuth();
+    const data = useAuth();
+    const { user, logOut, userDB } = data;
+    const navigate = useNavigate();
+
+    // console.log(data);
 
     const handleLogout = () => {
+        navigate('/loader');
         logOut()
-            .then(res => console.log('user Logged out!!'))
+            .then(res => {
+                console.log('user Logged out!!');
+                navigate('/');
+            })
             .catch(error => console.log('logout failed!!'))
     }
     const faltuTopDrower = <>
@@ -82,7 +90,7 @@ const NavTop = () => {
                 <div className='px-3 border-l-2 border-slate-300'>
                     {
                         user ? <>
-                            <Link to={'/user/dash'}>
+                            <Link to={userDB?.role === 'customer' ? '/user/dash' : (userDB?.role==='admin' ? '/admin': '/seller')}>
                                 <GoPerson id="clickable" className='hover:text-amber-600 hover:border-amber-600 border-2 border-gray-500 rounded-full p-1' size={35} />
                             </Link>
                             <Tooltip anchorSelect="#clickable" clickable className='bg-transparent'>
@@ -139,7 +147,7 @@ const NavTop = () => {
                 {/* <div className='px-3 border-x-2 border-slate-300'>
                         <GoPerson className='hover:text-amber-600 ' size={25} />
                     </div> */}
-                <div className='ml-3'>
+                <div className='mr-3'>
                     <div className="drawer drawer-end">
                         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                         <div className="drawer-content">

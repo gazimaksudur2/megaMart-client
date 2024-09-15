@@ -5,7 +5,7 @@ import { FaInstagram } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { RiFacebookFill } from 'react-icons/ri';
 
-const Profile = ({setEdit}) => {
+const Profile = ({setEdit, userDB}) => {
     return (
         <div className='max-w-[380px] bg-base-100 p-6 rounded-xl border-2 border-slate-200'>
             <div className='flex items-center justify-between'>
@@ -20,8 +20,8 @@ const Profile = ({setEdit}) => {
                     <BsPersonCircle size={80} />
                 </div>
                 <div className='text-center'>
-                    <h2 className='font-semibold'>Geneva Mcknight</h2>
-                    <h4 className='text-sm font-light'>@webdeveloper</h4>
+                    <h2 className='font-semibold'>{userDB ? userDB?.username : 'Jonathon Deo'}</h2>
+                    <h4 className='text-sm font-light'>{userDB ? "@"+userDB?.role : '@webdeveloper'}</h4>
                 </div>
                 <div className='py-4 flex gap-6'>
                     <button className='btn btn-sm bg-slate-700 text-white hover:bg-base-200 hover:text-slate-700 border-2 duration-150'>Follow</button>
@@ -37,7 +37,7 @@ const Profile = ({setEdit}) => {
                             <h2>Full Name </h2>
                             <p>:</p>
                         </div>
-                        <h3 className='text-sm'>Geneva D. Mcknight</h3>
+                        <h3 className='text-sm'>{userDB ? userDB?.first_name+" "+userDB?.last_name : 'Geneva D. Mcknight'}</h3>
                     </div>
                     <div className='flex items-center justify-start gap-2'>
                         <div className='w-[35%] font-semibold flex items-center justify-between'>
