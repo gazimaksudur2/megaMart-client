@@ -35,6 +35,12 @@ import AdminProducts from '../pages/AdminDashboard/AdminProducts/AdminProducts';
 import Transactions from '../pages/AdminDashboard/Transactions/Transactions';
 import ProductCategories from '../pages/AdminDashboard/ProductCategories/ProductCategories';
 import OrderLists from '../pages/AdminDashboard/OrderLists/OrderLists';
+import SellerDashboard from '../pages/SellerDashboard/SellerDashboard';
+import SellerProfile from '../pages/SellerDashboard/SellerProfile/SellerProfile';
+import SellerReport from '../pages/SellerDashboard/SellerReport/SellerReport';
+import MyProducts from '../pages/SellerDashboard/MyProducts/MyProducts';
+import SellerOrders from '../pages/SellerDashboard/SellerOrders/SellerOrders';
+import SellerTransactions from '../pages/SellerDashboard/SellerTransactions/SellerTransactions';
 
 const Router = createBrowserRouter([
     {
@@ -156,6 +162,36 @@ const Router = createBrowserRouter([
             {
                 path: 'transactions',
                 element: <Transactions/>,
+            }
+        ]
+    },
+    {
+        path: 'seller',
+        element: <SellerDashboard/>,
+        children: [
+            {
+                index: 'true',
+                element: <SellerProfile/>,
+            },
+            {
+                path: 'brands',
+                element: <Users/>,
+            },
+            {
+                path: 'sales',
+                element: <SellerReport/>,
+            },
+            {
+                path: 'products',
+                element: <MyProducts/>,
+            },
+            {
+                path: 'orders',
+                element: <SellerOrders/>,
+            },
+            {
+                path: 'transactions',
+                element: <SellerTransactions/>,
             }
         ]
     },

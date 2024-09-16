@@ -7,7 +7,7 @@ import { RiErrorWarningLine } from 'react-icons/ri';
 import { TbUserEdit } from 'react-icons/tb';
 import { Tooltip } from 'react-tooltip';
 
-const RequestedProductRow = () => {
+const ActiveProductRow = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const showModal = () => {
         setIsModalOpen(true);
@@ -146,4 +146,4 @@ const RequestedProductRow = () => {
     );
 };
 
-export default RequestedProductRow;
+export default ActiveProductRow;

@@ -1,8 +1,8 @@
 import { Radio } from 'antd';
 import React, { useState } from 'react';
-import RequestedProductRow from './RequestedProductRow';
+import ActiveProductRow from './ActiveProductRow';
 
-const ProductRequestTable = () => {
+const MyActiveProductsTable = () => {
     const [value, setValue] = useState(1);
     const onChange = (e) => {
         console.log('radio checked', e.target.value);
@@ -17,7 +17,7 @@ const ProductRequestTable = () => {
     return (
         <section class="mt-10 container px-4 mx-auto">
             <div class="flex items-center gap-x-3">
-                <h2 class="text-lg font-medium text-gray-800">Product Requests</h2>
+                <h2 class="text-lg font-medium text-gray-800">My Active Products</h2>
                 <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full">100 pcs</span>
             </div>
             <div className='mt-8 flex items-center justify-end'>
@@ -31,7 +31,6 @@ const ProductRequestTable = () => {
             {
                 // emptyUsers
             }
-
             <div>
                 <div class="flex flex-col mt-6">
                     <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -69,10 +68,10 @@ const ProductRequestTable = () => {
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y divide-gray-200">
-                                        <RequestedProductRow/>
-                                        <RequestedProductRow/>
-                                        <RequestedProductRow/>
-                                        <RequestedProductRow/>
+                                        <ActiveProductRow/>
+                                        <ActiveProductRow/>
+                                        <ActiveProductRow/>
+                                        <ActiveProductRow/>
                                     </tbody>
                                 </table>
                             </div>
@@ -117,4 +116,4 @@ const ProductRequestTable = () => {
     );
 };
 
-export default ProductRequestTable;
+export default MyActiveProductsTable;

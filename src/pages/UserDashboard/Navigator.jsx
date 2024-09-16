@@ -188,6 +188,49 @@ const Navigator = () => {
             </NavLink>
         </li>
     </>;
+    const sellerNavigator = <>
+        <li className='w-full font-open text-gray-700 hover:text-gray-900 hover:bg-gray-300 bg-gray-200 rounded-lg'>
+            <NavLink to={'/seller/brands'} className={({ isActive }) => isActive ? "flex items-center justify-start p-3 bg-amber-400 text-white rounded-lg" : "p-3 flex items-center justify-start"} end>
+                <div className='flex items-center justify-center gap-2'>
+                    <TfiShoppingCartFull size={20} />
+                    <p>My Brands</p>
+                </div>
+            </NavLink>
+        </li>
+        <li className='w-full font-open text-gray-700 hover:text-gray-900 hover:bg-gray-300 bg-gray-200 rounded-lg'>
+            <NavLink to={'/seller/products'} className={({ isActive }) => isActive ? "flex items-center justify-start p-3 bg-amber-400 text-white rounded-lg" : "p-3 flex items-center justify-start"} end>
+                <div className='flex items-center justify-center gap-2'>
+                    <TfiShoppingCartFull size={20} />
+                    <p>My Products</p>
+                </div>
+            </NavLink>
+        </li>
+        <li className='w-full font-open text-gray-700 hover:text-gray-900 hover:bg-gray-300 bg-gray-200 rounded-lg'>
+            <NavLink to={'/seller/sales'} className={({ isActive }) => isActive ? "flex items-center justify-start p-3 bg-amber-400 text-white rounded-lg" : "p-3 flex items-center justify-start"} end>
+                <div className='flex items-center justify-center gap-2'>
+                    <MdQueryStats size={20} />
+                    <p>Sales Report</p>
+                </div>
+            </NavLink>
+        </li>
+        <li className='w-full font-open text-gray-700 hover:text-gray-900 hover:bg-gray-300 bg-gray-200 rounded-lg'>
+            <NavLink to={'/seller/orders'} className={({ isActive }) => isActive ? "flex items-center justify-start p-3 bg-amber-400 text-white rounded-lg" : "p-3 flex items-center justify-start"} end>
+                <div className='flex items-center justify-center gap-2'>
+                    <TfiShoppingCartFull size={20} />
+                    <p>Order Lists</p>
+                </div>
+            </NavLink>
+        </li>
+        <li className='w-full font-open text-gray-700 hover:text-gray-900 hover:bg-gray-300 bg-gray-200 rounded-lg'>
+            <NavLink to={'/seller/transactions'} className={({ isActive }) => isActive ? "flex items-center justify-start p-3 bg-amber-400 text-white rounded-lg" : "p-3 flex items-center justify-start"} end>
+                <div className='flex items-center justify-center gap-2'>
+                    <TbTransactionDollar size={20} />
+                    <p>Transactions</p>
+                </div>
+            </NavLink>
+        </li>
+    </>;
+
     return (
         <div className='fixed md:w-64'>
             <MdArrowBackIosNew className='absolute top-0 right-0 p-2 bg-blue-100 hover:bg-blue-200 rounded-l-md' size={35} />
@@ -206,10 +249,10 @@ const Navigator = () => {
                     </NavLink>
                 </li>
                 {
-                    userDB?.role === 'customer' ? customerNavigator : adminNavigator
+                    userDB?.role === 'customer' ? customerNavigator : userDB?.role === 'admin' ? adminNavigator : sellerNavigator
                 }
-                <li className='w-full font-open text-gray-700 hover:text-gray-900 hover:bg-gray-300 bg-gray-200 rounded-lg'>
-                    <button onClick={handleLogout} className='p-3 flex items-center justify-start '>
+                <li onClick={handleLogout} className='w-full font-open text-gray-700 hover:text-gray-900 hover:bg-gray-300 bg-gray-200 rounded-lg cursor-pointer'>
+                    <button className='p-3 flex items-center justify-start '>
                         <CiLogout size={20} />
                         <p>LogOut</p>
                     </button>
