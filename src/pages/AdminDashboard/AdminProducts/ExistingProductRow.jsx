@@ -1,13 +1,12 @@
-import { Button, Modal } from 'antd';
+import { Modal } from 'antd';
 import React, { useState } from 'react';
 import { CiSquareQuestion } from 'react-icons/ci';
 import { FaSortDown } from 'react-icons/fa';
 import { RiErrorWarningLine } from 'react-icons/ri';
 import { TbUserEdit } from 'react-icons/tb';
 
-const UserRow = () => {
+const ExistingProductRow = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const showModal = () => {
         setIsModalOpen(true);
     };
@@ -105,4 +104,4 @@ const UserRow = () => {
     );
 };
 
-export default UserRow;
+export default ExistingProductRow;
