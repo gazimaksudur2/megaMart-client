@@ -5,7 +5,7 @@ import { RxDashboard } from 'react-icons/rx';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
-import { MdOutlineAdminPanelSettings, MdOutlinePostAdd, MdQueryStats } from 'react-icons/md';
+import { MdArrowBackIosNew, MdOutlineAdminPanelSettings, MdOutlinePostAdd, MdQueryStats } from 'react-icons/md';
 import { BsPersonVcard } from 'react-icons/bs';
 import { FaUsersGear } from 'react-icons/fa6';
 import { TfiShoppingCartFull } from 'react-icons/tfi';
@@ -111,7 +111,7 @@ const Navigator = () => {
             <NavLink to={'/admin/users'} className={({ isActive }) => isActive ? "flex items-center justify-start p-3 bg-amber-400 text-white rounded-lg" : "p-3 flex items-center justify-start"} end>
                 <div className='flex items-center justify-center gap-2'>
                     <FaUsersGear size={20} />
-                    <p>Users</p>
+                    <p>Manage Users</p>
                 </div>
             </NavLink>
         </li>
@@ -132,6 +132,54 @@ const Navigator = () => {
             </NavLink>
         </li>
         <li className='w-full font-open text-gray-700 hover:text-gray-900 hover:bg-gray-300 bg-gray-200 rounded-lg'>
+            <NavLink to={'/admin/orders'} className={({ isActive }) => isActive ? "flex items-center justify-start p-3 bg-amber-400 text-white rounded-lg" : "p-3 flex items-center justify-start"} end>
+                <div className='flex items-center justify-center gap-2'>
+                    <TfiShoppingCartFull size={20} />
+                    <p>Order Lists</p>
+                </div>
+            </NavLink>
+        </li>
+        <li className='w-full font-open text-gray-700 hover:text-gray-900 hover:bg-gray-300 bg-gray-200 rounded-lg'>
+            <NavLink to={'/admin/category'} className={({ isActive }) => isActive ? "flex items-center justify-start p-3 bg-amber-400 text-white rounded-lg" : "p-3 flex items-center justify-start"} end>
+                <div className='flex items-center justify-center gap-2'>
+                    <TfiShoppingCartFull size={20} />
+                    <p>Categories</p>
+                </div>
+            </NavLink>
+        </li>
+        {/* <li className='w-full font-open text-gray-700 hover:text-gray-900 hover:bg-gray-300 bg-gray-200 rounded-lg'>
+            <NavLink to={'/admin/products'} className={({ isActive }) => isActive ? "flex items-center justify-start p-3 bg-amber-400 text-white rounded-lg" : "p-3 flex items-center justify-start"} end>
+                <div className='flex items-center justify-center gap-2'>
+                    <TfiShoppingCartFull size={20} />
+                    <p>Brands</p>
+                </div>
+            </NavLink>
+        </li>
+        <li className='w-full font-open text-gray-700 hover:text-gray-900 hover:bg-gray-300 bg-gray-200 rounded-lg'>
+            <NavLink to={'/admin/products'} className={({ isActive }) => isActive ? "flex items-center justify-start p-3 bg-amber-400 text-white rounded-lg" : "p-3 flex items-center justify-start"} end>
+                <div className='flex items-center justify-center gap-2'>
+                    <TfiShoppingCartFull size={20} />
+                    <p>Refund Requests</p>
+                </div>
+            </NavLink>
+        </li>
+        <li className='w-full font-open text-gray-700 hover:text-gray-900 hover:bg-gray-300 bg-gray-200 rounded-lg'>
+            <NavLink to={'/admin/products'} className={({ isActive }) => isActive ? "flex items-center justify-start p-3 bg-amber-400 text-white rounded-lg" : "p-3 flex items-center justify-start"} end>
+                <div className='flex items-center justify-center gap-2'>
+                    <TfiShoppingCartFull size={20} />
+                    <p>Order Cancel Request</p>
+                </div>
+            </NavLink>
+        </li>
+        <li className='w-full font-open text-gray-700 hover:text-gray-900 hover:bg-gray-300 bg-gray-200 rounded-lg'>
+            <NavLink to={'/admin/products'} className={({ isActive }) => isActive ? "flex items-center justify-start p-3 bg-amber-400 text-white rounded-lg" : "p-3 flex items-center justify-start"} end>
+                <div className='flex items-center justify-center gap-2'>
+                    <TfiShoppingCartFull size={20} />
+                    <p>Order Cancel History</p>
+                </div>
+            </NavLink>
+        </li> */}
+        <li className='w-full font-open text-gray-700 hover:text-gray-900 hover:bg-gray-300 bg-gray-200 rounded-lg'>
             <NavLink to={'/admin/transactions'} className={({ isActive }) => isActive ? "flex items-center justify-start p-3 bg-amber-400 text-white rounded-lg" : "p-3 flex items-center justify-start"} end>
                 <div className='flex items-center justify-center gap-2'>
                     <TbTransactionDollar size={20} />
@@ -142,6 +190,7 @@ const Navigator = () => {
     </>;
     return (
         <div className='fixed md:w-64'>
+            <MdArrowBackIosNew className='absolute top-0 right-0 p-2 bg-blue-100 hover:bg-blue-200 rounded-l-md' size={35} />
             <Link to={'/'} className='my-12 flex justify-center items-center gap-3'>
                 <img className='w-8 h-8' src="https://cdn-icons-png.flaticon.com/128/1162/1162456.png" alt="logo" />
                 <h2 className='text-xl font-semibold font-beginner'>Mega Mart</h2>

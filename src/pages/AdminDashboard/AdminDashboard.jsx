@@ -8,7 +8,7 @@ const AdminDashboard = () => {
             <div className='bg-blue-50 text-base-content min-h-full max-w-80 w-[20%] p-4 border-r-2 border-slate-300 flex items-start justify-center'>
                 <Navigator />
             </div>
-            <div className='w-full'>
+            <div className='w-full px-16 py-8'>
                 <Outlet />
             </div>
         </div>

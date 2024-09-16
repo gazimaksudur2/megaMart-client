@@ -33,6 +33,8 @@ import Users from '../pages/AdminDashboard/Users/Users';
 import Sales from '../pages/AdminDashboard/Sales/Sales';
 import AdminProducts from '../pages/AdminDashboard/AdminProducts/AdminProducts';
 import Transactions from '../pages/AdminDashboard/Transactions/Transactions';
+import ProductCategories from '../pages/AdminDashboard/ProductCategories/ProductCategories';
+import OrderLists from '../pages/AdminDashboard/OrderLists/OrderLists';
 
 const Router = createBrowserRouter([
     {
@@ -142,6 +144,14 @@ const Router = createBrowserRouter([
             {
                 path: 'products',
                 element: <AdminProducts/>,
+            },
+            {
+                path: 'category',
+                element: <ProductCategories/>,
+            },
+            {
+                path: 'orders',
+                element: <OrderLists/>,
             },
             {
                 path: 'transactions',
