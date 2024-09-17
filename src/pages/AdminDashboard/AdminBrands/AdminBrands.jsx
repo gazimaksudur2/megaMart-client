@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { RxCrossCircled } from 'react-icons/rx';
 import { MdDownloadDone } from 'react-icons/md';
 import Swal from 'sweetalert2';
+import { VscCircleSlash } from 'react-icons/vsc';
 
 const AdminBrands = () => {
     const axios = useAxios();
@@ -22,7 +23,7 @@ const AdminBrands = () => {
             <p className='text-sm text-gray-500 mt-2'>Currently!! There is no Brands are registered or approved in Your platform.</p>
         </div>
     </>;
-    
+
     const handleApprove = brand => {
         Swal.fire({
             title: "Are you sure?",
@@ -34,32 +35,120 @@ const AdminBrands = () => {
             confirmButtonText: "Yes, approve it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.patch(`/brands?id=${brand?._id}`,{status: 'approved', approvedAt: new Date().toLocaleDateString()}, {withCredentials: true})
-                .then(res=>{
-                    if(res.data?.modifiedCount){
-                        Swal.fire({
-                            title: "Approved!",
-                            text: `${brand?.brand} got access to publish products`,
-                            icon: "success",
-                            showConfirmButton: false,
-                            timer: 2000
-                        });
-                        refetch();
-                    }else{
-                        Swal.fire({
-                            title: "Error!",
-                            text: `Unfortunately ${brand?.brand} didn't get access!! try again later`,
-                            icon: "error",
-                            showConfirmButton: false,
-                            timer: 2000,
-                        })
-                    }
-                })
+                axios.patch(`/brands?id=${brand?._id}`, { status: 'approved', actionedAt: new Date().toUTCString() }, { withCredentials: true })
+                    .then(res => {
+                        if (res.data?.modifiedCount) {
+                            Swal.fire({
+                                title: "Approved!",
+                                text: `${brand?.brand} got access to publish products`,
+                                icon: "success",
+                                showConfirmButton: false,
+                                timer: 2000
+                            });
+                            refetch();
+                        } else {
+                            Swal.fire({
+                                title: "Error!",
+                                text: `Unfortunately ${brand?.brand} didn't get access!! try again later`,
+                                icon: "error",
+                                showConfirmButton: false,
+                                timer: 2000,
+                            })
+                        }
+                    })
             } else {
                 Swal.fire({
                     title: "Approval Abandoned!!",
-                    text: `${brand?.brand} got rejected to publish their products`,
-                    icon: "error",
+                    text: "Try Again",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 2000
+                })
+            }
+        });
+    }
+
+    const handleReject = brand => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: `${brand?.brand} will be Rejected`,
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, reject it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axios.patch(`/brands?id=${brand?._id}`, { status: 'rejected', actionedAt: new Date().toUTCString() }, { withCredentials: true })
+                    .then(res => {
+                        if (res.data?.modifiedCount) {
+                            Swal.fire({
+                                title: "Rejected!",
+                                text: `${brand?.brand} got disallowed to publish products`,
+                                icon: "success",
+                                showConfirmButton: false,
+                                timer: 2000
+                            });
+                            refetch();
+                        } else {
+                            Swal.fire({
+                                title: "Error!",
+                                text: `Unfortunately ${brand?.brand} didn't complete process!! try again later`,
+                                icon: "error",
+                                showConfirmButton: false,
+                                timer: 2000,
+                            })
+                        }
+                    })
+            } else {
+                Swal.fire({
+                    title: "Rejection Abandoned!!",
+                    text: "Try Again",
+                    icon: "warning",
+                    showConfirmButton: false,
+                    timer: 2000
+                })
+            }
+        });
+    }
+
+    const handleAction = (brand, action) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: `${brand?.brand} will be ${action?.status}`,
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: `Yes, ${action?.status} it!`,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axios.patch(`/brands?id=${brand?._id}`, { status: action?.status, actionedAt: new Date().toUTCString() }, { withCredentials: true })
+                    .then(res => {
+                        if (res.data?.modifiedCount) {
+                            Swal.fire({
+                                title: `${action?.status}!!`,
+                                text: `${brand?.brand} got ${action?.status} to publish products`,
+                                icon: "success",
+                                showConfirmButton: false,
+                                timer: 2000
+                            });
+                            refetch();
+                        } else {
+                            Swal.fire({
+                                title: "Error!",
+                                text: `Unfortunately ${brand?.brand} didn't complete process!! try again later`,
+                                icon: "error",
+                                showConfirmButton: false,
+                                timer: 2000,
+                            })
+                        }
+                    })
+            } else {
+                Swal.fire({
+                    title: `${action?.status} Abandoned!!`,
+                    text: "Try Again",
+                    icon: "warning",
                     showConfirmButton: false,
                     timer: 2000
                 })
@@ -174,7 +263,7 @@ const AdminBrands = () => {
                                 </thead>
                                 <tbody>
                                     {
-                                        brands?.filter(brand => brand?.status === 'approved')?.map((brand, idx) => <>
+                                        brands?.filter(brand => brand?.status !== 'pending')?.map((brand, idx) => <>
                                             <tr key={idx}>
                                                 <td>
                                                     <div className="flex items-center gap-3">
@@ -193,16 +282,20 @@ const AdminBrands = () => {
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    {brand?.approvedAt}
+                                                    {new Date(brand?.actionedAt).toLocaleString()}
                                                 </td>
                                                 <td>{brand?.status}</td>
                                                 <td >
                                                     <div className='flex items-center justify-start gap-4'>
-                                                        <button class="p-1 text-gray-500 transition-colors duration-200 hover:text-amber-500 hover:bg-amber-50 rounded-full focus:outline-none flex items-center justify-center gap-2">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                                                            </svg>
-                                                        </button>
+                                                        {
+                                                            brand?.status === 'approved' ? <button onClick={() => handleAction(brand, { status: 'disabled' })} class="p-1 text-gray-500 transition-colors duration-200 hover:text-amber-500 hover:bg-amber-50 rounded-full focus:outline-none flex items-center justify-center gap-2">
+                                                                <VscCircleSlash size={18} />
+                                                            </button> : <button onClick={() => handleApprove(brand, {status: 'approved'})} class="p-1 text-gray-500 transition-colors duration-200 hover:text-amber-500 hover:bg-amber-50 rounded-full focus:outline-none flex items-center justify-center gap-2">
+                                                                <MdDownloadDone size={18} />
+                                                            </button>
+                                                        }
+
+
                                                         <button class="text-gray-500 transition-colors duration-200 hover:text-red-500 hover:bg-red-50 p-1 rounded-full focus:outline-none flex items-center justify-center gap-2">
                                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
@@ -213,8 +306,6 @@ const AdminBrands = () => {
                                             </tr>
                                         </>)
                                     }
-
-
                                 </tbody>
                             </table>
                         </div>
