@@ -1,152 +1,631 @@
-[
-    {
-        "productName": "iPhone 13 Pro",
-        "productCategory": "Electronics",
-        "actualPrice": 999.99,
-        "off": 10,
-        "productImage": "https://images.pexels.com/photos/16005007/pexels-photo-16005007/free-photo-of-apple-iphone-14-pro-max-mobile-phone.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "Supplier": "Apple Store",
-        "Brand": "Apple",
-        "colorFamily": ["Silver", "Graphite", "Gold", "Sierra Blue"],
-        "availableQuantity": 50,
-        "productDescription": "The latest iPhone with A15 Bionic chip and ProMotion display.",
-        "rating": 4.8,
-        "reviews": 1500,
-        "flashSale": true
+[{
+    "_id": {
+      "$oid": "66dfd5803ceeae0e5b23b99b"
     },
-    {
-        "productName": "Adidas Ultraboost",
-        "productCategory": "Fashion",
-        "actualPrice": 180.00,
-        "off": 15,
-        "productImage": "https://images.pexels.com/photos/6514891/pexels-photo-6514891.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "Supplier": "Adidas",
-        "Brand": "Adidas",
-        "colorFamily": ["Black", "White", "Grey"],
-        "availableQuantity": 120,
-        "productDescription": "Comfortable running shoes with responsive cushioning.",
-        "rating": 4.5,
-        "reviews": 320,
-        "flashSale": false
+    "productName": "Adidas Ultraboost",
+    "productCategory": "Fashion",
+    "actualPrice": 180,
+    "off": 15,
+    "productImage": [
+      "https://images.pexels.com/photos/6514891/pexels-photo-6514891.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "Supplier": "Adidas",
+    "Brand": "Adidas",
+    "colorFamily": [
+      "Black",
+      "White",
+      "Grey"
+    ],
+    "availableQuantity": 6,
+    "productDescription": "Comfortable running shoes with responsive cushioning.",
+    "rating": 4.5,
+    "bought": 204,
+    "reviews": 320,
+    "flashSale": false,
+    "features": [
+      "Responsive Boost cushioning",
+      "Primeknit upper",
+      "Flexible sole",
+      "Lightweight design"
+    ],
+    "specifications": [
+      "Size: M, L, XL, XXL",
+      "M-Length 26,Chest 36",
+      "L-Length 27,Chest 38",
+      "XL-Length 28,Chest 40",
+      "XXL-Length 29,Chest 42",
+      "Fabric:Microfiber Jersey",
+      "Quality:High Quality",
+      "Print Quality:3D Subly print",
+      "Type:Round Neck",
+      "Color: As given picture",
+      "Collection for Men & Women & Girls"
+    ],
+    "reviewDetails": [
+      {
+        "customer": "Raju Ahmed",
+        "customerMail": "raju42@gmail.com",
+        "postedAt": {
+          "$date": "2024-07-03T18:00:00.000Z"
+        },
+        "review": "OnePlus Nord N30 SE 5G Smartphone (4/128GB) is featured with 5000mAh battery . Very Good.",
+        "rating": "4.5"
+      }
+    ],
+    "questions": [
+      {
+        "customer": "Hasibul Hasan",
+        "customerMail": "hasib2001@gmail.com",
+        "postedAt": {
+          "$date": "2024-07-26T18:00:00.000Z"
+        },
+        "question": "Does OnePlus Nord N30 SE 5G Smartphone have an extra micro SD card slot?",
+        "answer": "No, Sir, the OnePlus Nord N30 SE 5G Smartphone (4/128GB) doesn't have any expendable storage slot.",
+        "answeredBy": "Ragib Ali"
+      },
+      {
+        "customer": "Asish Saha",
+        "customerMail": "asishSaha2@gmail.com",
+        "postedAt": {
+          "$date": "2024-08-03T18:00:00.000Z"
+        },
+        "question": "Does the OnePlus Nord N30 support 5G?",
+        "answer": "Yes Sir. The OnePlus Nord N30 SE 5G smartphone (4/128GB) supports 5G.",
+        "answeredBy": "Abadur Limon"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "66dfd5803ceeae0e5b23b99c"
     },
-    {
-        "productName": "Sony WH-1000XM4",
-        "productCategory": "Electronics",
-        "actualPrice": 349.99,
-        "off": 20,
-        "productImage": "https://images.pexels.com/photos/28039052/pexels-photo-28039052/free-photo-of-fujifilm-xt4.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "Supplier": "Sony",
-        "Brand": "Sony",
-        "colorFamily": ["Black", "Silver"],
-        "availableQuantity": 70,
-        "productDescription": "Industry-leading noise cancelling headphones with superior sound quality.",
-        "rating": 4.7,
-        "reviews": 1100,
-        "flashSale": true
+    "productName": "Wireless Headphones",
+    "productCategory": "Electronics",
+    "actualPrice": 79.99,
+    "off": 10,
+    "productImage": [
+      "https://www.startech.com.bd/image/cache/catalog/headphone/anker/soundcore-h30i/soundcore-h30i-01-228x228.webp",
+      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "Supplier": "Sony",
+    "Brand": "Sony",
+    "colorFamily": [
+      "Black",
+      "Blue"
+    ],
+    "availableQuantity": 0,
+    "productDescription": "Noise-canceling wireless headphones with long battery life.",
+    "rating": 4.8,
+    "reviews": 125,
+    "flashSale": true,
+    "features": [
+      "Noise-canceling",
+      "Bluetooth 5.0",
+      "20-hour battery life",
+      "Comfortable ear cups"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "66dfd5803ceeae0e5b23b99d"
     },
-    {
-        "productName": "Levi's 501 Original Fit Jeans",
-        "productCategory": "Fashion",
-        "actualPrice": 89.99,
-        "off": 5,
-        "productImage": "https://images.pexels.com/photos/4195786/pexels-photo-4195786.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "Supplier": "Levi's",
-        "Brand": "Levi's",
-        "colorFamily": ["Blue", "Black"],
-        "availableQuantity": 200,
-        "productDescription": "Classic straight-leg jeans with a timeless look.",
-        "rating": 4.3,
-        "reviews": 800,
-        "flashSale": false
+    "productName": "Gaming Laptop",
+    "productCategory": "Electronics",
+    "actualPrice": 1299.99,
+    "off": 5,
+    "productImage": [
+      "https://www.startech.com.bd/image/cache/catalog/laptop/lenovo/ideapad-gaming-3/ideapad-gaming-3-001-500x500.jpg",
+      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "Supplier": "Razer",
+    "Brand": "Razer",
+    "colorFamily": [
+      "Black"
+    ],
+    "availableQuantity": 20,
+    "productDescription": "High-performance gaming laptop with powerful graphics card.",
+    "rating": 4.3,
+    "reviews": 480,
+    "flashSale": false,
+    "features": [
+      "RTX 3060 graphics card",
+      "16GB RAM",
+      "1TB SSD",
+      "144Hz refresh rate"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "66dfd5803ceeae0e5b23b99e"
     },
-    {
-        "productName": "Samsung Galaxy S21",
-        "productCategory": "Electronics",
-        "actualPrice": 799.99,
-        "off": 10,
-        "productImage": "https://images.pexels.com/photos/17944743/pexels-photo-17944743/free-photo-of-close-up-of-a-man-holding-a-green-samsung-galaxy-s21.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "Supplier": "Samsung Store",
-        "Brand": "Samsung",
-        "colorFamily": ["Phantom Black", "Phantom White", "Pink Gold"],
-        "availableQuantity": 30,
-        "productDescription": "High-performance smartphone with a dynamic AMOLED display and triple camera system.",
-        "rating": 4.6,
-        "reviews": 900,
-        "flashSale": true
+    "productName": "Smartwatch",
+    "productCategory": "Electronics",
+    "actualPrice": 199.99,
+    "off": 20,
+    "productImage": [
+      "https://www.startech.com.bd/image/cache/catalog/smart-watch/colmi/p81/p81-02-500x500.webp",
+      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "Supplier": "Apple",
+    "Brand": "Apple",
+    "colorFamily": [
+      "Silver",
+      "Space Gray",
+      "Gold"
+    ],
+    "availableQuantity": 50,
+    "productDescription": "Fitness tracker with advanced health monitoring features.",
+    "rating": 4.7,
+    "reviews": 280,
+    "flashSale": true,
+    "features": [
+      "Heart rate monitoring",
+      "ECG app",
+      "GPS tracking",
+      "Water-resistant"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "66dfd5803ceeae0e5b23b99f"
     },
-    {
-        "productName": "Instant Pot Duo 7-in-1",
-        "productCategory": "Home & Kitchen",
-        "actualPrice": 99.99,
-        "off": 25,
-        "productImage": "https://images.pexels.com/photos/28054208/pexels-photo-28054208/free-photo-of-a-stove-with-two-pots-on-it-and-steam-coming-out-of-them.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "Supplier": "Instant Brands",
-        "Brand": "Instant Pot",
-        "colorFamily": ["Black", "Silver"],
-        "availableQuantity": 150,
-        "productDescription": "Multi-use pressure cooker that combines 7 appliances in one.",
-        "rating": 4.9,
-        "reviews": 4000,
-        "flashSale": false
+    "productName": "Coffee Maker",
+    "productCategory": "Home",
+    "actualPrice": 99.99,
+    "off": 10,
+    "productImage": [
+      "https://img.lazcdn.com/3rd/q/aHR0cHM6Ly9zdGF0aWMtMDEuZGFyYXouY29tLmJkL3AvNmI5NDlkZTZiOWJjNjgyZWU4NTJjYTRiMzRhZDU5ZTguanBn_200x200q80.png_.webp",
+      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "Supplier": "Keurig",
+    "Brand": "Keurig",
+    "colorFamily": [
+      "Black",
+      "Silver"
+    ],
+    "availableQuantity": 100,
+    "productDescription": "Single-serve coffee maker with various pod options.",
+    "rating": 4.6,
+    "reviews": 350,
+    "flashSale": false,
+    "features": [
+      "Single-serve brewing",
+      "Compact design",
+      "Compatible with K-Cups",
+      "Energy efficient"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "66dfd5803ceeae0e5b23b9a0"
     },
-    {
-        "productName": "Dyson V11 Vacuum Cleaner",
-        "productCategory": "Home & Kitchen",
-        "actualPrice": 599.99,
-        "off": 15,
-        "productImage": "https://images.pexels.com/photos/6195963/pexels-photo-6195963.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "Supplier": "Dyson",
-        "Brand": "Dyson",
-        "colorFamily": ["Purple", "Blue"],
-        "availableQuantity": 45,
-        "productDescription": "Cordless vacuum cleaner with powerful suction and intelligent cleaning modes.",
-        "rating": 4.8,
-        "reviews": 1300,
-        "flashSale": true
+    "productName": "Kitchen Knife Set",
+    "productCategory": "Home",
+    "actualPrice": 79.99,
+    "off": 15,
+    "productImage": [
+      "https://img.lazcdn.com/3rd/q/aHR0cHM6Ly9zdGF0aWMtMDEuZGFyYXouY29tLmJkL3AvMjE2NzAxYjdkY2QwNDZmODRkMjUzZWJiNDVlYmM0ZjguanBn_200x200q80.png_.webp",
+      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "Supplier": "Zwilling J.A. Henckels",
+    "Brand": "Zwilling J.A. Henckels",
+    "colorFamily": [
+      "Black",
+      "Silver"
+    ],
+    "availableQuantity": 30,
+    "productDescription": "High-quality kitchen knife set with various blade sizes.",
+    "rating": 4.9,
+    "reviews": 220,
+    "flashSale": true,
+    "features": [
+      "Stainless steel blades",
+      "Ergonomic handles",
+      "Precision cutting",
+      "Dishwasher safe"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "66dfd5803ceeae0e5b23b9a1"
     },
-    {
-        "productName": "Asus ROG Zephyrus G14",
-        "productCategory": "Electronics",
-        "actualPrice": 1449.99,
-        "off": 10,
-        "productImage": "https://images.pexels.com/photos/12877878/pexels-photo-12877878.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "Supplier": "Asus",
-        "Brand": "Asus",
-        "colorFamily": ["Eclipse Gray", "Moonlight White"],
-        "availableQuantity": 25,
-        "productDescription": "Powerful gaming laptop with AMD Ryzen 9 and RTX 3060 graphics.",
-        "rating": 4.6,
-        "reviews": 700,
-        "flashSale": true
+    "productName": "Bluetooth Speaker",
+    "productCategory": "Electronics",
+    "actualPrice": 59.99,
+    "off": 5,
+    "productImage": [
+      "https://www.startech.com.bd/image/cache/catalog/speaker/hoco/bs45/bs45-01-228x228.jpg",
+      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "Supplier": "JBL",
+    "Brand": "JBL",
+    "colorFamily": [
+      "Black",
+      "Blue"
+    ],
+    "availableQuantity": 150,
+    "productDescription": "Portable Bluetooth speaker with powerful sound.",
+    "rating": 4.4,
+    "reviews": 400,
+    "flashSale": false,
+    "features": [
+      "Bluetooth connectivity",
+      "12-hour battery life",
+      "Water-resistant",
+      "Compact design"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "66dfd5803ceeae0e5b23b9a2"
     },
-    {
-        "productName": "Apple MacBook Air M1",
-        "productCategory": "Electronics",
-        "actualPrice": 999.99,
-        "off": 5,
-        "productImage": "https://images.pexels.com/photos/28038387/pexels-photo-28038387/free-photo-of-macbook-pro-on-the-berger.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "Supplier": "Apple Store",
-        "Brand": "Apple",
-        "colorFamily": ["Space Gray", "Silver", "Gold"],
-        "availableQuantity": 60,
-        "productDescription": "Ultra-lightweight laptop with the powerful M1 chip and up to 18 hours of battery life.",
-        "rating": 4.9,
-        "reviews": 2100,
-        "flashSale": true
+    "productName": "Yoga Mat",
+    "productCategory": "Sports",
+    "actualPrice": 29.99,
+    "off": 10,
+    "productImage": [
+      "https://img.lazcdn.com/3rd/q/aHR0cHM6Ly9iZC1saXZlLTIxLnNsYXRpYy5uZXQva2YvUzdhOTlmMzY1OTA2ZDQ4ODZiMmFhODdhOWZkYjJhZGRmSC5qcGc=_200x200q80.png_.webp",
+      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "Supplier": "Manduka",
+    "Brand": "Manduka",
+    "colorFamily": [
+      "Black",
+      "Blue",
+      "Purple"
+    ],
+    "availableQuantity": 80,
+    "productDescription": "Non-slip yoga mat with good cushioning.",
+    "rating": 4.8,
+    "reviews": 180,
+    "flashSale": true,
+    "features": [
+      "Non-slip surface",
+      "Eco-friendly material",
+      "Thick cushioning",
+      "Lightweight"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "66dfd5803ceeae0e5b23b9a3"
     },
-    {
-        "productName": "Nintendo Switch",
-        "productCategory": "Electronics",
-        "actualPrice": 299.99,
-        "off": 10,
-        "productImage": "https://images.pexels.com/photos/371924/pexels-photo-371924.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "Supplier": "Nintendo",
-        "Brand": "Nintendo",
-        "colorFamily": ["Neon Red", "Neon Blue", "Gray"],
-        "availableQuantity": 90,
-        "productDescription": "Hybrid gaming console that can be used as both a home console and a portable device.",
-        "rating": 4.8,
-        "reviews": 5000,
-        "flashSale": false
-    }
-]
+    "productName": "Bicycle",
+    "productCategory": "Sports",
+    "actualPrice": 399.99,
+    "off": 15,
+    "productImage": [
+      "https://img.lazcdn.com/3rd/q/aHR0cHM6Ly9iZC1saXZlLTIxLnNsYXRpYy5uZXQva2YvUzc2YTU5ZTUzYjczZTQ5ZDhhNDU5MzM4NDc1NzlkZDA5WS5qcGc=_200x200q80.png_.webp",
+      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "Supplier": "Trek",
+    "Brand": "Trek",
+    "colorFamily": [
+      "Black",
+      "Blue"
+    ],
+    "availableQuantity": 25,
+    "productDescription": "High-quality road bike with aluminum frame.",
+    "rating": 4.7,
+    "reviews": 320,
+    "flashSale": false,
+    "features": [
+      "Aluminum frame",
+      "21-speed gear system",
+      "Lightweight design",
+      "Durable tires"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "66dfd5803ceeae0e5b23b9a4"
+    },
+    "productName": "Sunglasses",
+    "productCategory": "Fashion",
+    "actualPrice": 69.99,
+    "off": 20,
+    "productImage": [
+      "https://img.lazcdn.com/3rd/q/aHR0cHM6Ly9zdGF0aWMtMDEuZGFyYXouY29tLmJkL3AvN2QwOWZiMDhmM2RjNzUxYjcwYTkyZTVmZDNiNGM5NTEuanBn_200x200q80.png_.webp",
+      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "Supplier": "Ray-Ban",
+    "Brand": "Ray-Ban",
+    "colorFamily": [
+      "Black",
+      "Havana"
+    ],
+    "availableQuantity": 70,
+    "productDescription": "Stylish sunglasses with UV protection.",
+    "rating": 4.5,
+    "reviews": 250,
+    "flashSale": true,
+    "features": [
+      "UV protection",
+      "Lightweight frame",
+      "Polarized lenses",
+      "Scratch-resistant"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "66dfd5803ceeae0e5b23b9a5"
+    },
+    "productName": "Smart Thermostat",
+    "productCategory": "Home",
+    "actualPrice": 149.99,
+    "off": 10,
+    "productImage": [
+      "https://img.lazcdn.com/3rd/q/aHR0cHM6Ly9iZC1saXZlLTIxLnNsYXRpYy5uZXQva2YvUzJlZmVhNjlmNzdiOTRiZGZiZjRhNmVkMTM1Yjk1ODhhNi5qcGc=_200x200q80.png_.webp",
+      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "Supplier": "Nest",
+    "Brand": "Nest",
+    "colorFamily": [
+      "White"
+    ],
+    "availableQuantity": 40,
+    "productDescription": "Smart thermostat with voice control and energy-saving features.",
+    "rating": 4.7,
+    "reviews": 320,
+    "flashSale": false
+  },
+  {
+    "_id": {
+      "$oid": "66dfd5803ceeae0e5b23b9a6"
+    },
+    "productName": "Nike Air Max 270",
+    "productCategory": "Fashion",
+    "actualPrice": 150,
+    "off": 10,
+    "productImage": [
+      "https://img.lazcdn.com/3rd/q/aHR0cHM6Ly9zdGF0aWMtMDEuZGFyYXouY29tLmJkL3AvMTFiODIzYTAxYmNmZWE0NzI3NDE1ZDkwYWEyZTBiOWEuanBn_200x200q80.png_.webp",
+      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "Supplier": "Nike",
+    "Brand": "Nike",
+    "colorFamily": [
+      "Black",
+      "Red",
+      "White"
+    ],
+    "availableQuantity": 200,
+    "productDescription": "Breathable and lightweight shoes with a soft, comfortable sole.",
+    "rating": 4.8,
+    "reviews": 500,
+    "flashSale": true
+  },
+  {
+    "_id": {
+      "$oid": "66dfd5803ceeae0e5b23b9a7"
+    },
+    "productName": "Samsung Galaxy S21 FE",
+    "productCategory": "Electronics",
+    "actualPrice": 799.99,
+    "off": 20,
+    "productImage": [
+      "https://img.lazcdn.com/3rd/q/aHR0cHM6Ly9iZC1saXZlLTIxLnNsYXRpYy5uZXQva2YvUzk3YTdmYWZhNTY3ZDQ4N2RiMjZhNTkxMWVhZDg4ZjZlSi5qcGc=_200x200q80.png_.webp",
+      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "Supplier": "Samsung",
+    "Brand": "Samsung",
+    "colorFamily": [
+      "Phantom Black",
+      "Phantom White"
+    ],
+    "availableQuantity": 50,
+    "productDescription": "High-performance smartphone with a dynamic AMOLED display.",
+    "rating": 4.7,
+    "reviews": 600,
+    "flashSale": false
+  },
+  {
+    "_id": {
+      "$oid": "66dfd5803ceeae0e5b23b9a8"
+    },
+    "productName": "Apple MacBook Air M1",
+    "productCategory": "Electronics",
+    "actualPrice": 999.99,
+    "off": 5,
+    "productImage": [
+      "https://images.pexels.com/photos/28038387/pexels-photo-28038387/free-photo-of-macbook-pro-on-the-berger.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "Supplier": "Apple",
+    "Brand": "Apple",
+    "colorFamily": [
+      "Space Gray",
+      "Silver",
+      "Gold"
+    ],
+    "availableQuantity": 40,
+    "productDescription": "Ultra-lightweight laptop with the powerful M1 chip and 18 hours of battery life.",
+    "rating": 4.9,
+    "reviews": 1000,
+    "flashSale": true
+  },
+  {
+    "_id": {
+      "$oid": "66dfd5803ceeae0e5b23b9a9"
+    },
+    "productName": "Sony WH-1000XM4",
+    "productCategory": "Electronics",
+    "actualPrice": 349.99,
+    "off": 15,
+    "productImage": [
+      "https://images.pexels.com/photos/28039052/pexels-photo-28039052/free-photo-of-fujifilm-xt4.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "Supplier": "Sony",
+    "Brand": "Sony",
+    "colorFamily": [
+      "Black",
+      "Silver"
+    ],
+    "availableQuantity": 120,
+    "productDescription": "Noise-canceling headphones with superior sound quality.",
+    "rating": 4.8,
+    "reviews": 750,
+    "flashSale": false
+  },
+  {
+    "_id": {
+      "$oid": "66dfd5803ceeae0e5b23b9aa"
+    },
+    "productName": "Levi's 501 Original Fit Jeans",
+    "productCategory": "Fashion",
+    "actualPrice": 89.99,
+    "off": 10,
+    "productImage": [
+      "https://images.pexels.com/photos/4195786/pexels-photo-4195786.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "Supplier": "Levi's",
+    "Brand": "Levi's",
+    "colorFamily": [
+      "Blue",
+      "Black"
+    ],
+    "availableQuantity": 250,
+    "productDescription": "Classic straight-leg jeans with a timeless look.",
+    "rating": 4.6,
+    "reviews": 450,
+    "flashSale": true
+  },
+  {
+    "_id": {
+      "$oid": "66dfd5803ceeae0e5b23b9ab"
+    },
+    "productName": "Instant Pot Duo 7-in-1",
+    "productCategory": "Home & Kitchen",
+    "actualPrice": 99.99,
+    "off": 25,
+    "productImage": [
+      "https://images.pexels.com/photos/28054208/pexels-photo-28054208/free-photo-of-a-stove-with-two-pots-on-it-and-steam-coming-out-of-them.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "Supplier": "Instant Brands",
+    "Brand": "Instant Pot",
+    "colorFamily": [
+      "Black",
+      "Silver"
+    ],
+    "availableQuantity": 80,
+    "productDescription": "Multi-use pressure cooker that combines 7 appliances in one.",
+    "rating": 4.9,
+    "reviews": 3000,
+    "flashSale": true
+  },
+  {
+    "_id": {
+      "$oid": "66dfd5803ceeae0e5b23b9ac"
+    },
+    "productName": "Dyson V11 Vacuum Cleaner",
+    "productCategory": "Home & Kitchen",
+    "actualPrice": 599.99,
+    "off": 10,
+    "productImage": [
+      "https://images.pexels.com/photos/6195963/pexels-photo-6195963.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "Supplier": "Dyson",
+    "Brand": "Dyson",
+    "colorFamily": [
+      "Purple",
+      "Blue"
+    ],
+    "availableQuantity": 60,
+    "productDescription": "Cordless vacuum cleaner with powerful suction and intelligent cleaning modes.",
+    "rating": 4.7,
+    "reviews": 1250,
+    "flashSale": false
+  },
+  {
+    "_id": {
+      "$oid": "66dfd5803ceeae0e5b23b9ad"
+    },
+    "productName": "Asus ROG Zephyrus G14",
+    "productCategory": "Electronics",
+    "actualPrice": 1449.99,
+    "off": 10,
+    "productImage": [
+      "https://images.pexels.com/photos/12877878/pexels-photo-12877878.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "Supplier": "Asus",
+    "Brand": "Asus",
+    "colorFamily": [
+      "Eclipse Gray",
+      "Moonlight White"
+    ],
+    "availableQuantity": 30,
+    "productDescription": "Gaming laptop with AMD Ryzen 9 and RTX 3060 graphics.",
+    "rating": 4.6,
+    "reviews": 850,
+    "flashSale": true
+  },
+  {
+    "_id": {
+      "$oid": "66dfd5803ceeae0e5b23b9ae"
+    },
+    "productName": "Nintendo Switch",
+    "productCategory": "Electronics",
+    "actualPrice": 299.99,
+    "off": 15,
+    "productImage": [
+      "https://images.pexels.com/photos/371924/pexels-photo-371924.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "Supplier": "Nintendo",
+    "Brand": "Nintendo",
+    "colorFamily": [
+      "Neon Red",
+      "Neon Blue",
+      "Gray"
+    ],
+    "availableQuantity": 120,
+    "productDescription": "Hybrid gaming console for home and portable play.",
+    "rating": 4.9,
+    "reviews": 5500,
+    "flashSale": false
+  }]

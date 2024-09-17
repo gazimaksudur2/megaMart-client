@@ -8,7 +8,7 @@ const Specifications = ({ product }) => {
                     product?.specifications.map(feature => <li>{feature}</li>)
                 }
             </ul>
-            <h2>{product?.productDescription}</h2>
+            <h2 className='mt-4 p-3 text-[15px]'>{product?.description}</h2>
         </div>
     );
 };

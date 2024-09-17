@@ -15,7 +15,7 @@ const DeepInfo = ({product}) => {
                 items={new Array(3).fill(null).map((_, i) => {
                     const id = String(i + 1);
                     return {
-                        label: id==='1'?'Specifications':(id==='2'?`Questions (${product?.questions?.length})`:`Reviews (${product?.reviewDetails?.length})`),
+                        label: id==='1'?'Specifications':(id==='2'?`Questions (${product?.questions?.length})`:`Reviews (${product?.reviews?.length})`),
                         key: id,
                         children: id==='1'?<Specifications product={product}/>:(id==='2'?<Questions product={product}/>:<Reviews product={product}/>),
                     };

@@ -32,7 +32,7 @@ const MaterialCarousel = ({ images }) => (
         >
             <Carousel arrows dotPosition='bottom' speed={700} fade="true" infinite={true} >
                 {
-                    images.map(image => <>
+                    images?.map(image => <>
                         <div className=''>
                             <img style={contentStyle} className='scale-90' src={image} alt="slideImage" />
                         </div>
