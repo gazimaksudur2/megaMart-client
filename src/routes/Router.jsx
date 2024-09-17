@@ -41,6 +41,8 @@ import SellerReport from '../pages/SellerDashboard/SellerReport/SellerReport';
 import MyProducts from '../pages/SellerDashboard/MyProducts/MyProducts';
 import SellerOrders from '../pages/SellerDashboard/SellerOrders/SellerOrders';
 import SellerTransactions from '../pages/SellerDashboard/SellerTransactions/SellerTransactions';
+import ProductBrand from '../pages/SellerDashboard/ProductBrand/ProductBrand';
+import AdminBrands from '../pages/AdminDashboard/AdminBrands/AdminBrands';
 
 const Router = createBrowserRouter([
     {
@@ -156,6 +158,10 @@ const Router = createBrowserRouter([
                 element: <ProductCategories/>,
             },
             {
+                path: 'brand',
+                element: <AdminBrands/>,
+            },
+            {
                 path: 'orders',
                 element: <OrderLists/>,
             },
@@ -175,7 +181,7 @@ const Router = createBrowserRouter([
             },
             {
                 path: 'brands',
-                element: <Users/>,
+                element: <ProductBrand/>,
             },
             {
                 path: 'sales',

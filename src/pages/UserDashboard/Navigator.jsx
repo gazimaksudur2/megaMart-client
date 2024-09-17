@@ -5,7 +5,7 @@ import { RxDashboard } from 'react-icons/rx';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
-import { MdArrowBackIosNew, MdOutlineAdminPanelSettings, MdOutlinePostAdd, MdQueryStats } from 'react-icons/md';
+import { MdArrowBackIosNew, MdOutlineAdminPanelSettings, MdOutlineBrandingWatermark, MdOutlineCategory, MdOutlinePostAdd, MdQueryStats } from 'react-icons/md';
 import { BsPersonVcard } from 'react-icons/bs';
 import { FaUsersGear } from 'react-icons/fa6';
 import { TfiShoppingCartFull } from 'react-icons/tfi';
@@ -116,6 +116,22 @@ const Navigator = () => {
             </NavLink>
         </li>
         <li className='w-full font-open text-gray-700 hover:text-gray-900 hover:bg-gray-300 bg-gray-200 rounded-lg'>
+            <NavLink to={'/admin/category'} className={({ isActive }) => isActive ? "flex items-center justify-start p-3 bg-amber-400 text-white rounded-lg" : "p-3 flex items-center justify-start"} end>
+                <div className='flex items-center justify-center gap-2'>
+                    <MdOutlineCategory size={20} />
+                    <p>Category </p>
+                </div>
+            </NavLink>
+        </li>
+        <li className='w-full font-open text-gray-700 hover:text-gray-900 hover:bg-gray-300 bg-gray-200 rounded-lg'>
+            <NavLink to={'/admin/brand'} className={({ isActive }) => isActive ? "flex items-center justify-start p-3 bg-amber-400 text-white rounded-lg" : "p-3 flex items-center justify-start"} end>
+                <div className='flex items-center justify-center gap-2'>
+                    <MdOutlineBrandingWatermark size={20} />
+                    <p>Brands</p>
+                </div>
+            </NavLink>
+        </li>
+        <li className='w-full font-open text-gray-700 hover:text-gray-900 hover:bg-gray-300 bg-gray-200 rounded-lg'>
             <NavLink to={'/admin/sales'} className={({ isActive }) => isActive ? "flex items-center justify-start p-3 bg-amber-400 text-white rounded-lg" : "p-3 flex items-center justify-start"} end>
                 <div className='flex items-center justify-center gap-2'>
                     <MdQueryStats size={20} />
@@ -136,14 +152,6 @@ const Navigator = () => {
                 <div className='flex items-center justify-center gap-2'>
                     <TfiShoppingCartFull size={20} />
                     <p>Order Lists</p>
-                </div>
-            </NavLink>
-        </li>
-        <li className='w-full font-open text-gray-700 hover:text-gray-900 hover:bg-gray-300 bg-gray-200 rounded-lg'>
-            <NavLink to={'/admin/category'} className={({ isActive }) => isActive ? "flex items-center justify-start p-3 bg-amber-400 text-white rounded-lg" : "p-3 flex items-center justify-start"} end>
-                <div className='flex items-center justify-center gap-2'>
-                    <TfiShoppingCartFull size={20} />
-                    <p>Categories</p>
                 </div>
             </NavLink>
         </li>

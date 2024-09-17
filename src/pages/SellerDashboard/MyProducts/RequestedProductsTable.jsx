@@ -1,10 +1,110 @@
-import React from 'react';
+import { Radio } from 'antd';
+import React, { useState } from 'react';
+import ActiveProductRow from './ActiveProductRow';
 
 const RequestedProductsTable = () => {
+    const [value, setValue] = useState(1);
+    const onChange = (e) => {
+        console.log('radio checked', e.target.value);
+        setValue(e.target.value);
+    };
+
+    const emptyUsers = <div className='mt-20 flex flex-col items-center '>
+        <img className='w-52' src="https://img.freepik.com/premium-vector/user-group-icon-flat-design_1039903-362.jpg?uid=R113556208&ga=GA1.1.820294120.1714974066&semt=ais_hybrid" alt="no user" />
+        <h2 className='text-lg font-semibold text-gray-600'>No User Found</h2>
+        <p className='text-sm text-gray-500 mt-2'>There is no such users in your platform database for your selected user type.</p>
+    </div>;
     return (
-        <div>
-            req
-        </div>
+        <section class="mt-10 container px-4 mx-auto">
+            <div class="flex items-center gap-x-3">
+                <h2 class="text-lg font-medium text-gray-800">My Requested Products</h2>
+                <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full">100 pcs</span>
+            </div>
+            {
+                // emptyUsers
+            }
+            <div>
+                <div class="flex flex-col mt-6">
+                    <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                        <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+                            <div class="overflow-hidden border border-gray-200 md:rounded-lg">
+                                <table class="min-w-full divide-y divide-gray-200">
+                                    <thead class="bg-gray-50">
+                                        <tr>
+                                            <th scope="col" class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500">
+                                                <div class="flex items-center gap-x-3">
+                                                    <span>Product Name</span>
+                                                </div>
+                                            </th>
+
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">#Product ID</th>
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-center rtl:text-right text-gray-500">Category</th>
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-center rtl:text-right text-gray-500">Stock</th>
+                                            <th scope="col" class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
+                                                <button class="flex items-center gap-x-2">
+                                                    <span>Seller</span>
+                                                </button>
+                                            </th>
+
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
+                                                <button class="flex items-center gap-x-2">
+                                                    <span>Price</span>
+                                                </button>
+                                            </th>
+
+
+
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-center rtl:text-right text-gray-500">
+                                                <span class="">Action</span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y divide-gray-200">
+                                        <ActiveProductRow/>
+                                        <ActiveProductRow/>
+                                        <ActiveProductRow/>
+                                        <ActiveProductRow/>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between mt-6">
+                    <a href="#" class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 rtl:-scale-x-100">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                        </svg>
+
+                        <span>
+                            previous
+                        </span>
+                    </a>
+
+                    <div class="items-center hidden lg:flex gap-x-3">
+                        <a href="#" class="px-2 py-1 text-sm text-blue-500 rounded-md bg-blue-100/60">1</a>
+                        <a href="#" class="px-2 py-1 text-sm text-gray-500 rounded-md hover:bg-gray-100">2</a>
+                        <a href="#" class="px-2 py-1 text-sm text-gray-500 rounded-md hover:bg-gray-100">3</a>
+                        <a href="#" class="px-2 py-1 text-sm text-gray-500 rounded-md hover:bg-gray-100">...</a>
+                        <a href="#" class="px-2 py-1 text-sm text-gray-500 rounded-md hover:bg-gray-100">12</a>
+                        <a href="#" class="px-2 py-1 text-sm text-gray-500 rounded-md hover:bg-gray-100">13</a>
+                        <a href="#" class="px-2 py-1 text-sm text-gray-500 rounded-md hover:bg-gray-100">14</a>
+                    </div>
+
+                    <a href="#" class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100">
+                        <span>
+                            Next
+                        </span>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 rtl:-scale-x-100">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </section>
     );
 };
 

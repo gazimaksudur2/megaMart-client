@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import MyActiveProductsTable from './MyActiveProductsTable';
 import { IoMdAdd } from 'react-icons/io';
 import { useForm } from 'react-hook-form';
+import RequestedProductsTable from './RequestedProductsTable';
 
 const MyProducts = () => {
     const [add, setAdd] = useState(false);
@@ -132,9 +133,10 @@ const MyProducts = () => {
                     </div>
                 </> : <button className='btn btn-warning text-white' onClick={() => setAdd(true)}>
                     <IoMdAdd className='font-bold' size={24} />
-                    <h2>Add Product</h2>
+                    <h2>Add A Product</h2>
                 </button>
             }
+            <RequestedProductsTable/>
             <MyActiveProductsTable />
         </div>
     );
