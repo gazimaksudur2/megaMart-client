@@ -3,7 +3,6 @@ import { useQuery } from '@tanstack/react-query';
 
 const useProducts = () => {
     const axios = useAxios();
-    // const url = id ? `?id=${id}` : 's';
     const {data: products, refetch, isLoading, isFetching} = useQuery({
         queryKey: ['products'],
         queryFn: ()=> {

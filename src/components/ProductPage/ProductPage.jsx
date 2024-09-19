@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { ScrollRestoration, useParams } from 'react-router-dom';
 import MaterialCarousel from './MaterialCarousel';
 import { Radio, Spin } from 'antd';
 import { GoPlus } from 'react-icons/go';
@@ -8,15 +8,21 @@ import DeepInfo from './DeepInfo';
 import useProducts from '../../hooks/useProducts';
 
 const ProductPage = () => {
-    const { products, isFetching } = useProducts();
+    const { products, isFetching, refetch } = useProducts();
+    const [product, setProduct] = useState();
     const { id } = useParams();
     const [value, setValue] = useState(0);
     const [quantity, setQuantity] = useState(0);
-    const product = products.find(product=> product?._id === id);
     const onChange = (e) => {
         console.log('radio checked', e.target.value);
         setValue(e.target.value);
     };
+    
+    useEffect(()=>{
+        refetch();
+        setProduct(products?.find(product=> product?._id === id));
+    },[id]);
+    // const product = products?.find(product=> product?._id === id);
 
     if(!product){
         return <Spin size='large'/>
@@ -25,6 +31,7 @@ const ProductPage = () => {
 
     return (
         <div className='w-[80%] mx-auto my-10 grid grid-cols-2 gap-10'>
+            <ScrollRestoration/>
             <MaterialCarousel images={[product?.main_image,...product?.images]} />
             <div className='flex flex-col items-start justify-start space-y-4 bg-white p-6 rounded-lg'>
                 <h2 className='text-blue-700 text-2xl font-open'>{product?.product_name}</h2>

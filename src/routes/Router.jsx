@@ -65,7 +65,7 @@ const Router = createBrowserRouter([
             },
             {
                 path: '/userActivity',
-                element:<Outlet/>,
+                element:<PrivateRouter><Outlet/></PrivateRouter>,
                 children: [
                     {
                         path: 'askQuestion',

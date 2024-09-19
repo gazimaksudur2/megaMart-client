@@ -45,7 +45,22 @@ const SignIn = () => {
     }
 
     const setUserForProviders = (data, provider) => {
-        axios.get(`/findUser?email=${data?.user?.email}`)
+        const userInfo = {
+            first_name: data.user?.displayName.split(' ')[0],
+            last_name: (data.user?.displayName.split(' ')?.length > 1 ? data.user?.displayName.split(' ')[1] : ''),
+            username: data?.user?.displayName,
+            photoURL: data?.user?.photoURL,
+            email: data?.user?.email,
+            provider,
+            createdAt: new Date().toUTCString(),
+            role: 'customer',
+            sellerRequest: { status: 'unattempted' },
+            adminRequest: { status: 'unattempted' },
+            shippingAddress: [],
+            billingAddress: [],
+        };
+
+        axios.get(`/search_user?email=${data?.user?.email}`)
             .then(res => {
                 console.log(res.data);
                 if (res.data?.found) {
@@ -58,20 +73,7 @@ const SignIn = () => {
                     });
                     navigate('/');
                 } else {
-                    axios.post('/users', {
-                        first_name: data.user?.displayName.split(' ')[0],
-                        last_name: (data.user?.displayName.split(' ')?.length > 1 ? data.user?.displayName.split(' ')[1] : ''),
-                        username: data?.user?.displayName,
-                        photoURL: data?.user?.photoURL,
-                        email: data?.user?.email,
-                        provider,
-                        createdAt: new Date().toUTCString(),
-                        role: 'customer',
-                        sellerRequest: { underReview: false, accepted: false, rejected: false },
-                        adminRequest: { underReview: false, accepted: false, rejected: false },
-                        shippingAddress: [],
-                        billingAddress: [],
-                    })
+                    axios.post('/users', userInfo , {withCredentials: true})
                         .then(res => {
                             // console.log(res.data);
                             if (res?.data?.insertedId) {

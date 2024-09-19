@@ -84,8 +84,8 @@ const CreateAccount = () => {
             password: allPass.pass,
             createdAt: new Date().toISOString(),
             role: 'customer',
-            sellerRequest: { underReview: false, accepted: false, rejected: false },
-            adminRequest: { underReview: false, accepted: false, rejected: false },
+            sellerRequest: { status: 'unattempted' },
+            adminRequest: { status: 'unattempted' },
             shippingAddress: [],
             billingAddress: [],
         }
@@ -93,7 +93,7 @@ const CreateAccount = () => {
 
         createUser(mail, allPass.pass)
             .then(res => {
-                axios.post('/users', userInfo)
+                axios.post('/users', userInfo, {withCredentials: true})
                     .then(res => {
                         profileUpdate(username, null)
                         .then(data=>{

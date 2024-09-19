@@ -1,9 +1,11 @@
 import React from 'react';
 import RequestedBrands from './RequestedBrands';
 import useBrands from '../../../hooks/useBrands';
+import useAuth from '../../../hooks/useAuth';
 
 const MyBrands = () => {
-    const {brands, refetch} = useBrands(true);
+    const {brands, refetch} = useBrands();
+    const {userDB} = useAuth();
 
     const emptyBrands = <div className='mt-20 flex flex-col items-center '>
         <img src="https://img.freepik.com/free-vector/hand-drawn-no-data-illustration_23-2150544961.jpg?uid=R113556208&ga=GA1.1.820294120.1714974066&semt=ais_hybrid" className="mask mask-hexagon-2 w-60" alt="no brand" />
@@ -13,7 +15,7 @@ const MyBrands = () => {
     return (
         <div>
             {
-                brands?.length ? <RequestedBrands brands={brands} /> : emptyBrands
+                brands?.length ? <RequestedBrands brands={brands?.filter(brand=>brand?.requestedBy === userDB?.email)} /> : emptyBrands
             }
         </div>
     );
