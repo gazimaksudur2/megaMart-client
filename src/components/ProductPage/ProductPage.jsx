@@ -6,21 +6,31 @@ import { GoPlus } from 'react-icons/go';
 import { FiMinus } from 'react-icons/fi';
 import DeepInfo from './DeepInfo';
 import useProducts from '../../hooks/useProducts';
+import useAxios from '../../hooks/useAxios';
 
 const ProductPage = () => {
-    const { products, isFetching, refetch } = useProducts();
+    // const { products, isFetching, refetch } = useProducts();
     const [product, setProduct] = useState();
     const { id } = useParams();
     const [value, setValue] = useState(0);
     const [quantity, setQuantity] = useState(0);
+    const axiosPublic = useAxios();
     const onChange = (e) => {
         console.log('radio checked', e.target.value);
         setValue(e.target.value);
     };
     
     useEffect(()=>{
-        refetch();
-        setProduct(products?.find(product=> product?._id === id));
+        // refetch();
+        // console.log(id);
+        axiosPublic.get(`products?id=${id}`)
+        .then(res=>{
+            setProduct(res.data);
+        })
+        .catch(err=>{
+            console.log(err.message);
+        })
+        // setProduct(products?.find(product=> product?._id === id));
     },[id]);
     // const product = products?.find(product=> product?._id === id);
 
@@ -32,12 +42,12 @@ const ProductPage = () => {
     return (
         <div className='w-[80%] mx-auto my-10 grid grid-cols-2 gap-10'>
             <ScrollRestoration/>
-            <MaterialCarousel images={[product?.main_image,...product?.images]} />
+            <MaterialCarousel images={[...product?.productImage]} />
             <div className='flex flex-col items-start justify-start space-y-4 bg-white p-6 rounded-lg'>
-                <h2 className='text-blue-700 text-2xl font-open'>{product?.product_name}</h2>
+                <h2 className='text-blue-700 text-2xl font-open'>{product?.productName}</h2>
                 <div className='flex items-center justify-start gap-3'>
                     {
-                        product?.offer > 0 ? <h4 className='text-slate-500 font-normal bg-base-300 rounded-full px-3 py-2'>Price: <span className='font-semibold text-slate-700'>$ {(product?.price) - (product?.price * product?.offer / 100)}</span> <span className='line-through'>$ {product?.price}</span></h4> : <h4 className='text-slate-500 font-normal bg-base-300 rounded-full px-3 py-2'>Price: <span className='font-semibold text-slate-700'>$ {(product?.price)}</span></h4>
+                        product?.off > 0 ? <h4 className='text-slate-500 font-normal bg-base-300 rounded-full px-3 py-2'>Price: <span className='font-semibold text-slate-700'>$ {(product?.actualPrice) - (product?.actualPrice * product?.off / 100)}</span> <span className='line-through'>$ {product?.actualPrice}</span></h4> : <h4 className='text-slate-500 font-normal bg-base-300 rounded-full px-3 py-2'>Price: <span className='font-semibold text-slate-700'>$ {(product?.actualPrice)}</span></h4>
                     }
                     <h4 className='text-slate-500 font-normal bg-base-300 rounded-full px-3 py-2'>Status: <span className='font-semibold text-slate-700'>{product?.stock > 0 ? "in Stock" : "Out of Stock"}</span></h4>
                     <h4 className='text-slate-500 font-normal bg-base-300 rounded-full px-3 py-2'>Brand: <span className='font-semibold text-slate-700'>{product?.brand}</span></h4>

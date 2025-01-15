@@ -60,35 +60,50 @@ const SignIn = () => {
             billingAddress: [],
         };
 
-        axios.get(`/search_user?email=${data?.user?.email}`)
+        // axios.get(`/search_user?email=${data?.user?.email}`)
+        //     .then(res => {
+        //         console.log(res.data);
+        //         if (res.data?.found) {
+        //             Swal.fire({
+        //                 title: `Hello ${data?.user?.displayName}!`,
+        //                 text: "User Logged in Successfully!",
+        //                 icon: "success",
+        //                 showConfirmButton: false,
+        //                 timer: 2000,
+        //             });
+        //             navigate('/');
+        //         } else {
+        //             axios.post('/users', userInfo , {withCredentials: true})
+        //                 .then(res => {
+        //                     // console.log(res.data);
+        //                     if (res?.data?.insertedId) {
+        //                         Swal.fire({
+        //                             title: `Hello ${data?.user?.displayName}!`,
+        //                             text: "User Created & Logged in Successfully!",
+        //                             icon: "success",
+        //                             showConfirmButton: false,
+        //                             timer: 2000,
+        //                         });
+        //                     }
+        //                     navigate('/');
+        //                 })
+        //                 .catch(error => console.log(error.message))
+        //         }
+        //     })
+        //     .catch(error => console.log(error.message))
+        axios.post('/users', userInfo, { withCredentials: true })
             .then(res => {
-                console.log(res.data);
-                if (res.data?.found) {
+                // console.log(res.data);
+                if (res?.data?.insertedId) {
                     Swal.fire({
                         title: `Hello ${data?.user?.displayName}!`,
-                        text: "User Logged in Successfully!",
+                        text: "User Created & Logged in Successfully!",
                         icon: "success",
                         showConfirmButton: false,
                         timer: 2000,
                     });
-                    navigate('/');
-                } else {
-                    axios.post('/users', userInfo , {withCredentials: true})
-                        .then(res => {
-                            // console.log(res.data);
-                            if (res?.data?.insertedId) {
-                                Swal.fire({
-                                    title: `Hello ${data?.user?.displayName}!`,
-                                    text: "User Created & Logged in Successfully!",
-                                    icon: "success",
-                                    showConfirmButton: false,
-                                    timer: 2000,
-                                });
-                            }
-                            navigate('/');
-                        })
-                        .catch(error => console.log(error.message))
                 }
+                navigate('/');
             })
             .catch(error => console.log(error.message))
     }
@@ -99,6 +114,7 @@ const SignIn = () => {
             .then(res => {
                 // console.log('Sign in successful through Google.');
                 setUserForProviders(res, 'google');
+                navigate('/');
             })
             .catch(error => setError(error.message));
     }
@@ -109,6 +125,7 @@ const SignIn = () => {
             .then(res => {
                 // console.log('Sign in successful through Facebook.');
                 setUserForProviders(res, 'facebook');
+                navigate('/');
             })
             .catch(error => setError(error.message));
     }
@@ -118,6 +135,7 @@ const SignIn = () => {
             .then(res => {
                 // console.log('Sign in successful through Twitter.');
                 setUserForProviders(res, 'twitter');
+                navigate('/');
             })
             .catch(error => setError(error.message));
     }

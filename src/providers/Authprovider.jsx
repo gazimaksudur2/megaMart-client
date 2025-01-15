@@ -57,23 +57,23 @@ const Authprovider = ({children}) => {
             // console.log(curUser);
             setLoading(false);
             setUser(curUser);
-                if(curUser){
-                    axios.post('/jwt',loggedUser, {withCredentials: true})
-                    .then(res=>{
-                        // console.log(res.data);
-                        if(res?.data?.success){
-                            setToken(true);
-                        }
-                    })
-                }else{
-                    axios.post('/logout', loggedUser, {withCredentials: true})
-                    .then(res=>{
-                        console.log(res.data);
-                        if(res?.data?.success){
-                            setToken(false);
-                        }
-                    })
-                }
+            // if(curUser){
+            //     axios.post('/jwt',loggedUser, {withCredentials: true})
+            //     .then(res=>{
+            //         // console.log(res.data);
+            //         if(res?.data?.success){
+            //             setToken(true);
+            //         }
+            //     })
+            // }else{
+            //     axios.post('/logout', loggedUser, {withCredentials: true})
+            //     .then(res=>{
+            //         console.log(res.data);
+            //         if(res?.data?.success){
+            //             setToken(false);
+            //         }
+            //     })
+            // }
             });
 
         return () => {

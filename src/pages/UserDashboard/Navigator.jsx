@@ -248,7 +248,13 @@ const Navigator = () => {
             </Link>
             <ul className="w-[80%] mx-auto flex flex-col items-start justify-start gap-2">
                 <li className='w-full font-open text-gray-700 hover:text-gray-900 hover:bg-gray-300 bg-gray-200 rounded-lg'>
-                    <NavLink to={userDB?.role === 'customer' ? '/user/dash' : (userDB?.role === 'admin' ? '/admin' : '/seller')} className={({ isActive }) => isActive ? "flex items-center justify-start p-3 bg-amber-400 text-white rounded-lg" : "p-3 flex items-center justify-start"} end>
+                    {/* <NavLink to={userDB?.role === 'customer' ? '/user/dash' : (userDB?.role === 'admin' ? '/admin' : '/seller')} className={({ isActive }) => isActive ? "flex items-center justify-start p-3 bg-amber-400 text-white rounded-lg" : "p-3 flex items-center justify-start"} end>
+                        <div className='flex items-center justify-center gap-2'>
+                            <RxDashboard size={20} />
+                            <p className=''>Dashboard</p>
+                        </div>
+                    </NavLink> */}
+                    <NavLink to={'/user/dash'} className={({ isActive }) => isActive ? "flex items-center justify-start p-3 bg-amber-400 text-white rounded-lg" : "p-3 flex items-center justify-start"} end>
                         <div className='flex items-center justify-center gap-2'>
                             <RxDashboard size={20} />
                             <p className=''>Dashboard</p>

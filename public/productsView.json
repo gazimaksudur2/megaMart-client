@@ -1,0 +1,13 @@
+[
+  {
+    "_id": "1234567890abcdef",
+    "product_name": "Product Name Example",
+    "main_image": "https://example.com/path/to/product-image.jpg",
+    "price": 100.0,
+    "offer": 20,
+    "flashSale": true,
+    "brand": "Brand Name",
+    "stock": 50,
+    "rating": 4.5
+  }
+]

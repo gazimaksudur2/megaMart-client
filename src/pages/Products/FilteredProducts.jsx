@@ -3,7 +3,7 @@ import CategoryProductCard from '../../components/CategoryProductCard/CategoryPr
 import useProducts from '../../hooks/useProducts';
 
 const FilteredProducts = () => {
-    const {products} = useProducts();
+    const { products } = useProducts();
     // console.log(products);
     return (
         <div className='w-[75%] space-y-3'>

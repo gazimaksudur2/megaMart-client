@@ -1,7 +1,4 @@
 [{
-    "_id": {
-      "$oid": "66dfd5803ceeae0e5b23b99b"
-    },
     "productName": "Adidas Ultraboost",
     "productCategory": "Fashion",
     "actualPrice": 180,
@@ -13,7 +10,7 @@
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "Supplier": "Adidas",
-    "Brand": "Adidas",
+    "brand": "Adidas",
     "colorFamily": [
       "Black",
       "White",
@@ -79,9 +76,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "66dfd5803ceeae0e5b23b99c"
-    },
     "productName": "Wireless Headphones",
     "productCategory": "Electronics",
     "actualPrice": 79.99,
@@ -93,7 +87,7 @@
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "Supplier": "Sony",
-    "Brand": "Sony",
+    "brand": "Sony",
     "colorFamily": [
       "Black",
       "Blue"
@@ -111,9 +105,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "66dfd5803ceeae0e5b23b99d"
-    },
     "productName": "Gaming Laptop",
     "productCategory": "Electronics",
     "actualPrice": 1299.99,
@@ -125,7 +116,7 @@
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "Supplier": "Razer",
-    "Brand": "Razer",
+    "brand": "Razer",
     "colorFamily": [
       "Black"
     ],
@@ -142,9 +133,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "66dfd5803ceeae0e5b23b99e"
-    },
     "productName": "Smartwatch",
     "productCategory": "Electronics",
     "actualPrice": 199.99,
@@ -156,7 +144,7 @@
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "Supplier": "Apple",
-    "Brand": "Apple",
+    "brand": "Apple",
     "colorFamily": [
       "Silver",
       "Space Gray",
@@ -175,9 +163,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "66dfd5803ceeae0e5b23b99f"
-    },
     "productName": "Coffee Maker",
     "productCategory": "Home",
     "actualPrice": 99.99,
@@ -189,7 +174,7 @@
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "Supplier": "Keurig",
-    "Brand": "Keurig",
+    "brand": "Keurig",
     "colorFamily": [
       "Black",
       "Silver"
@@ -207,9 +192,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "66dfd5803ceeae0e5b23b9a0"
-    },
     "productName": "Kitchen Knife Set",
     "productCategory": "Home",
     "actualPrice": 79.99,
@@ -221,7 +203,7 @@
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "Supplier": "Zwilling J.A. Henckels",
-    "Brand": "Zwilling J.A. Henckels",
+    "brand": "Zwilling J.A. Henckels",
     "colorFamily": [
       "Black",
       "Silver"
@@ -239,9 +221,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "66dfd5803ceeae0e5b23b9a1"
-    },
     "productName": "Bluetooth Speaker",
     "productCategory": "Electronics",
     "actualPrice": 59.99,
@@ -253,7 +232,7 @@
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "Supplier": "JBL",
-    "Brand": "JBL",
+    "brand": "JBL",
     "colorFamily": [
       "Black",
       "Blue"
@@ -271,9 +250,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "66dfd5803ceeae0e5b23b9a2"
-    },
     "productName": "Yoga Mat",
     "productCategory": "Sports",
     "actualPrice": 29.99,
@@ -285,7 +261,7 @@
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "Supplier": "Manduka",
-    "Brand": "Manduka",
+    "brand": "Manduka",
     "colorFamily": [
       "Black",
       "Blue",
@@ -304,9 +280,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "66dfd5803ceeae0e5b23b9a3"
-    },
     "productName": "Bicycle",
     "productCategory": "Sports",
     "actualPrice": 399.99,
@@ -318,7 +291,7 @@
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "Supplier": "Trek",
-    "Brand": "Trek",
+    "brand": "Trek",
     "colorFamily": [
       "Black",
       "Blue"
@@ -336,9 +309,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "66dfd5803ceeae0e5b23b9a4"
-    },
     "productName": "Sunglasses",
     "productCategory": "Fashion",
     "actualPrice": 69.99,
@@ -350,7 +320,7 @@
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "Supplier": "Ray-Ban",
-    "Brand": "Ray-Ban",
+    "brand": "Ray-Ban",
     "colorFamily": [
       "Black",
       "Havana"
@@ -368,9 +338,6 @@
     ]
   },
   {
-    "_id": {
-      "$oid": "66dfd5803ceeae0e5b23b9a5"
-    },
     "productName": "Smart Thermostat",
     "productCategory": "Home",
     "actualPrice": 149.99,
@@ -382,7 +349,7 @@
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "Supplier": "Nest",
-    "Brand": "Nest",
+    "brand": "Nest",
     "colorFamily": [
       "White"
     ],
@@ -393,9 +360,6 @@
     "flashSale": false
   },
   {
-    "_id": {
-      "$oid": "66dfd5803ceeae0e5b23b9a6"
-    },
     "productName": "Nike Air Max 270",
     "productCategory": "Fashion",
     "actualPrice": 150,
@@ -407,7 +371,7 @@
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "Supplier": "Nike",
-    "Brand": "Nike",
+    "brand": "Nike",
     "colorFamily": [
       "Black",
       "Red",
@@ -420,9 +384,6 @@
     "flashSale": true
   },
   {
-    "_id": {
-      "$oid": "66dfd5803ceeae0e5b23b9a7"
-    },
     "productName": "Samsung Galaxy S21 FE",
     "productCategory": "Electronics",
     "actualPrice": 799.99,
@@ -434,7 +395,7 @@
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "Supplier": "Samsung",
-    "Brand": "Samsung",
+    "brand": "Samsung",
     "colorFamily": [
       "Phantom Black",
       "Phantom White"
@@ -446,9 +407,6 @@
     "flashSale": false
   },
   {
-    "_id": {
-      "$oid": "66dfd5803ceeae0e5b23b9a8"
-    },
     "productName": "Apple MacBook Air M1",
     "productCategory": "Electronics",
     "actualPrice": 999.99,
@@ -460,7 +418,7 @@
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "Supplier": "Apple",
-    "Brand": "Apple",
+    "brand": "Apple",
     "colorFamily": [
       "Space Gray",
       "Silver",
@@ -473,9 +431,6 @@
     "flashSale": true
   },
   {
-    "_id": {
-      "$oid": "66dfd5803ceeae0e5b23b9a9"
-    },
     "productName": "Sony WH-1000XM4",
     "productCategory": "Electronics",
     "actualPrice": 349.99,
@@ -487,7 +442,7 @@
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "Supplier": "Sony",
-    "Brand": "Sony",
+    "brand": "Sony",
     "colorFamily": [
       "Black",
       "Silver"
@@ -499,9 +454,6 @@
     "flashSale": false
   },
   {
-    "_id": {
-      "$oid": "66dfd5803ceeae0e5b23b9aa"
-    },
     "productName": "Levi's 501 Original Fit Jeans",
     "productCategory": "Fashion",
     "actualPrice": 89.99,
@@ -513,7 +465,7 @@
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "Supplier": "Levi's",
-    "Brand": "Levi's",
+    "brand": "Levi's",
     "colorFamily": [
       "Blue",
       "Black"
@@ -525,9 +477,6 @@
     "flashSale": true
   },
   {
-    "_id": {
-      "$oid": "66dfd5803ceeae0e5b23b9ab"
-    },
     "productName": "Instant Pot Duo 7-in-1",
     "productCategory": "Home & Kitchen",
     "actualPrice": 99.99,
@@ -539,7 +488,7 @@
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "Supplier": "Instant Brands",
-    "Brand": "Instant Pot",
+    "brand": "Instant Pot",
     "colorFamily": [
       "Black",
       "Silver"
@@ -551,9 +500,6 @@
     "flashSale": true
   },
   {
-    "_id": {
-      "$oid": "66dfd5803ceeae0e5b23b9ac"
-    },
     "productName": "Dyson V11 Vacuum Cleaner",
     "productCategory": "Home & Kitchen",
     "actualPrice": 599.99,
@@ -565,7 +511,7 @@
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "Supplier": "Dyson",
-    "Brand": "Dyson",
+    "brand": "Dyson",
     "colorFamily": [
       "Purple",
       "Blue"
@@ -577,9 +523,6 @@
     "flashSale": false
   },
   {
-    "_id": {
-      "$oid": "66dfd5803ceeae0e5b23b9ad"
-    },
     "productName": "Asus ROG Zephyrus G14",
     "productCategory": "Electronics",
     "actualPrice": 1449.99,
@@ -591,7 +534,7 @@
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "Supplier": "Asus",
-    "Brand": "Asus",
+    "brand": "Asus",
     "colorFamily": [
       "Eclipse Gray",
       "Moonlight White"
@@ -603,9 +546,6 @@
     "flashSale": true
   },
   {
-    "_id": {
-      "$oid": "66dfd5803ceeae0e5b23b9ae"
-    },
     "productName": "Nintendo Switch",
     "productCategory": "Electronics",
     "actualPrice": 299.99,
@@ -617,7 +557,7 @@
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "Supplier": "Nintendo",
-    "Brand": "Nintendo",
+    "brand": "Nintendo",
     "colorFamily": [
       "Neon Red",
       "Neon Blue",
