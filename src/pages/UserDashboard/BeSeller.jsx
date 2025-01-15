@@ -76,7 +76,7 @@ const BeSeller = () => {
             requestMessage: e.target.message.value,
         }
         // request status unattempted, pending, approved, rejected 
-        axios.patch(`/user?id=${userDB?._id}`, sellerRequest, { withCredentials: true })
+        axios.patch(`/users?id=${userDB?._id}`, sellerRequest, { withCredentials: true })
             .then(res => {
                 if (res.data.modifiedCount) {
                     Swal.fire({
