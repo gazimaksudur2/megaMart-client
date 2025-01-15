@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import CartRow from './CartRow';
 import MakeShip from './MakeShip';
 
-const CartTable = () => {
+const CartTable = ({cartProducts}) => {
     const [price, setPrice] = useState([]);
     const [ship, setShip] = useState(false);
     return (
@@ -49,10 +49,13 @@ const CartTable = () => {
                                         </tr>
                                     </thead>
                                     <tbody className="bg-white divide-y divide-gray-200">
-                                        <CartRow price={price} index={1} />
+                                        {
+                                            cartProducts?.map((cartProduct, idx)=><CartRow index={idx} price={price} cartProduct={cartProduct} />)
+                                        }
+                                        {/* <CartRow price={price} index={1} />
                                         <CartRow price={price} index={2} />
                                         <CartRow price={price} index={3} />
-                                        <CartRow price={price} index={4} />
+                                        <CartRow price={price} index={4} /> */}
                                         <tr className='h-14'>
                                             <td></td>
                                             <td></td>

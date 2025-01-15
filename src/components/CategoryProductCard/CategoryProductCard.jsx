@@ -5,7 +5,7 @@ import { AiOutlineStop } from 'react-icons/ai';
 import { CiHeart, CiShoppingCart } from 'react-icons/ci';
 import { FcApproval } from 'react-icons/fc';
 import { IoIosGitCompare } from 'react-icons/io';
-import useAxios from '../../hooks/useAxios';
+// import useAxios from '../../hooks/useAxios';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
 // import { Link } from 'react-router-dom';
@@ -13,34 +13,47 @@ import Swal from 'sweetalert2';
 const CategoryProductCard = ({ product }) => {
     // console.log(product); Link to={`/product/${product?._id}`}
     const { user } = useAuth();
-    const axiosPublic = useAxios();
-    const handleAddToCart = ()=>{
-        console.log('adding to cart '+ product?._id);
+    // const axiosPublic = useAxios();
+    const handleAddToCart = () => {
+        console.log('adding to cart ' + product?._id);
         const cartProduct = {
             clientEmail: user?.email,
             productID: product?._id,
             productName: product?.productName,
             productImg: product?.productImage[0],
+            // availableQuantity: product?.
             price: product?.actualPrice,
             count: 1,
             status: 'carted',
             cartedAt: new Date()
         }
-        axiosPublic.post('/carts', cartProduct)
-        .then(res=>{
-            if(res.data.insertedId){
-                Swal.fire({
-                    title: "Added to Cart",
-                    text: "To view all carted products Go To Carts",
-                    icon: 'success',
-                    showConfirmButton: false,
-                    timer: 2000
-                })
-            }
+        let prevProduct = [];
+        if (JSON.parse(localStorage.getItem('cartProduct'))) {
+            prevProduct = JSON.parse(localStorage.getItem('cartProduct'));
+        }
+        localStorage.setItem('cartProduct', JSON.stringify([cartProduct, ...prevProduct]));
+        Swal.fire({
+            title: "Added to Cart",
+            text: "Product added to your local cart",
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 2000
         })
-        .catch(err=>{
-            console.log(err?.message);
-        })
+        // axiosPublic.post('/carts', cartProduct)
+        // .then(res=>{
+        //     if(res.data.insertedId){
+        //         Swal.fire({
+        // title: "Added to Cart",
+        // text: "To view all carted products Go To Carts",
+        // icon: 'success',
+        // showConfirmButton: false,
+        // timer: 2000
+        //         })
+        //     }
+        // })
+        // .catch(err=>{
+        //     console.log(err?.message);
+        // })
 
     }
     return (
@@ -77,8 +90,6 @@ const CategoryProductCard = ({ product }) => {
                             <p className='capitalize'>out of stock</p>
                         </div>
                     }
-
-
                 </div>
                 <div className='pt-10 flex flex-col items-start gap-1'>
                     {

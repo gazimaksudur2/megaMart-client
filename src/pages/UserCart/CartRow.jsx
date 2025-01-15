@@ -2,23 +2,27 @@ import React, { useState } from 'react';
 import { FiMinus } from 'react-icons/fi';
 import { GoPlus } from 'react-icons/go';
 
-const CartRow = () => {
+const CartRow = ({cartProduct}) => {
     const [quantity, setQuantity] = useState(2);
     const rate = 20;
+    console.log(cartProduct);
+    const handleDeleteProductFromCart = ()=>{
+        
+    }
     return (
         <>
             <tr>
                 <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                     <div className="inline-flex items-center gap-x-3">
                         <div className="flex items-center gap-x-2">
-                            <img className="object-cover w-14 h-14 rounded" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" />
+                            <img className="object-cover w-14 h-14 rounded" src={cartProduct?.productImg} alt="productImage" />
                         </div>
                     </div>
                 </td>
                 <td className="px-12 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
-                        <h2 className="text-sm font-normal hover:text-orange-300 cursor-pointer">Cozy Chair</h2>
+                        <h2 className="text-sm font-normal hover:text-orange-300 cursor-pointer">{cartProduct?.productName}</h2>
                 </td>
-                <td className="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">{rate.toPrecision(3)}</td>
+                <td className="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">{cartProduct?.price.toPrecision(4)}</td>
                 <td className="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
                     <div className='flex items-center justify-center gap-2'>
                         <button className='btn btn-xs' onClick={()=>(quantity>1) && setQuantity(quantity-1)}><FiMinus/></button>
