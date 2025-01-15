@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import TitleBanner from '../../shared/TitleBanner';
 import CartTable from './CartTable';
-import Footer from '../../shared/Footer/Footer';
-import EmptyCart from './EmptyCart';
+import useLocalCart from '../../hooks/useLocalCart';
 
 const UserCart = () => {
-    const [cartProducts, setCartProducts] = useState(JSON.parse(localStorage.getItem('cartProduct')));
+    const {items: cartProducts} = useLocalCart();
 
     const handleChangeCart = ()=>{
 

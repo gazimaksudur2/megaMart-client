@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { IoChevronBackOutline } from 'react-icons/io5';
-import { Link } from 'react-router-dom';
 
-const PlaceOrder = () => {
+const PlaceOrder = ({cartProducts: products, grandTotal}) => {
     const [shipDifferent, setShipDifferent] = useState(false);
     const { register, handleSubmit } = useForm()
     const onSubmit = (data) => console.log(data);
@@ -15,15 +13,16 @@ const PlaceOrder = () => {
         } else setShipDifferent(false);
     }
 
-    const products = ['1', '2', '3'];
+    // const products = ['1', '2', '3'];
 
     return (
         <div className='relative'>
-            <Link to={'/carts'} className='absolute -top-12 left-6 p-2 bg-orange-500 text-white inline-block rounded-full hover:bg-orange-400'>
+            {/* <Link to={'/carts'} className='absolute -top-12 left-6 p-2 bg-orange-500 text-white inline-block rounded-full hover:bg-orange-400'>
                 <IoChevronBackOutline size={30}/>
-            </Link>
-            <form onSubmit={handleSubmit(onSubmit)} className='bg-base-100 p-6 rounded flex items-start justify-between'>
-                <div className='w-[50%]'>
+            </Link> */}
+            <form onSubmit={handleSubmit(onSubmit)} className='bg-base-100 p-6 rounded flex items-center justify-center'>
+                {/* <div className='w-[50%]'> */}
+                <div className='w-[70%] mt-10'>
                     <h2 className='font-open text-xl font-semibold pb-2'>Billing Details</h2>
                     <div className="form-control w-full">
                         <label className="label">
@@ -160,7 +159,7 @@ const PlaceOrder = () => {
                     </div>
 
                 </div>
-                <div className='w-[40%]'>
+                {/* <div className='w-[40%]'>
                     <h2 className='text-xl font-open font-semibold mb-4'>Your Order</h2>
                     <div className="overflow-x-auto bg-base-200 p-6 rounded">
                         <table className="table">
@@ -251,7 +250,7 @@ const PlaceOrder = () => {
                     <Link to={'/checkout/pay'}>
                         <input className='btn my-6 bg-orange-600 hover:bg-orange-500 text-white w-full rounded-none capitalize' type="submit" value={"place order & pay"} />
                     </Link>
-                </div>
+                </div> */}
             </form>
         </div>
     );

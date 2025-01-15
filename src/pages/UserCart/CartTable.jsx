@@ -1,17 +1,34 @@
 import React, { useState } from 'react';
 import CartRow from './CartRow';
-import MakeShip from './MakeShip';
+import useLocalCart from '../../hooks/useLocalCart';
+import Address_Payment from '../UserDashboard/Address_Payment';
 
 const CartTable = ({cartProducts}) => {
-    const [price, setPrice] = useState([]);
+    const [grandTotal, setGrandTotal] = useState(cartProducts?.reduce((accumulator, cur) => {
+        return accumulator + parseInt(cur?.price || 0);
+      }, 0));
+      const { deleteFromCart, refetch } = useLocalCart();
+
     const [ship, setShip] = useState(false);
+    const calculateGrandTotal = (op, price) =>{
+        if(op=='minus'){
+            setGrandTotal(grandTotal-price);
+        }else{
+            setGrandTotal(grandTotal+price);
+        }   
+    }
+
+    const handleDeleteAll = ()=>{
+        deleteFromCart('all');
+        setGrandTotal(0);
+        refetch();
+    }
     return (
         <div className='w-[90%] my-10 mx-auto'>
             <section className="container px-4 mx-auto">
                 <div className="flex items-center gap-x-3">
-                    <h2 className="text-lg font-medium text-gray-800">Total Products</h2>
-
-                    <span className="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full">100 pcs</span>
+                    <h2 className="text-lg font-medium text-gray-800">Total Products In Cart</h2>
+                    <span className="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full">{cartProducts?.length} pcs</span>
                 </div>
 
                 <div className="flex flex-col mt-6">
@@ -50,7 +67,7 @@ const CartTable = ({cartProducts}) => {
                                     </thead>
                                     <tbody className="bg-white divide-y divide-gray-200">
                                         {
-                                            cartProducts?.map((cartProduct, idx)=><CartRow index={idx} price={price} cartProduct={cartProduct} />)
+                                            cartProducts?.map((cartProduct, idx)=><CartRow calculateGrandTotal={calculateGrandTotal} cartProduct={cartProduct} />)
                                         }
                                         {/* <CartRow price={price} index={1} />
                                         <CartRow price={price} index={2} />
@@ -61,7 +78,7 @@ const CartTable = ({cartProducts}) => {
                                             <td></td>
                                             <td></td>
                                             <td className='font-semibold text-[#181818cd]'>Grand Total : </td>
-                                            <td className='font-fira font-normal text-lg text-[#181818de]'>$ 260.0</td>
+                                            <td className='font-fira font-normal text-lg text-[#181818de]'>$ {grandTotal}</td>
                                             <td></td>
                                         </tr>
                                     </tbody>
@@ -77,12 +94,13 @@ const CartTable = ({cartProducts}) => {
                         <button className='btn btn-warning rounded-l-none text-white rounded'>Apply Coupon</button>
                     </div>
                     <div className='space-x-4'>
-                        <button className='btn btn-warning rounded text-white'>Clear cart</button>
+                        <button className='btn btn-warning rounded text-white' onClick={handleDeleteAll}>Clear cart</button>
                         <button className='btn bg-black hover:bg-[#181818e0] text-white rounded' onClick={()=>setShip(!ship)}>{(!ship)?"Continue to Ship":"Back from Ship"}</button>
                     </div>
                 </div>
                 {
-                    ship && <MakeShip/>
+                    // ship && <MakeShip/>
+                    ship && <Address_Payment cartProducts={cartProducts} grandTotal={grandTotal} />
                 }
             </section>
         </div>

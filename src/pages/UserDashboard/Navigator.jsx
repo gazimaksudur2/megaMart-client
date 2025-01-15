@@ -15,7 +15,7 @@ const Navigator = () => {
     const { logOut, userDB } = useAuth();
     const navigate = useNavigate();
 
-    console.log(userDB);
+    // console.log(userDB);
     const handleLogout = () => {
         Swal.fire({
             title: "Are you sure?",

@@ -6,11 +6,13 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import useAuth from '../../hooks/useAuth';
 import { Tooltip } from 'react-tooltip';
+import useLocalCart from '../../hooks/useLocalCart';
 
 const NavTop = () => {
     const data = useAuth();
     const { user, logOut, userDB } = data;
     const navigate = useNavigate();
+    const { items } = useLocalCart();
 
     // console.log(data);
 
@@ -156,7 +158,7 @@ const NavTop = () => {
                             <label htmlFor="my-drawer-2" className="drawer-button">
                                 <div className='relative'>
                                     <CiShoppingCart className='hover:text-amber-600' size={25} />
-                                    <p className='absolute -top-[10px] -right-[5px] p-[3px] font-semibold text-xs text-white bg-red-400 rounded'>{(JSON.parse(localStorage.getItem('cartProduct')))?.length}</p>
+                                    <p className='absolute -top-[10px] -right-[5px] p-[3px] font-semibold text-xs text-white bg-red-400 rounded'>{items?.length ? items?.length : 0}</p>
                                 </div>
                             </label>
                         </div>

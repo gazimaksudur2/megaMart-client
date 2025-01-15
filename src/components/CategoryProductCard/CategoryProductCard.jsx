@@ -8,30 +8,28 @@ import { IoIosGitCompare } from 'react-icons/io';
 // import useAxios from '../../hooks/useAxios';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
+import useLocalCart from '../../hooks/useLocalCart';
 // import { Link } from 'react-router-dom';
 
 const CategoryProductCard = ({ product }) => {
     // console.log(product); Link to={`/product/${product?._id}`}
     const { user } = useAuth();
+    const { addCartItems, refetch } = useLocalCart();
     // const axiosPublic = useAxios();
     const handleAddToCart = () => {
-        console.log('adding to cart ' + product?._id);
+        // console.log('adding to cart ' + product?._id);
         const cartProduct = {
             clientEmail: user?.email,
             productID: product?._id,
             productName: product?.productName,
             productImg: product?.productImage[0],
-            // availableQuantity: product?.
+            stock: product?.availableQuantity,
             price: product?.actualPrice,
             count: 1,
             status: 'carted',
             cartedAt: new Date()
         }
-        let prevProduct = [];
-        if (JSON.parse(localStorage.getItem('cartProduct'))) {
-            prevProduct = JSON.parse(localStorage.getItem('cartProduct'));
-        }
-        localStorage.setItem('cartProduct', JSON.stringify([cartProduct, ...prevProduct]));
+        addCartItems(cartProduct);
         Swal.fire({
             title: "Added to Cart",
             text: "Product added to your local cart",
@@ -39,6 +37,7 @@ const CategoryProductCard = ({ product }) => {
             showConfirmButton: false,
             timer: 2000
         })
+        refetch();
         // axiosPublic.post('/carts', cartProduct)
         // .then(res=>{
         //     if(res.data.insertedId){
