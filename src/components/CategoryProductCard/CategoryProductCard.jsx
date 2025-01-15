@@ -5,12 +5,46 @@ import { AiOutlineStop } from 'react-icons/ai';
 import { CiHeart, CiShoppingCart } from 'react-icons/ci';
 import { FcApproval } from 'react-icons/fc';
 import { IoIosGitCompare } from 'react-icons/io';
-import { Link } from 'react-router-dom';
+import useAxios from '../../hooks/useAxios';
+import useAuth from '../../hooks/useAuth';
+import Swal from 'sweetalert2';
+// import { Link } from 'react-router-dom';
 
 const CategoryProductCard = ({ product }) => {
-    // console.log(product); Link to={`/product/${product?._id}`} 
+    // console.log(product); Link to={`/product/${product?._id}`}
+    const { user } = useAuth();
+    const axiosPublic = useAxios();
+    const handleAddToCart = ()=>{
+        console.log('adding to cart '+ product?._id);
+        const cartProduct = {
+            clientEmail: user?.email,
+            productID: product?._id,
+            productName: product?.productName,
+            productImg: product?.productImage[0],
+            price: product?.actualPrice,
+            count: 1,
+            status: 'carted',
+            cartedAt: new Date()
+        }
+        axiosPublic.post('/carts', cartProduct)
+        .then(res=>{
+            if(res.data.insertedId){
+                Swal.fire({
+                    title: "Added to Cart",
+                    text: "To view all carted products Go To Carts",
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 2000
+                })
+            }
+        })
+        .catch(err=>{
+            console.log(err?.message);
+        })
+
+    }
     return (
-        <div class="group basis-60 flex-1 pb-2 bg-white flex flex-col items-center justify-start border-4 border-white hover:border-base-200 duration-150 hover:shadow-lg cursor-pointer rounded">
+        <div class="group basis-80 flex-1 pb-2 bg-white flex flex-col items-center justify-start border-4 border-white hover:border-base-200 duration-150 hover:shadow-lg cursor-pointer rounded">
             <div className='relative w-full overflow-hidden'>
                 {
                     product?.flashSale && <>
@@ -64,7 +98,7 @@ const CategoryProductCard = ({ product }) => {
                         <h2 className='text-sm text-slate-600'>({product?.rating})</h2>
                         <Rating name="read-only" value={(product?.rating)} readOnly size='small' />
                     </div>
-                    <button className='btn btn-sm btn-accent'>Add to Cart</button>
+                    <button className='btn btn-sm btn-accent' onClick={handleAddToCart}>Add to Cart</button>
                 </div>
             </div>
         </div>

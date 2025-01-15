@@ -14,6 +14,8 @@ import { TbTransactionDollar } from 'react-icons/tb';
 const Navigator = () => {
     const { logOut, userDB } = useAuth();
     const navigate = useNavigate();
+
+    console.log(userDB);
     const handleLogout = () => {
         Swal.fire({
             title: "Are you sure?",
@@ -263,7 +265,8 @@ const Navigator = () => {
                     </NavLink>
                 </li>
                 {
-                    userDB?.role === 'customer' ? customerNavigator : userDB?.role === 'admin' ? adminNavigator : sellerNavigator
+                    // userDB?.role === 'customer' ? customerNavigator : userDB?.role === 'admin' ? adminNavigator : sellerNavigator
+                    userDB?.role === 'customer' ? customerNavigator : sellerNavigator
                 }
                 <li onClick={handleLogout} className='w-full font-open text-gray-700 hover:text-gray-900 hover:bg-gray-300 bg-gray-200 rounded-lg cursor-pointer'>
                     <button className='p-3 flex items-center justify-start '>

@@ -14,14 +14,14 @@ const useAuth = () => {
     const {data: userDB, refetch} = useQuery({
         queryKey: ['userDB'],
         queryFn: ()=>{
-            const info = axios.get(`/user?email=${authInfo?.user?.email}`, {withCredentials: true})
+            const info = axios.get(`/users?email=${authInfo?.user?.email}`, {withCredentials: true})
             .then(res=> res.data);
             return info;
         },
-        enabled: authInfo?.token,
+        // enabled: authInfo?.token,
     })
 
-
+    // console.log(authInfo?.user?.email);
     return (
         { ...authInfo, userDB, refetch }
     );

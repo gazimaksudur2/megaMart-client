@@ -91,7 +91,7 @@ const SignIn = () => {
         //         }
         //     })
         //     .catch(error => console.log(error.message))
-        axios.post('/users', userInfo, { withCredentials: true })
+        axios.post('/users', userInfo)
             .then(res => {
                 // console.log(res.data);
                 if (res?.data?.insertedId) {
