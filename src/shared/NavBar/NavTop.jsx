@@ -7,14 +7,16 @@ import Cart from '../Cart/Cart';
 import useAuth from '../../hooks/useAuth';
 import { Tooltip } from 'react-tooltip';
 import useLocalCart from '../../hooks/useLocalCart';
+import { useSelector } from 'react-redux';
 
 const NavTop = () => {
     const data = useAuth();
     const { user, logOut, userDB } = data;
     const navigate = useNavigate();
-    const { items } = useLocalCart();
+    const items = useSelector(state=>state?.cart?.cart);
+    // const { items } = useLocalCart();
 
-    // console.log(data);
+    // console.log(items);
 
     const handleLogout = () => {
         navigate('/loader');

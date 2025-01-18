@@ -1,12 +1,11 @@
 [{
     "productName": "Adidas Ultraboost",
-    "seller_mail": "seller@gmail.com",
+    "seller_mail": "supplier@gmail.com",
     "productCategory": "Fashion",
     "actualPrice": 180,
     "off": 15,
     "productImage": [
       "https://images.pexels.com/photos/6514891/pexels-photo-6514891.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
@@ -78,13 +77,12 @@
   },
   {
     "productName": "Wireless Headphones",
-    "seller_mail": "seller@gmail.com",
+    "seller_mail": "supplier@gmail.com",
     "productCategory": "Electronics",
     "actualPrice": 79.99,
     "off": 10,
     "productImage": [
       "https://www.startech.com.bd/image/cache/catalog/headphone/anker/soundcore-h30i/soundcore-h30i-01-228x228.webp",
-      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
@@ -108,13 +106,12 @@
   },
   {
     "productName": "Gaming Laptop",
-    "seller_mail": "seller@gmail.com",
+    "seller_mail": "supplier@gmail.com",
     "productCategory": "Electronics",
     "actualPrice": 1299.99,
     "off": 5,
     "productImage": [
       "https://www.startech.com.bd/image/cache/catalog/laptop/lenovo/ideapad-gaming-3/ideapad-gaming-3-001-500x500.jpg",
-      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
@@ -137,13 +134,12 @@
   },
   {
     "productName": "Smartwatch",
-    "seller_mail": "seller@gmail.com",
+    "seller_mail": "supplier@gmail.com",
     "productCategory": "Electronics",
     "actualPrice": 199.99,
     "off": 20,
     "productImage": [
       "https://www.startech.com.bd/image/cache/catalog/smart-watch/colmi/p81/p81-02-500x500.webp",
-      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
@@ -168,13 +164,12 @@
   },
   {
     "productName": "Coffee Maker",
-    "seller_mail": "seller@gmail.com",
+    "seller_mail": "supplier@gmail.com",
     "productCategory": "Home",
     "actualPrice": 99.99,
     "off": 10,
     "productImage": [
       "https://img.lazcdn.com/3rd/q/aHR0cHM6Ly9zdGF0aWMtMDEuZGFyYXouY29tLmJkL3AvNmI5NDlkZTZiOWJjNjgyZWU4NTJjYTRiMzRhZDU5ZTguanBn_200x200q80.png_.webp",
-      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
@@ -198,13 +193,12 @@
   },
   {
     "productName": "Kitchen Knife Set",
-    "seller_mail": "seller@gmail.com",
+    "seller_mail": "supplier@gmail.com",
     "productCategory": "Home",
     "actualPrice": 79.99,
     "off": 15,
     "productImage": [
       "https://img.lazcdn.com/3rd/q/aHR0cHM6Ly9zdGF0aWMtMDEuZGFyYXouY29tLmJkL3AvMjE2NzAxYjdkY2QwNDZmODRkMjUzZWJiNDVlYmM0ZjguanBn_200x200q80.png_.webp",
-      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
@@ -228,13 +222,12 @@
   },
   {
     "productName": "Bluetooth Speaker",
-    "seller_mail": "seller@gmail.com",
+    "seller_mail": "supplier@gmail.com",
     "productCategory": "Electronics",
     "actualPrice": 59.99,
     "off": 5,
     "productImage": [
       "https://www.startech.com.bd/image/cache/catalog/speaker/hoco/bs45/bs45-01-228x228.jpg",
-      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
@@ -258,13 +251,12 @@
   },
   {
     "productName": "Yoga Mat",
-    "seller_mail": "seller@gmail.com",
+    "seller_mail": "supplier@gmail.com",
     "productCategory": "Sports",
     "actualPrice": 29.99,
     "off": 10,
     "productImage": [
       "https://img.lazcdn.com/3rd/q/aHR0cHM6Ly9iZC1saXZlLTIxLnNsYXRpYy5uZXQva2YvUzdhOTlmMzY1OTA2ZDQ4ODZiMmFhODdhOWZkYjJhZGRmSC5qcGc=_200x200q80.png_.webp",
-      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
@@ -289,13 +281,12 @@
   },
   {
     "productName": "Bicycle",
-    "seller_mail": "seller@gmail.com",
+    "seller_mail": "supplier@gmail.com",
     "productCategory": "Sports",
     "actualPrice": 399.99,
     "off": 15,
     "productImage": [
       "https://img.lazcdn.com/3rd/q/aHR0cHM6Ly9iZC1saXZlLTIxLnNsYXRpYy5uZXQva2YvUzc2YTU5ZTUzYjczZTQ5ZDhhNDU5MzM4NDc1NzlkZDA5WS5qcGc=_200x200q80.png_.webp",
-      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
@@ -319,13 +310,12 @@
   },
   {
     "productName": "Sunglasses",
-    "seller_mail": "seller@gmail.com",
+    "seller_mail": "supplier@gmail.com",
     "productCategory": "Fashion",
     "actualPrice": 69.99,
     "off": 20,
     "productImage": [
       "https://img.lazcdn.com/3rd/q/aHR0cHM6Ly9zdGF0aWMtMDEuZGFyYXouY29tLmJkL3AvN2QwOWZiMDhmM2RjNzUxYjcwYTkyZTVmZDNiNGM5NTEuanBn_200x200q80.png_.webp",
-      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
@@ -349,13 +339,12 @@
   },
   {
     "productName": "Smart Thermostat",
-    "seller_mail": "seller@gmail.com",
+    "seller_mail": "supplier@gmail.com",
     "productCategory": "Home",
     "actualPrice": 149.99,
     "off": 10,
     "productImage": [
       "https://img.lazcdn.com/3rd/q/aHR0cHM6Ly9iZC1saXZlLTIxLnNsYXRpYy5uZXQva2YvUzJlZmVhNjlmNzdiOTRiZGZiZjRhNmVkMTM1Yjk1ODhhNi5qcGc=_200x200q80.png_.webp",
-      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
@@ -372,13 +361,12 @@
   },
   {
     "productName": "Nike Air Max 270",
-    "seller_mail": "seller@gmail.com",
+    "seller_mail": "supplier@gmail.com",
     "productCategory": "Fashion",
     "actualPrice": 150,
     "off": 10,
     "productImage": [
       "https://img.lazcdn.com/3rd/q/aHR0cHM6Ly9zdGF0aWMtMDEuZGFyYXouY29tLmJkL3AvMTFiODIzYTAxYmNmZWE0NzI3NDE1ZDkwYWEyZTBiOWEuanBn_200x200q80.png_.webp",
-      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
@@ -397,13 +385,12 @@
   },
   {
     "productName": "Samsung Galaxy S21 FE",
-    "seller_mail": "seller@gmail.com",
+    "seller_mail": "supplier@gmail.com",
     "productCategory": "Electronics",
     "actualPrice": 799.99,
     "off": 20,
     "productImage": [
       "https://img.lazcdn.com/3rd/q/aHR0cHM6Ly9iZC1saXZlLTIxLnNsYXRpYy5uZXQva2YvUzk3YTdmYWZhNTY3ZDQ4N2RiMjZhNTkxMWVhZDg4ZjZlSi5qcGc=_200x200q80.png_.webp",
-      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
@@ -421,13 +408,12 @@
   },
   {
     "productName": "Apple MacBook Air M1",
-    "seller_mail": "seller@gmail.com",
+    "seller_mail": "supplier@gmail.com",
     "productCategory": "Electronics",
     "actualPrice": 999.99,
     "off": 5,
     "productImage": [
       "https://images.pexels.com/photos/28038387/pexels-photo-28038387/free-photo-of-macbook-pro-on-the-berger.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
@@ -446,13 +432,12 @@
   },
   {
     "productName": "Sony WH-1000XM4",
-    "seller_mail": "seller@gmail.com",
+    "seller_mail": "supplier@gmail.com",
     "productCategory": "Electronics",
     "actualPrice": 349.99,
     "off": 15,
     "productImage": [
       "https://images.pexels.com/photos/28039052/pexels-photo-28039052/free-photo-of-fujifilm-xt4.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
@@ -470,13 +455,12 @@
   },
   {
     "productName": "Levi's 501 Original Fit Jeans",
-    "seller_mail": "seller@gmail.com",
+    "seller_mail": "supplier@gmail.com",
     "productCategory": "Fashion",
     "actualPrice": 89.99,
     "off": 10,
     "productImage": [
       "https://images.pexels.com/photos/4195786/pexels-photo-4195786.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
@@ -494,13 +478,12 @@
   },
   {
     "productName": "Instant Pot Duo 7-in-1",
-    "seller_mail": "seller@gmail.com",
+    "seller_mail": "supplier@gmail.com",
     "productCategory": "Home & Kitchen",
     "actualPrice": 99.99,
     "off": 25,
     "productImage": [
       "https://images.pexels.com/photos/28054208/pexels-photo-28054208/free-photo-of-a-stove-with-two-pots-on-it-and-steam-coming-out-of-them.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
@@ -518,13 +501,12 @@
   },
   {
     "productName": "Dyson V11 Vacuum Cleaner",
-    "seller_mail": "seller@gmail.com",
+    "seller_mail": "supplier@gmail.com",
     "productCategory": "Home & Kitchen",
     "actualPrice": 599.99,
     "off": 10,
     "productImage": [
       "https://images.pexels.com/photos/6195963/pexels-photo-6195963.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
@@ -542,13 +524,12 @@
   },
   {
     "productName": "Asus ROG Zephyrus G14",
-    "seller_mail": "seller@gmail.com",
+    "seller_mail": "supplier@gmail.com",
     "productCategory": "Electronics",
     "actualPrice": 1449.99,
     "off": 10,
     "productImage": [
       "https://images.pexels.com/photos/12877878/pexels-photo-12877878.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
@@ -566,13 +547,12 @@
   },
   {
     "productName": "Nintendo Switch",
-    "seller_mail": "seller@gmail.com",
+    "seller_mail": "supplier@gmail.com",
     "productCategory": "Electronics",
     "actualPrice": 299.99,
     "off": 15,
     "productImage": [
       "https://images.pexels.com/photos/371924/pexels-photo-371924.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/27581017/pexels-photo-27581017/free-photo-of-a-man-in-adidas-tracksuit-sitting-on-a-chair.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/16586462/pexels-photo-16586462/free-photo-of-a-boy-balancing-a-soccer-ball-on-his-head.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/48013/pexels-photo-48013.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],

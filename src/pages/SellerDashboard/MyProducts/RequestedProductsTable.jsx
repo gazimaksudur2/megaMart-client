@@ -61,9 +61,6 @@ const RequestedProductsTable = () => {
                                     </thead>
                                     <tbody class="bg-white divide-y divide-gray-200">
                                         <ActiveProductRow/>
-                                        <ActiveProductRow/>
-                                        <ActiveProductRow/>
-                                        <ActiveProductRow/>
                                     </tbody>
                                 </table>
                             </div>

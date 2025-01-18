@@ -1,27 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CartRow from './CartRow';
 import useLocalCart from '../../hooks/useLocalCart';
 import Address_Payment from '../UserDashboard/Address_Payment';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteProduct } from '../../redux/features/cart/cartSlice';
 
-const CartTable = ({cartProducts}) => {
+const CartTable = () => {
+    // const { cartProducts, deleteFromCart, refetch } = useLocalCart();
+    const cartProducts = useSelector(state=>state?.cart?.cart);
+    const dispatch = useDispatch();
     const [grandTotal, setGrandTotal] = useState(cartProducts?.reduce((accumulator, cur) => {
-        return accumulator + parseInt(cur?.price || 0);
-      }, 0));
-      const { deleteFromCart, refetch } = useLocalCart();
+        return accumulator + parseInt(cur?.price * cur?.count || 0);
+    }, 0));
 
     const [ship, setShip] = useState(false);
-    const calculateGrandTotal = (op, price) =>{
-        if(op=='minus'){
-            setGrandTotal(grandTotal-price);
-        }else{
-            setGrandTotal(grandTotal+price);
-        }   
-    }
+    useEffect(()=>{
+        setGrandTotal(cartProducts?.reduce((accumulator, cur) => {
+            return accumulator + parseInt(parseInt(cur?.price) * parseInt(cur?.count) || 0);
+        }, 0))
+    },[cartProducts]);
 
-    const handleDeleteAll = ()=>{
-        deleteFromCart('all');
-        setGrandTotal(0);
-        refetch();
+    const handleDeleteAll = () => {
+        dispatch(deleteProduct('all'));
+        setShip(false);
     }
     return (
         <div className='w-[90%] my-10 mx-auto'>
@@ -67,7 +68,7 @@ const CartTable = ({cartProducts}) => {
                                     </thead>
                                     <tbody className="bg-white divide-y divide-gray-200">
                                         {
-                                            cartProducts?.map((cartProduct, idx)=><CartRow calculateGrandTotal={calculateGrandTotal} cartProduct={cartProduct} />)
+                                            cartProducts?.map((cartProduct, idx) => <CartRow cartProduct={cartProduct} />)
                                         }
                                         {/* <CartRow price={price} index={1} />
                                         <CartRow price={price} index={2} />
@@ -95,7 +96,7 @@ const CartTable = ({cartProducts}) => {
                     </div>
                     <div className='space-x-4'>
                         <button className='btn btn-warning rounded text-white' onClick={handleDeleteAll}>Clear cart</button>
-                        <button className='btn bg-black hover:bg-[#181818e0] text-white rounded' onClick={()=>setShip(!ship)}>{(!ship)?"Continue to Ship":"Back from Ship"}</button>
+                        <button className='btn bg-black hover:bg-[#181818e0] text-white rounded' onClick={() => setShip(!ship)} disabled={cartProducts?.length==0 ?true:false}>{(!ship) ? "Continue to Ship" : "Back from Ship"}</button>
                     </div>
                 </div>
                 {

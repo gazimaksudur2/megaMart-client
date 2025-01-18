@@ -1,14 +1,40 @@
 import { Radio } from 'antd';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ActiveProductRow from './ActiveProductRow';
+import useAxios from '../../../hooks/useAxios';
+import useAuth from '../../../hooks/useAuth';
+import { useQuery } from '@tanstack/react-query';
 
 const MyActiveProductsTable = () => {
     const [value, setValue] = useState(1);
+    const axiosPublic = useAxios();
+    const { user } = useAuth();
+    // const [myProducts, setMyProducts] = useState([]);
     const onChange = (e) => {
         console.log('radio checked', e.target.value);
         setValue(e.target.value);
     };
-
+    // useEffect(()=>{
+    //     axiosPublic.get(`/products?seller=${user?.email}`)
+    //     .then(res=>{
+    //         setMyProducts(res.data);
+    //     })
+    //     .catch(err=>{
+    //         console.log(err?.message);
+    //     })
+    // },[])
+    const { data: myProducts, refetch } = useQuery({
+        queryKey: ['myProducts'],
+        queryFn: ()=>{
+            const items = axiosPublic.get(`/products?seller=${user?.email}`)
+                                .then(res=> res.data)
+                                .catch(err=> {
+                                    console.log(err?.message);
+                                })
+            return items
+        }
+    })
+    // console.log(myProducts);
     const emptyUsers = <div className='mt-20 flex flex-col items-center '>
         <img className='w-52' src="https://img.freepik.com/premium-vector/user-group-icon-flat-design_1039903-362.jpg?uid=R113556208&ga=GA1.1.820294120.1714974066&semt=ais_hybrid" alt="no user" />
         <h2 className='text-lg font-semibold text-gray-600'>No User Found</h2>
@@ -18,7 +44,7 @@ const MyActiveProductsTable = () => {
         <section class="mt-10 container px-4 mx-auto">
             <div class="flex items-center gap-x-3">
                 <h2 class="text-lg font-medium text-gray-800">My Active Products</h2>
-                <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full">100 pcs</span>
+                <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full">{myProducts?.length} pcs</span>
             </div>
             <div className='mt-8 flex items-center justify-end'>
                 <Radio.Group onChange={onChange} value={value}>
@@ -47,31 +73,18 @@ const MyActiveProductsTable = () => {
 
                                             <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">#Product ID</th>
                                             <th scope="col" class="px-4 py-3.5 text-sm font-normal text-center rtl:text-right text-gray-500">Category</th>
-                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-center rtl:text-right text-gray-500">Stock</th>
-                                            <th scope="col" class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
-                                                <button class="flex items-center gap-x-2">
-                                                    <span>Seller</span>
-                                                </button>
-                                            </th>
-
-                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
-                                                <button class="flex items-center gap-x-2">
-                                                    <span>Price</span>
-                                                </button>
-                                            </th>
-
-
-
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-center rtl:text-right text-gray-500">Unit Price</th>
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-center rtl:text-right text-gray-500">Available Stock</th>
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-center rtl:text-right text-gray-500">Product Rating</th>
                                             <th scope="col" class="px-4 py-3.5 text-sm font-normal text-center rtl:text-right text-gray-500">
                                                 <span class="">Action</span>
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y divide-gray-200">
-                                        <ActiveProductRow/>
-                                        <ActiveProductRow/>
-                                        <ActiveProductRow/>
-                                        <ActiveProductRow/>
+                                        {
+                                            myProducts?.map((product, idx)=><ActiveProductRow product={product} refetch={refetch} index={idx}/>)
+                                        }
                                     </tbody>
                                 </table>
                             </div>

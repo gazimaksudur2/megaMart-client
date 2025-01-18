@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 const axiosLocal = axios.create({
-    // baseURL: import.meta.env.VITE_SERVER_API,
-    baseURL: 'http://localhost:5000',
+    baseURL: import.meta.env.VITE_MEGAMART_SERVER_API,
     withCredentials: true
 })
 const useAxios = () => {

@@ -2,8 +2,8 @@ import axios from 'axios';
 
 const useBankAxios = () => {
     const axiosBank = axios.create({
-        // baseURL: import.meta.VITE_BANK_SERVER,
-        baseURL: 'https://bank-server-six.vercel.app',
+        baseURL: import.meta.env.VITE_BANK_API,
+        withCredentials: true
     })
     return axiosBank;
 };

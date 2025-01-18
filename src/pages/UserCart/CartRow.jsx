@@ -2,22 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { FiMinus } from 'react-icons/fi';
 import { GoPlus } from 'react-icons/go';
 import useLocalCart from '../../hooks/useLocalCart';
+import { useDispatch } from 'react-redux';
+import { changeQuantity, deleteProduct } from '../../redux/features/cart/cartSlice';
 
-const CartRow = ({cartProduct, calculateGrandTotal}) => {
-    const [quantity, setQuantity] = useState(1);
-    const [prev, setPrev] = useState(quantity*parseInt(cartProduct?.price));
-    const { deleteFromCart, refetch } = useLocalCart();
+const CartRow = ({cartProduct}) => {
+    const dispatch = useDispatch();
+
     const handleDeleteProductFromCart = ()=>{
-        deleteFromCart(cartProduct?.productID);
-        calculateGrandTotal('minus', parseInt(cartProduct?.price)*quantity);
-        refetch();   
+        dispatch(deleteProduct({productID: cartProduct?.productID}))
     }
-    const handleQuantity = (operation) =>{
-        calculateGrandTotal(operation, parseInt(cartProduct?.price));
+    const handleCount = (operation) =>{
         if(operation==='minus'){
-            setQuantity(quantity-1);
+            dispatch(changeQuantity({productID: cartProduct?.productID, amount: 1}))
         }else{
-            setQuantity(quantity+1);
+            dispatch(changeQuantity({productID: cartProduct?.productID, amount: -1}))
         }
     }
     return (
@@ -36,13 +34,13 @@ const CartRow = ({cartProduct, calculateGrandTotal}) => {
                 <td className="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">$ {parseInt(cartProduct?.price)}</td>
                 <td className="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
                     <div className='flex items-center justify-center gap-2'>
-                        <button className='btn btn-xs' onClick={()=>(quantity>1) && handleQuantity('minus')}><FiMinus/></button>
-                        <p>{quantity}</p>
-                        <button className='btn btn-xs' onClick={()=>(quantity <= cartProduct?.stock) && handleQuantity('add')}><GoPlus/></button>
+                        <button className='btn btn-xs' onClick={()=>(cartProduct?.count>1) && handleCount('minus')}><FiMinus/></button>
+                        <p>{cartProduct?.count}</p>
+                        <button className='btn btn-xs' onClick={()=>(cartProduct?.count <= cartProduct?.stock) && handleCount('add')}><GoPlus/></button>
                     </div>
                 </td>
                 <td className="px-4 py-4 text-sm whitespace-nowrap">
-                    $ {(parseInt(cartProduct?.price)*quantity)}
+                    $ {(parseInt(cartProduct?.price)*parseInt(cartProduct?.count))}
                 </td>
                 <td className="px-4 py-4 text-sm whitespace-nowrap">
                     <div className="flex items-center gap-x-6">

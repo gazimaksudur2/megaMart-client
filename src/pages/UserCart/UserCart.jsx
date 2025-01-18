@@ -4,15 +4,10 @@ import CartTable from './CartTable';
 import useLocalCart from '../../hooks/useLocalCart';
 
 const UserCart = () => {
-    const {items: cartProducts} = useLocalCart();
-
-    const handleChangeCart = ()=>{
-
-    }
     return (
         <div>
             <TitleBanner title={'Your Cart'} route={'home / cart'}/>
-            <CartTable cartProducts={cartProducts}/>
+            <CartTable />
             {/* <EmptyCart/> */}
             {/* <Footer/> */}
         </div>

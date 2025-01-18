@@ -3,17 +3,22 @@ import { useForm } from 'react-hook-form';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
 import useAxios from '../../hooks/useAxios';
+import useBankAxios from '../../hooks/useBankAxios';
+import { useDispatch } from 'react-redux';
+import { deleteProduct } from '../../redux/features/cart/cartSlice';
+import { useNavigate } from 'react-router-dom';
 
 const Address_Payment = ({ grandTotal, cartProducts }) => {
     const axios = useAxios();
+    const dispatch = useDispatch();
+    const axiosBank = useBankAxios();
     const { userDB } = useAuth();
+    const navigate = useNavigate();
     const { register, handleSubmit } = useForm()
     const onSubmit = (data) => {
-        // console.log(data, grandTotal);
-        // receiver_account_name, receiver_email, sender_account_no, sender_email: userDB?.email, amount
         const paymentData = {
             receiver_account_name: "The Seller",
-            receiver_email: "seller@gmail.com",
+            receiver_email: "supplier@gmail.com",
             sender_email: userDB?.email,
             sender_account_no: 'this is demo',
             amount: grandTotal,
@@ -23,54 +28,78 @@ const Address_Payment = ({ grandTotal, cartProducts }) => {
         }
         const orderInfo = {
             products: cartProducts,
-            amount: grandTotal,
+            total_amount: grandTotal,
             delivery_mail: data.email,
             delivery_phone: data.phone,
             delivery_address: data.address,
             orderedAt: new Date(),
         }
-        console.log(orderInfo);
-        // axiosPublic.post('/orders', orderInfo)
-        //     .then(res=>{
-        //         console.log(res.data);
-        //     })
-        //     .catch(err=>{
-        //         console.log(err.message);
-        //     })
-        axios.post('/orders', orderInfo, {withCredentials: true})
+        axiosBank.post('/account/payment', paymentData)
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 if (res.data.insertedId) {
-                    // axiosBank.post('/payment', paymentData)
-                    //     .then(res => {
-                    //         if (res.data.insertedId) {
-                    //             Swal.fire({
-                    //                 title: "Great Job",
-                    //                 text: "Your order is in progress",
-                    //                 icon: 'success',
-                    //                 showConfirmButton: false,
-                    //                 timer: 2000
-                    //             })
-                    //         }
-                    //     })
-                    //     .catch(err=>{
-                    //         console.log(err.message);
-                    //         Swal.fire({
-                    //             title: "error in payment",
-                    //             text: "Your order is in progress",
-                    //             icon: 'success',
-                    //             showConfirmButton: false,
-                    //             timer: 2000
-                    //         })
-                    //     })
+                    axios.post('/orders', orderInfo)
+                        .then(res => {
+                            if (res.data.insertedId) {
+                                Swal.fire({
+                                    title: "Great Job",
+                                    text: "Your order is placed Successfully",
+                                    icon: 'success',
+                                    showConfirmButton: false,
+                                    timer: 2000
+                                })
+                                dispatch(deleteProduct('all'));
+                                navigate('/');
+                            }
+                        })
+                        .catch(err => {
+                            console.log(err.message);
+                            Swal.fire({
+                                title: "Order failed!!",
+                                text: err.message,
+                                icon: 'error',
+                                showConfirmButton: false,
+                                timer: 2000
+                            })
+                            const paymentReversalData = {
+                                sender_account_name: "The Seller",
+                                sender_email: "supplier@gmail.com",
+                                receiver_email: userDB?.email,
+                                sender_account_no: 'this is demo',
+                                amount: grandTotal,
+                                security: 654321,
+                                account_holder_name: "The Seller",
+                            }
+                            axiosBank.post('/account/payment', paymentReversalData)
+                                .then(res => {
+                                    console.log('payment reversal successful!!');
+                                })
+                                .catch(err => {
+                                    Swal.fire({
+                                        title: "payment reversal failed!!",
+                                        text: err.message,
+                                        icon: 'error',
+                                        showConfirmButton: false,
+                                        timer: 2000
+                                    })
+                                })
+                        })
+                }else {
+                    Swal.fire({
+                        title: "payment failed!!",
+                        text: res.data?.message,
+                        icon: 'error',
+                        showConfirmButton: false,
+                        timer: 2000
+                    })
                 }
             })
-            .catch(err=>{
-                console.log(err.message);
+            .catch(err => {
+                // console.log(err.message);
                 Swal.fire({
-                    title: "Error",
-                    text: "Your order is in progress",
-                    icon: 'success',
+                    title: "payment failed!!",
+                    text: err.message,
+                    icon: 'error',
                     showConfirmButton: false,
                     timer: 2000
                 })
